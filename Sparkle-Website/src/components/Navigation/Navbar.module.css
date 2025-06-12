@@ -1,0 +1,331 @@
+
+.navbar {
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 100%;
+    border-radius: 3rem;
+    padding: 0.5rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarSection {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0rem;
+  left: 50%;
+  z-index: 1;
+  border-radius: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  transform: translateX(-50%);
+}
+
+.navbarLogoImage {
+  height: 45px;
+}
+
+.menuItems {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarItem a {
+  text-decoration: none;
+  font-weight: 600;
+  color: black;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  transition: background 0.3s ease;
+}
+
+.navbarItem a:hover,
+.navbarItem .active-link {
+  background: linear-gradient(to right, #5E1AF4, #7669E9);
+  color: white;
+}
+  
+.navbarContainer {
+    width: auto;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbarLinks {
+    display: flex;
+    gap: 3rem;
+    font-size: 1rem;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    background-color: #F9FAFB;
+    padding: 5px 10px;
+    border-radius: 5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: auto;
+}
+  
+.home-link,
+.booking-link,
+.services-link,
+.resources-link {
+    color: black; 
+    font-weight: 500;
+    text-decoration: none; 
+    position: relative;
+    transition: color 0.3s ease; 
+}
+
+
+
+.home-link::after,
+.booking-link::after,
+.services-link::after,
+.resources-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 0%; 
+    height: 3px;
+    background: linear-gradient(135deg, #5E1AF4 20%, #7669E9 90%);
+    transition: width 0.4s ease; 
+}
+
+/* Hover and active state */
+.home-link:hover::after,
+.home-link:focus::after,
+.home-link:active::after,
+.booking-link:hover::after,
+.booking-link:focus::after,
+.booking-link:active::after,
+.services-link:hover::after,
+.services-link:focus::after,
+.services-link:active::after,
+.resources-link:hover::after,
+.resources-link:focus::after,
+.resources-link:active::after,
+.active-link::after {
+    width: 100%; 
+}
+
+.home-link:hover,
+.home-link:focus,
+.home-link:active,
+.booking-link:hover,
+.booking-link:focus,
+.booking-link:active,
+.services-link:hover,
+.services-link:focus,
+.services-link:active,
+.resources-link:hover,
+.resources-link:focus,
+.resources-link:active {
+    color: #5E1AF4;
+}
+
+/* .active-link {
+    color: #5E1AF4;
+    font-weight: 600;
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+} */
+
+.navbarLinks a {
+    position: relative;
+    text-decoration: none;
+    align-content: center;
+}
+
+/* Hide logo inside navbar for small screens */
+.navbarLogo {
+    display: block;
+}
+
+/* Hide logo outside navbar for small screens */
+.navbarMobileLogoImage {
+    display: none;
+}
+  
+.navbarLogoImage {
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Hamburger (Mobile Trigger) */
+.navbarHamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #5E1AF4;
+    position: absolute;
+    top: 0;
+    right: 0rem;
+    z-index: 999;
+    cursor: pointer;
+}
+.navbarHamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Mobile Nav sliding Panel */
+.navbarMobile {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 7vw;
+    max-width: 400px;
+    height: 100%;
+    background-color: #F9FAFB;
+    display: flex;
+    flex-direction: column;
+    padding: 0rem;
+    gap: 2rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 998;
+}
+
+.navbarMobile {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+  
+.navbarMobile.open {
+    left: 0;
+}
+  
+.navbarMobile a {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+/* Hide hamburger and mobile-nav by default (desktop view) */
+.navbarHamburger {
+    display: none;
+}
+  
+.navbarMobile {
+    display: none;
+}
+
+/* Small Desktop */
+@media (max-width: 1279px) and (min-width: 1025px) {
+   .navbarMobile {
+    display: none !important;
+  }
+}
+  
+
+/* Show hamburger only on small screens */
+@media (max-width: 1024px) {
+    .navbar {
+        top: 0;
+        width: 100%;
+        height: 5rem;
+        border-radius: 0;
+        background-color: white;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbarMobileInner {
+        position: absolute;
+        top: 0.85rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90vw;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .navbarMobileLogoLink {
+        display: block;
+        padding: 0;
+        margin: 0;
+        z-index: 999;
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .navbarMobileLogoImage {
+        display: block;
+        height: 3.5rem;
+        padding: 0;
+        margin: 0;
+        z-index: 999;
+        object-fit: contain;
+    }
+
+     .navbarHamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 3rem;
+        color: black;
+        cursor: pointer;
+        z-index: 999;
+        padding: 0;
+    }
+
+    .navbarHamburger svg {
+        padding-top: 0.4rem;
+        padding-right: 1.5rem;
+    }
+
+    .navbarLogoImage {
+        height: 45px;
+        left: 50px;
+        margin-top: 0.1rem;
+        padding-left: 1.5rem;
+        object-fit: contain;
+    }
+
+    .navbarLogo {
+        display: none; 
+    }
+
+    .navbarContainer {
+        display: block; 
+    }
+
+    .navbarLinks {
+      display: none;
+    }
+}
