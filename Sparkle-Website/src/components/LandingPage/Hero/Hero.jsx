@@ -40,12 +40,14 @@ const Hero = () => {
             <p className={styles.heroText}>From communication to literacy, our dedicated therapists provide the 
                 support for adults and children needs to grow, learn, and thrive.
             </p>
-            <button className={styles.heroBookBtn}>
-                Book a session now!
-            </button>
-            <button className={styles.heroQuestionBtn}>
-                Ask a question!
-            </button>
+            <div className={styles.heroBtn}>
+              <button className={styles.heroBookBtn}>
+                  Book a session now!
+              </button>
+              <button className={styles.heroQuestionBtn}>
+                  Ask a question!
+              </button>
+            </div>
         </div>
 
         <div>

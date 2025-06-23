@@ -59,9 +59,9 @@
   width: 90%;
   max-width: 500px;
   margin: 0 auto;
-  left: 50%;
+  left: 20rem;
   transform: translateX(-50%);
-  bottom: 5rem;
+  bottom: 40%;
 }
 
 .heroTitle {
@@ -72,6 +72,11 @@
 
 .heroText {
   font-size: 1rem;
+}
+
+.heroBtn {
+  display: flex;
+  flex-direction: row;
 }
 
 .heroBookBtn, .heroQuestionBtn {
@@ -109,37 +114,84 @@
   pointer-events: none;
 }
 
+@media (max-width: 1024px) and (min-width: 768px) {
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0rem;
+    padding-bottom: 7rem;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    left: 50%;
+    bottom: 0rem;
+  }
 
+  .heroBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
 
+  .heroBookBtn, .heroQuestionBtn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
 
+@media (max-width: 767px) and (min-width: 426px) {
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0rem;
+    padding-bottom: 7rem;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    left: 50%;
+    bottom: 0rem;
+  }
 
+  .heroBtn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
 
-
-
+  .heroBookBtn, .heroQuestionBtn {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
 
 /* For small screens */
-@media (max-width: 768px) {
+@media (max-width: 425px) {
   .heroContent {
     display: flex;
     flex-direction: column;
-    bottom: 0;
-  }
-  .heroContent {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    z-index: 3;
-    background-color: #563CAA;
-    border-radius: 2rem;
-    color: white;
-    padding: 1.5rem;
-    text-align: left;
+    border-radius: 0rem;
+    padding-bottom: 5rem;
+    text-align: center;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 100%;
     left: 50%;
-    transform: translateX(-50%);
-    bottom: 5rem;
+    bottom: 0rem;
+  }
+
+  .heroBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .heroBookBtn, .heroQuestionBtn {
+    width: 100%;
+    margin: 0.5rem 0;
   }
 }
 
