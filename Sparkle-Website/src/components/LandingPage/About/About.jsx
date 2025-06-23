@@ -18,24 +18,44 @@ const AboutUs = () => {
             alt="Colorful play interaction"
             className={styles.aboutImage2}
           />
+          <img
+            src="assets/About/Yellow Circle.webp"
+            alt="Yellow Circle Illustration"
+            className={styles.aboutIllustration1}
+          />
+          <img
+            src="assets/About/shapes 1.webp"
+            alt="Shapes Illustration"
+            className={styles.aboutIllustration2}
+          />
         </div>
 
         <div className={styles.textContent}>
-          <h3 className={styles.subTitle}>About Us</h3>
-          <h2 className={styles.title}>
-            Welcome to Sparkle Therapy Centre’s nook!
-          </h2>
-          <p className={styles.description}>
-            We are licensed Speech and Language Therapists and Clinical
-            Psychologist under Allied Health Professions Council of Brunei
-            Darussalam (AHPCBD). We provide consultation, assessment, diagnosis
-            and individualised treatment to children and adults with
-            communication, cognitive, voice, play, fluency, swallowing and
-            psychological difficulties. We aim to help our clients achieve their
-            maximum best potential through different evidence-based therapies and
-            offer training to their loved ones or teachers and carers involved in
-            their growth and development.
-          </p>
+            <img
+                src="assets/About/shooting star.webp"
+                alt="Shooting Star Illustration"
+                className={styles.aboutIllustration3}
+            />
+            <h3 className={styles.subTitle}>About Us</h3>
+            <h2 className={styles.title}>
+                Welcome to Sparkle Therapy Centre’s nook!
+            </h2>
+            <p className={styles.description}>
+                We are licensed Speech and Language Therapists and Clinical
+                Psychologist under Allied Health Professions Council of Brunei
+                Darussalam (AHPCBD). We provide consultation, assessment, diagnosis
+                and individualised treatment to children and adults with
+                communication, cognitive, voice, play, fluency, swallowing and
+                psychological difficulties. We aim to help our clients achieve their
+                maximum best potential through different evidence-based therapies and
+                offer training to their loved ones or teachers and carers involved in
+                their growth and development.
+            </p>
+            <img
+                src="assets/About/rocket.webp"
+                alt="Rocket Illustration"
+                className={styles.aboutIllustration4}
+            />
         </div>
       </div>
     </section>

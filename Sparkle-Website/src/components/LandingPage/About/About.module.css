@@ -1,7 +1,9 @@
 .aboutSection {
     background-color: white;
-    padding: 4rem 2rem;
+    padding: 4rem 8rem;
     position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .topCloud {
@@ -19,21 +21,90 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    margin: 0 auto;
-    gap: 3rem;
+    gap: 4rem;
     position: relative;
     z-index: 1;
     flex-wrap: wrap;
 }
 
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 40rem;
+    min-height: 300px;
+}
+
+/* Bottom Image */
+.aboutImage1 {
+    border-radius: 2rem;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+    width: 70%;
+    height: 300px;
+}
+
+/* Top Overlapping Image */
+.aboutImage2 {
+    position: absolute;
+    bottom: -120px;
+    right: 30px;
+    border-radius: 2rem;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    z-index: 2;
+    width: 260px;
+    height: 260px;
+}
+
+.aboutIllustration1 {
+    position: absolute;
+    bottom: 50px;
+    right: 70px;
+    border-radius: 10rem;
+    width: 200px;
+    height: 200px;
+}
+
+.aboutIllustration2 {
+    position: absolute;
+    bottom: -130px;
+    left: 80px;
+    border-radius: 2rem;
+    z-index: 2;
+    width: 130px;
+}
+
+.aboutIllustration3 {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    border-radius: 2rem;
+    z-index: 2;
+    width: 140px;
+}
+
+.aboutIllustration4 {
+    position: absolute;
+    bottom: -80px;
+    right: -180px;
+    overflow-x: hidden;
+    border-radius: 2rem;
+    z-index: 2;
+    width: 150px;
+}
+
 .textContent {
-    flex: 1 1 50%;
+    flex: 1;
+    margin-top: 4rem;
 }
 
 .subTitle {
     color: #F08A29;
     font-weight: 600;
     font-size: 2rem;
+    text-decoration: underline;
     margin-bottom: 0.5rem;
 }
 
@@ -47,72 +118,127 @@
 .description {
     color: #333;
     font-size: 1.5rem;
+    text-align: justify;
     line-height: 1.8;
 }
 
-.imageWrapper {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    min-height: 300px;
-    margin: 2rem auto;
-}
-
-/* Bottom Image */
-.aboutImage1 {
-    width: 100%;
-    border-radius: 2rem;
-    object-fit: cover;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    position: relative;
-    z-index: 1;
-    height: 350px;
-}
-
-/* Top Overlapping Image */
-.aboutImage2 {
-    position: absolute;
-    bottom: -30px;
-    right: -40px;
-    border-radius: 2rem;
-    object-fit: cover;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-    z-index: 2;
-    width: 300px;
-    height: 300px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .imageWrapper {
-        max-width: 90%;
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .aboutSection {
+        padding: 4rem 4rem;
     }
 
-    .imageSecondary {
-        width: 60%;
-        bottom: -20px;
-        right: -20px;
-    }
-}
-
-
-@media (max-width: 1024px) and (min-width: 768px) {}
-@media (max-width: 767px) and (min-width: 426px) {
     .contentWrapper {
-        flex-direction: column;
-        align-items: center;
+        gap: 2rem;
+    }
+
+    .imageWrapper {
+        max-width: 30rem;
+    }
+
+    .aboutIllustration2 {
+        left: 20px;
+    }
+
+    .aboutIllustration3 {
+        right: 50px;
+    }
+
+    .aboutIllustration4 {
+        bottom: -90px;
+        right: -110px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .aboutSection {
+        padding: 4rem 5rem;
+    }
+
+    .contentWrapper {
+        gap: 10rem;
+    }
+
+    .aboutImage1 {
+        left: 60px;
+        width: 70%;
+        height: 350px;
+    }
+
+    .aboutImage2 {
+        bottom: -140px;
+        right: -10px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .aboutIllustration1 {
+        bottom: 80px;
+        right: 60px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .aboutIllustration2 {
+        left: 80px;
+    }
+
+    .aboutIllustration3 {
+        top: 550px;
+        right: 50px;
+    }
+
+    .aboutIllustration4 {
+        bottom: -90px;
+        right: -110px;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .aboutSection {
+        padding: 2rem;
+    }
+
+    .contentWrapper {
+        gap: 10rem;
+    }
+
+    .aboutImage1 {
+        left: -50px;
+        width: 70%;
+        height: 300px;
+    }
+
+    .aboutImage2 {
+        bottom: -140px;
+        right: 0px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .aboutIllustration1 {
+        bottom: 30px;
+        right: 30px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .aboutIllustration2 {
+        left: 0px;
+        width: 6rem;
+    }
+
+    .aboutIllustration3 {
+        display: none;
+    }
+
+    .aboutIllustration4 {
+        display: none;
     }
 
     .textContent,
     .imageWrapper {
         width: 100%;
         text-align: center;
-    }
-
-    .aboutImage,
-    .aboutImageSecondary {
-        width: 90%;
-        margin: 0 auto;
     }
 }
 
