@@ -7,6 +7,18 @@ const AboutUs = () => {
       <div className={styles.topCloud}></div>
 
       <div className={styles.contentWrapper}>
+        <div className={styles.topText}>
+          <img
+            src="assets/About/shooting star.webp"
+            alt="Shooting Star Illustration"
+            className={styles.topAboutIllustration3}
+          />
+          <h3 className={styles.topSubTitle}>About Us</h3>
+          <h2 className={styles.topTitle}>
+            Welcome to Sparkle Therapy Centre’s nook!
+          </h2>
+        </div>
+
         <div className={styles.imageWrapper}>
           <img
             src="/assets/About/IMG_3270.webp"
