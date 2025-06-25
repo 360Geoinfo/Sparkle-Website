@@ -2,10 +2,10 @@ import React, { useState, useEffect } from "react";
 import styles from './Hero.module.css';
 
 const images = [
-  "/assets/Hero/slideshow 1.webp",
-  "/assets/Hero/slideshow 2.webp",
-  "/assets/Hero/slideshow 3.webp",
-  "/assets/Hero/slideshow 4.webp"
+  "/assets/LandingPage/Hero/slideshow 1.webp",
+  "/assets/LandingPage/Hero/slideshow 2.webp",
+  "/assets/LandingPage/Hero/slideshow 3.webp",
+  "/assets/LandingPage/Hero/slideshow 4.webp"
 ];
 
 const Hero = () => {
@@ -53,7 +53,7 @@ const Hero = () => {
         <div>
             <img
                 className={styles.cloudImage}
-                src="/assets/Hero/Cloud.webp"
+                src="/assets/LandingPage/Hero/Cloud.webp"
                 alt="Cloud"
             />
         </div>

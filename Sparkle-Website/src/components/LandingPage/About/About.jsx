@@ -9,34 +9,34 @@ const AboutUs = () => {
       <div className={styles.contentWrapper}>
         <div className={styles.topText}>
           <img
-            src="assets/About/shooting star.webp"
+            src="assets/LandingPage/About/shooting star.webp"
             alt="Shooting Star Illustration"
             className={styles.topAboutIllustration3}
           />
-          <h3 className={styles.topSubTitle}>About Us</h3>
-          <h2 className={styles.topTitle}>
+          <h2 className={styles.topTitle}>About Us</h2>
+          <h3 className={styles.topSubTitle}>
             Welcome to Sparkle Therapy Centre’s nook!
-          </h2>
+          </h3>
         </div>
 
         <div className={styles.imageWrapper}>
           <img
-            src="/assets/About/IMG_3270.webp"
+            src="/assets/LandingPage/About/IMG_3270.webp"
             alt="Therapist interacting with child"
             className={styles.aboutImage1}
           />
           <img
-            src="assets/About/1b2314a3-8184-4006-a8e9-13dce08fc95b.webp"
+            src="assets/LandingPage/About/1b2314a3-8184-4006-a8e9-13dce08fc95b.webp"
             alt="Colorful play interaction"
             className={styles.aboutImage2}
           />
           <img
-            src="assets/About/Yellow Circle.webp"
+            src="assets/LandingPage/About/Yellow Circle.webp"
             alt="Yellow Circle Illustration"
             className={styles.aboutIllustration1}
           />
           <img
-            src="assets/About/shapes 1.webp"
+            src="assets/LandingPage/About/shapes 1.webp"
             alt="Shapes Illustration"
             className={styles.aboutIllustration2}
           />
@@ -44,14 +44,14 @@ const AboutUs = () => {
 
         <div className={styles.textContent}>
             <img
-                src="assets/About/shooting star.webp"
+                src="assets/LandingPage/About/shooting star.webp"
                 alt="Shooting Star Illustration"
                 className={styles.aboutIllustration3}
             />
-            <h3 className={styles.subTitle}>About Us</h3>
-            <h2 className={styles.title}>
+            <h2 className={styles.title}>About Us</h2>
+            <h3 className={styles.subTitle}>
                 Welcome to Sparkle Therapy Centre’s nook!
-            </h2>
+            </h3>
             <p className={styles.description}>
                 We are licensed Speech and Language Therapists and Clinical
                 Psychologist under Allied Health Professions Council of Brunei
@@ -64,7 +64,7 @@ const AboutUs = () => {
                 their growth and development.
             </p>
             <img
-                src="assets/About/rocket.webp"
+                src="assets/LandingPage/About/rocket.webp"
                 alt="Rocket Illustration"
                 className={styles.aboutIllustration4}
             />

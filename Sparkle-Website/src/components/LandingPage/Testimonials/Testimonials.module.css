@@ -1,0 +1,112 @@
+.testimonialsSection {
+    padding: 4rem 2rem;
+    background: white;
+    text-align: center;
+}
+
+.topContent {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.testimonialContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonialCard {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+}
+
+.bubbleWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.bubbleImage {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bubbleContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-top: -2rem;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text {
+    text-align: left;
+    font-size: clamp(1rem, 5vw, 1.15rem);
+    line-height: 1.5;
+    color: #111;
+    margin-bottom: 1rem;
+}
+
+.name {
+    text-align: left;
+    font-size: clamp(1rem, 5vw, 1.15rem);
+    font-weight: bold;
+    color: #563caa;
+    margin-bottom: 1rem;
+}
+
+.stars {
+    display: flex;
+    justify-content: right;
+    gap: 0.3rem;
+}
+
+.starIcon {
+    width: 1.5rem;
+    height: auto;
+}
+
+.quote {
+  position: absolute;
+  width: 3.5rem;
+}
+
+.topLeft {
+  top: -20px;
+  left: -20px;
+  transform: rotate(200deg);
+}
+
+.bottomRight {
+  bottom: 80px;
+  right: -20px;
+  transform: rotate(20deg);
+}
+
+
+@media (min-width: 768px) {
+  .testimonialContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+

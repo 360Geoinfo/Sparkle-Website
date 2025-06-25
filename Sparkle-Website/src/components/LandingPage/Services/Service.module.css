@@ -1,14 +1,143 @@
-/* import React from "react";
-import styles from "./Service.module.css";
+.serviceSection {
+  background-color: white;
+  padding: 4rem 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
-const Service = () => {
-  return (
-    <section className={styles.aboutSection}>
-      <div className={styles.contentWrapper}>
-        
-      </div>
-    </section>
-  );
-};
+.topContent {
+  text-align: center;
+}
 
-export default Service; */
+.title {
+  color: #F08A29;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+.subTitle {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 600;
+  color: #563CAA;
+  margin-bottom: 1.25rem;
+}
+
+.serviceWrapper {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 5rem;
+  gap: 3rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.baseImage {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center bottom; 
+  border-radius: 1rem;
+}
+
+.contentImageWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  margin-bottom: -5rem;
+}
+
+.overlayImage {
+  width: 100%;
+  margin-bottom: -0.5rem;
+}
+
+.speechContentBox, .clinicalContentBox {
+  border-radius: 0rem 0rem 1rem 1rem;
+  padding: 1rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.speechContentBox {
+  background-color: #1BB9FF;
+}
+
+.clinicalContentBox {
+  background-color: #A0C260;
+}
+
+.contentTitle {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.speechLearnMoreBtn, .clinicalLearnMoreBtn {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.speechLearnMoreBtn {
+  color: #1BB9FF;
+}
+
+.clinicalLearnMoreBtn {
+  color: #A0C260;
+}
+
+.BookBtn{
+  background-color: #F0C000;
+  color: #563CAA;
+  padding: 0.5rem 2rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  border: none;
+}
+
+@media (max-width: 1440px) and (min-width: 1025px) {}
+@media (max-width: 1024px) and (min-width: 769px) {
+  .serviceSection {
+    padding: 4rem 2rem;
+  }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+  .serviceSection {
+    padding: 4rem 2rem;
+  }
+
+  .serviceWrapper {
+    flex-direction: column;
+    max-width: 360px;
+    gap: 7rem;
+  }
+}
+@media (max-width: 425px) {
+  .serviceSection {
+    padding: 4rem 2rem;
+  }
+
+  .serviceWrapper {
+    flex-direction: column;
+    max-width: 360vw;
+    gap: 7rem;
+  }
+}

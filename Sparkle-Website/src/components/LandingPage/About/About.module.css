@@ -54,6 +54,7 @@
     bottom: -120px;
     right: 30px;
     border-radius: 2rem;
+    border: 5px solid white;
     object-fit: cover;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
     z-index: 2;
@@ -103,7 +104,7 @@
     margin-top: 4rem;
 }
 
-.subTitle {
+.title {
     color: #F08A29;
     font-weight: 600;
     font-size: 2rem;
@@ -111,7 +112,7 @@
     margin-bottom: 0.5rem;
 }
 
-.title {
+.subTitle {
     font-size: 2rem;
     font-weight: 600;
     color: #563CAA;
@@ -195,13 +196,13 @@
         width: 100px;
     }
 
-    .topSubTitle {
+    .topTitle {
         text-decoration: underline;
         font-size: 2rem;
         color: #F08A29;
     }
 
-    .topTitle {
+    .topSubTitle {
         font-size: 2rem;
         color: #563CAA;
         margin-bottom: 0.5rem;
@@ -242,11 +243,11 @@
         right: -110px;
     }
 
-    .subTitle {
+    .title {
         display: none;
     }
 
-    .title {
+    .subTitle {
         display: none;
     }
 }
@@ -289,13 +290,13 @@
         width: 80px;
     }
 
-    .topSubTitle {
+    .topTitle {
         text-decoration: underline;
         font-size: 1.5rem;
         color: #F08A29;
     }
 
-    .topTitle {
+    .topSubTitle {
         font-size: 1.5rem;
         color: #563CAA;
         margin-bottom: 0.5rem;
@@ -336,11 +337,11 @@
         display: none;
     }
 
-    .subTitle {
+    .title {
         display: none;
     }
 
-    .title {
+    .subTitle {
         display: none;
     }
 
@@ -426,13 +427,13 @@
         width: 80px;
     }
 
-    .topSubTitle {
+    .topTitle {
         text-decoration: underline;
         font-size: 1.5rem;
         color: #F08A29;
     }
 
-    .topTitle {
+    .topSubTitle {
         font-size: 1.5rem;
         color: #563CAA;
         margin-bottom: 0.5rem;
@@ -473,11 +474,11 @@
         display: none;
     }
 
-    .subTitle {
+    .title {
         display: none;
     }
 
-    .title {
+    .subTitle {
         display: none;
     }
 
