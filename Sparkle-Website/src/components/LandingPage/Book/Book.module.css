@@ -2,6 +2,7 @@
     background-color: #563CAA;
     display: flex;
     padding: 1.5rem;
+    margin: 4rem 0;
     gap: 3rem;
 }
 
@@ -33,7 +34,7 @@
     color: #563CAA;
     width: 100%;
     padding: 0.5rem 2rem;
-    font-size: 1.15rem;
+    font-size: clamp(1rem, 5vw, 1.5rem);
     font-weight: 600;
     border-radius: 0.5rem;
     border: none;
@@ -50,5 +51,9 @@
 
     .bookImage {
         width: 100%;
+    }
+
+    .bookTitle {
+        text-align: center;
     }
 }

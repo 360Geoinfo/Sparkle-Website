@@ -1,5 +1,5 @@
 .testimonialsSection {
-    padding: 4rem 2rem;
+    padding: 4rem 0rem;
     background: white;
     text-align: center;
 }
@@ -35,14 +35,16 @@
 }
 
 .bubbleWrapper {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 70%;
+  overflow: visible; 
 }
 
 .bubbleImage {
     width: 100%;
     height: auto;
     display: block;
+    padding: 0rem 5rem;
 }
 
 .bubbleContent {
@@ -50,16 +52,17 @@
     top: 0;
     left: 0;
     padding: 2rem;
-    width: 100%;
+    width: 80%;
     height: 100%;
     display: flex;
-    margin-top: -2rem;
+    margin-top: -3rem;
+    margin-left: 6.5rem;
     flex-direction: column;
     justify-content: center;
 }
 
 .text {
-    text-align: left;
+    text-align: justify;
     font-size: clamp(1rem, 5vw, 1.15rem);
     line-height: 1.5;
     color: #111;
@@ -92,14 +95,31 @@
 
 .topLeft {
   top: -20px;
-  left: -20px;
+  left: 60px;
   transform: rotate(200deg);
 }
 
 .bottomRight {
-  bottom: 80px;
-  right: -20px;
+  bottom: 50px;
+  right: -30px;
   transform: rotate(20deg);
+}
+
+.sliderContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+.slick-dots li button:before {
+  font-size: 30px;
+  color: #563CAA;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #563CAA;
 }
 
 
