@@ -13,28 +13,41 @@ const Testimonials = () => {
     infinite: true,
     speed: 600,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "15%", 
     arrows: false,
     autoplay: true,
     autoplaySpeed: 6000,
-  };
+    responsive: [
+        {
+        breakpoint: 768,
+        settings: {
+            centerMode: false,
+            slidesToShow: 1,
+            centerPadding: "0",
+        },
+        },
+    ],
+    };
 
-  return (
-    <section className={styles.testimonialsSection}>
-      <div className={styles.topContent}>
-        <h2 className={styles.title}>Testimonials</h2>
-        <h3 className={styles.subTitle}>Stories of progress and transformation</h3>
-      </div>
+    return (
+        <section className={styles.testimonialsSection}>
+            <div className={styles.topContent}>
+                <h2 className={styles.title}>Testimonials</h2>
+                <h3 className={styles.subTitle}>Stories of progress and transformation</h3>
+            </div>
 
-      <div className={styles.sliderContainer}>
-        <Slider {...settings}>
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.id} testimonial={t} />
-          ))}
-        </Slider>
-      </div>
-    </section>
-  );
+            <div className={styles.sliderContainer}>
+                <Slider {...settings}>
+                    {testimonials.map((t) => (
+                        <div className={styles.cardWrapper} key={t.id}>
+                        <TestimonialCard testimonial={t} />
+                        </div>
+                    ))}
+                </Slider>
+            </div>
+        </section>
+    );
 };
 
 export default Testimonials;

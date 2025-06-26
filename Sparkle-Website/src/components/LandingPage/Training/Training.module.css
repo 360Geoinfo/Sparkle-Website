@@ -1,0 +1,54 @@
+.trainingSection {
+    padding: 4rem;
+    background: white;
+    text-align: center;
+}
+
+.topContent {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.description { 
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    margin-bottom: 3rem;
+}
+
+.topicsSubTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.topicsSubTitle li {
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    color: black;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+.contactUsBtn {
+    background-color: #F0C000;
+    color: #563CAA;
+    padding: 0.5rem 2rem;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+}
