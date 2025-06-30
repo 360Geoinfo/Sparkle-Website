@@ -1,6 +1,6 @@
 .trainingSection {
-    padding: 4rem;
-    background: white;
+    padding: 4rem 4rem 10rem;
+    background: #f8f7fe;
     text-align: center;
 }
 
@@ -31,24 +31,141 @@
     font-size: clamp(1.5rem, 5vw, 2rem);
     color: #563caa;
     font-weight: bold;
-    margin-top: 0.5rem;
+    margin: 1rem 0rem 2rem;
     text-align: left;
 }
 
-.topicsSubTitle li {
-    font-size: clamp(1rem, 5vw, 1.5rem);
-    color: black;
-    font-weight: bold;
-    margin-top: 0.5rem;
-    text-align: left;
+.slideGroup {
+    display: grid !important; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    box-sizing: border-box;
+}
+
+/* Style for each topic box */
+.topicBox {
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    font-size: clamp(0.15rem, 5vw, 1.15rem);
+    text-align: center;
+}
+
+/* Colored backgrounds */
+.color0 { background-color: #D21315; }
+.color1 { background-color: #F08A29; }
+.color2 { background-color: #F0C000; }
+.color3 { background-color: #A0C260; }
+.color4 { background-color: #1BB9FF; }
+.color5 { background-color: #CC6AE1; }
+
+/* Slider dot styles */
+.slick-dots li button:before {
+    font-size: 20px;
+    color: #563CAA;
+    opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #563CAA;
 }
 
 .contactUsBtn {
     background-color: #F0C000;
     color: #563CAA;
-    padding: 0.5rem 2rem;
-    font-size: clamp(1rem, 5vw, 1.5rem);
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 5vw, 1rem);
     font-weight: 600;
+    cursor: pointer;
     border-radius: 0.5rem;
     border: none;
+    margin: 3rem;
 }
+
+.contactUsBtn:hover {
+    background-color: #cea501;
+}
+
+.contactUsIcon {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    font-size: 1.5rem;
+}
+
+.cloudImage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin-top: 6rem;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.customArrow {
+    position: absolute;
+    width: 10%;
+    z-index: 10;
+}
+
+.arrowIcon {
+    font-size: 2.5rem;
+    color: #563CAA;
+    background: white;
+    border-radius: 50%;
+    padding: 0.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.arrowIcon:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 767px) and (min-width: 426px) {
+    .trainingSection {
+        padding: 4rem 4rem 6rem;
+    }
+
+    .slideGroup {
+        grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .cloudImage {
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 425px) {
+    .trainingSection {
+        padding: 4rem 2rem 6rem;
+    }
+
+    .slideGroup {
+        grid-template-columns: 1fr;
+    }
+
+    .description { 
+        text-align: justify;
+    }
+
+    .topicBox {
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
+
+    .contactUsBtn {
+        padding: 0.5rem 0.5rem;
+        font-size: clamp(0.5rem, 5vw, 1rem);
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .cloudImage {
+        margin-top: 8rem;
+    }
+}
+
+

@@ -23,6 +23,7 @@ const TestimonialsCard = ({ testimonial }) => {
                 ))}
             </div>
             <img src={quoteImage} alt="Quote" className={`${styles.quote} ${styles.bottomRight}`} />
+            
         </div>
     </div>
   );
