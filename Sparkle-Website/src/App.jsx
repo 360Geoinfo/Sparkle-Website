@@ -10,7 +10,9 @@ import Book from './components/LandingPage/Book/Book';
 import Testimonials from './components/LandingPage/Testimonials/Testimonials';
 import Training from './components/LandingPage/Training/Training';
 
-import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
+import ClinicalPsychology from './components/Services/ClinicalPsychology/ClinicalPsychology';
+import Events from './components/Services/Events/Events';
+import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
 
 import Blog from './components/Resource/Blog/Blog';
 import FQA from './components/Resource/FQA/FQA';
@@ -32,7 +34,10 @@ function App() {
             <Training />
           </>
         } />
-        <Route path="/ClinicalPsychology" element={<ClinicalPsychology />} />
+
+        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
+        <Route path="/Services/Events" element={<Events/>} />
+        <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
         
         <Route path="/Resources/Blog" element={<Blog />} />
         <Route path="/Resources/FQA" element={<FQA />} />
