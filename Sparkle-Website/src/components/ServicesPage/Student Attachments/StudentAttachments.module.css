@@ -1,0 +1,21 @@
+.studentSection {
+    padding: 10rem 0rem 4rem;
+    background: #F8F7FE;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.topContent {
+    margin-bottom: 3rem;
+}
+
+.topTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}

@@ -4,7 +4,7 @@
     top: 0rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 9999;
     width: 100%;
     border-radius: 3rem;
     padding: 0.5rem 0rem;
@@ -14,51 +14,50 @@
 }
 
 .navbarSection {
-  width: 100%;
-  top: 0;
-  z-index: 999;
-  background-color: white;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    background-color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: absolute;
-  top: 0rem;
-  left: 50%;
-  z-index: 1;
-  border-radius: 3rem;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 2rem;
-  transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0rem;
+    left: 50%;
+    z-index: 1;
+    border-radius: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    transform: translateX(-50%);
 }
 
 .navbarLogoImage {
-  height: 45px;
+    height: 45px;
 }
 
 .menuItems {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .navbarItem a {
-  font-weight: 600;
-  font-size: 1.5rem;
-  position: relative;
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
 }
 
-  
 .navbarContainer {
     width: auto;
     margin: 0 auto;
@@ -86,13 +85,13 @@
 .booking-link,
 .services-link,
 .resources-link {
-  color: white;
-  font-weight: 600;
-  padding: 0.5rem 1.5rem;
-  border-radius: 999px; 
-  display: inline-block;
-  transition: transform 0.2s ease, background-color 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px; 
+    display: inline-block;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .home-link {
@@ -109,16 +108,16 @@
 }
 
 .home-link:hover {
-  background-color: #b81012; 
+    background-color: #b81012; 
 }
 .booking-link:hover {
-  background-color: #d3751d; 
+    background-color: #d3751d; 
 }
 .services-link:hover {
-  background-color: #d4a900; 
+    background-color: #d4a900; 
 }
 .resources-link:hover {
-  background-color: #86ad4e; 
+    background-color: #86ad4e; 
 }
 
 .home-link:hover,
@@ -133,13 +132,78 @@
 .resources-link:hover,
 .resources-link:focus,
 .resources-link:active {
-    color: #5E1AF4;
+    color: white;
 }
 
 .navbarLinks a {
     position: relative;
     text-decoration: none;
     align-content: center;
+}
+
+.servicesLink {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px; 
+    border: none;
+    background-color: #F0C000;
+    color: white;
+    font-weight: 600;
+    font-size: clamp(1rem, 5vw, 1.5rem);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.servicesDropdownMenu {
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #F0C000;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    min-width: 220px;
+    list-style: none;
+}
+
+.servicesDropdownMenu {
+    display: flex;
+}
+
+.servicesDropdownMenu li {
+    padding: 0.75rem 0;
+    border-top: white 1px solid;
+}
+
+.servicesDropdownMenu li:first-child {
+  border-top: none;
+}
+
+.servicesDropdownMenu li:last-child {
+    margin-bottom: 0;
+}
+
+.servicesDropdownMenu a {
+    color: white;
+    padding: 0;
+    font-weight: 500;
+    font-size: clamp(1rem, 5vw, 1.25rem);
+    text-align: left;
+    text-decoration: none;
+    transition: color 0.3s;
+  
+}
+
+.servicesDropdownMenu a:hover {
+    color: #5E1AF4;
 }
 
 /* Hide logo inside navbar for small screens */
@@ -171,11 +235,11 @@
     cursor: pointer;
 }
 .navbarHamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Mobile Nav sliding Panel */
@@ -196,10 +260,10 @@
 }
 
 .navbarMobile {
-  display: none;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
 }
   
 .navbarMobile.open {

@@ -1,9 +1,13 @@
 import React from "react";
 import styles from "./Events.module.css";
 import { IoIosCalendar } from "react-icons/io";
+import Navbar from "../../Navigation/Navbar";
+import Footer from "../../Footer/Footer";
 
 const Events = () => {
   return (
+    <>
+    <Navbar />
     <section className={styles.eventsSection}>
         <div className={styles.topContent}>
           <h2 className={styles.topTitle}>Join Us</h2>
@@ -76,7 +80,7 @@ const Events = () => {
                                 For <strong>NEW</strong> sparkle clients: Enjoy a <strong>DISCOUNTED CONSULTATION - LIMITED TIME</strong> only! 
                             </li>
                             <li>
-                                For <strong>ACTIVE SPARKLERS</strong> -  Ask your therapist about <strong>EXCLUSIVE</strong> treats just for you!
+                                For <strong>ACTIVE SPARKLERS</strong> -  Ask your therapist about <strong>EXCLUSIVE</strong> treats just for you!
                             </li>
                         </ul>
 
@@ -92,8 +96,9 @@ const Events = () => {
                 </div>
             </div>
         </div>
-
     </section>
+    <Footer />
+    </>
   );
 };
 

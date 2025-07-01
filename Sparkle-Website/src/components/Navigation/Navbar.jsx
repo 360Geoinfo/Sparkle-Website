@@ -3,10 +3,12 @@ import { NavLink } from 'react-router-dom';
 import { FaArrowRight, FaBars } from "react-icons/fa";
 import Sidebar from './Sidebar';
 import styles from './Navbar.module.css';
+import { FaCaretDown } from "react-icons/fa";
 
 export const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   useEffect(() => {
     const checkIsMobile = () => setIsMobile(window.innerWidth <= 1025);
@@ -47,11 +49,26 @@ export const Navbar = () => {
                   Booking
                 </NavLink>
               </li>
-              <li className={styles.navbarItem}>
-                <NavLink to="/Services" className={({ isActive }) => isActive ? "services-link active-link" : "services-link"}>
+              <li className={`${styles.navbarItem} ${styles.dropdown}`}>
+                <button
+                  className={styles.servicesLink}
+                  onClick={() => setIsServicesOpen((prev) => !prev)}
+                >
                   Services
-                </NavLink>
+                </button>
+
+                {isServicesOpen && (
+                  <ul className={styles.servicesDropdownMenu}>
+                    <li><NavLink to="/services/clinical-psychology" onClick={() => setIsServicesOpen(false)}>Clinical Psychology</NavLink></li>
+                    <li><NavLink to="/services/speech-therapy">Speech Therapy</NavLink></li>
+                    <li><NavLink to="/services/clinical-supervision">Clinical Supervision</NavLink></li>
+                    <li><NavLink to="/services/events">Events</NavLink></li>
+                    <li><NavLink to="/services/products">Products</NavLink></li>
+                    <li><NavLink to="/services/student-attachments">Student Attachments</NavLink></li>
+                  </ul>
+                )}
               </li>
+
               <li className={styles.navbarItem}>
                 <NavLink to="/Resources" className={({ isActive }) => isActive ? "resources-link active-link" : "resources-link"}>
                   Resources
