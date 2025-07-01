@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaArrowRight, FaBars } from "react-icons/fa";
+import { FaChevronDown, FaBars } from "react-icons/fa";
 import Sidebar from './Sidebar';
 import styles from './Navbar.module.css';
 import { FaCaretDown } from "react-icons/fa";
@@ -8,7 +8,51 @@ import { FaCaretDown } from "react-icons/fa";
 export const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isHomeOpen, setIsHomeOpen] = useState(false);
+
+  const toggleHomeDropdown = (e) => {
+    e.preventDefault();
+    setIsHomeOpen(prev => !prev);
+  };
+
+  const toggleBookingDropdown = (e) => {
+    e.preventDefault();
+    setIsBookingOpen(prev => !prev);
+  };
+
+  const toggleServicesDropdown = (e) => {
+    e.preventDefault();
+    setIsServicesOpen(prev => !prev);
+  };
+
+  const toggleDropdown = (e) => {
+    e.preventDefault();
+    setIsDropdownOpen(prev => !prev);
+  };
+
+  const closeDropdown = () => setIsDropdownOpen(false);
+  const closeHomeDropdown = () => setIsHomeOpen(false);
+  const closeBookingDropdown = () => setIsBookingOpen(false);
+  const closeServicesDropdown = () => setIsServicesOpen(false);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(`.${styles.dropdown}`)) {
+        setIsHomeOpen(false);
+        setIsBookingOpen(false);
+        setIsServicesOpen(false);
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   useEffect(() => {
     const checkIsMobile = () => setIsMobile(window.innerWidth <= 1025);
@@ -39,41 +83,179 @@ export const Navbar = () => {
             </NavLink>
 
             <ul className={styles.menuItems}>
+              {/* Home Navigation */}
               <li className={styles.navbarItem}>
-                <NavLink to="/" className={({ isActive }) => isActive ? "home-link active-link" : "home-link"}>
-                  Home
-                </NavLink>
-              </li>
-              <li className={styles.navbarItem}>
-                <NavLink to="/Booking" className={({ isActive }) => isActive ? "booking-link active-link" : "booking-link"}>
-                  Booking
-                </NavLink>
-              </li>
-              <li className={`${styles.navbarItem} ${styles.dropdown}`}>
-                <button
-                  className={styles.servicesLink}
-                  onClick={() => setIsServicesOpen((prev) => !prev)}
-                >
-                  Services
-                </button>
+                <div className={`${styles.dropdown} ${styles.homeDropdown}`}>
+                  <button
+                    onClick={toggleHomeDropdown}
+                    className={`${styles.navButton} ${isHomeOpen ? styles.homeActive : ''}`}
+                  >
+                    <span className={styles.linkWithIcon}>
+                      Home <FaChevronDown className={`${styles.dropdownArrow} ${isHomeOpen ? styles.open : ''}`} />
+                    </span>
+                  </button>
 
-                {isServicesOpen && (
-                  <ul className={styles.servicesDropdownMenu}>
-                    <li><NavLink to="/services/clinical-psychology" onClick={() => setIsServicesOpen(false)}>Clinical Psychology</NavLink></li>
-                    <li><NavLink to="/services/speech-therapy">Speech Therapy</NavLink></li>
-                    <li><NavLink to="/services/clinical-supervision">Clinical Supervision</NavLink></li>
-                    <li><NavLink to="/services/events">Events</NavLink></li>
-                    <li><NavLink to="/services/products">Products</NavLink></li>
-                    <li><NavLink to="/services/student-attachments">Student Attachments</NavLink></li>
-                  </ul>
-                )}
+                  {isHomeOpen && (
+                    <div className={styles.dropdownContent}>
+                      <NavLink
+                        to="/"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsHomeOpen(false)}
+                      >
+                        Main Home
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
               </li>
 
+              {/* Booking Navigation */}
               <li className={styles.navbarItem}>
-                <NavLink to="/Resources" className={({ isActive }) => isActive ? "resources-link active-link" : "resources-link"}>
-                  Resources
-                </NavLink>
+                <div className={`${styles.dropdown} ${styles.bookingDropdown}`}>
+                  <button
+                    onClick={toggleBookingDropdown}
+                    className={`${styles.navButton} ${isBookingOpen ? styles.bookingActive : ''}`}
+                  >
+                    <span className={styles.linkWithIcon}>
+                      Booking <FaChevronDown className={`${styles.dropdownArrow} ${isBookingOpen ? styles.open : ''}`} />
+                    </span>
+                  </button>
+
+                  {isBookingOpen && (
+                    <div className={styles.dropdownContent}>
+                      <NavLink
+                        to="/Booking"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsBookingOpen(false)}
+                      >
+                        Main Booking
+                      </NavLink>
+                      {/* You can add more booking-related links here */}
+                    </div>
+                  )}
+                </div>
               </li>
+
+              {/* Service Navigation */}
+              <li className={styles.navbarItem}>
+                <div className={`${styles.dropdown} ${styles.servicesDropdown}`}>
+                  <button
+                    onClick={toggleServicesDropdown}
+                    className={`${styles.navButton} ${isServicesOpen ? styles.servicesActive : ''}`}
+                  >
+                    <span className={styles.linkWithIcon}>
+                      Services <FaChevronDown className={`${styles.dropdownArrow} ${isServicesOpen ? styles.open : ''}`} />
+                    </span>
+                  </button>
+
+                  {isServicesOpen && (
+                    <div className={styles.dropdownContentServices}>
+                      <NavLink
+                        to="/Services/SpeechTherapy"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Speech Therapy
+                      </NavLink>
+
+                      <NavLink
+                        to="/Services/ClinicalPsychology"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Clinical Psychology
+                      </NavLink>
+
+                      <NavLink
+                        to="/Services/Products"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Products
+                      </NavLink>
+
+                      <NavLink
+                        to="/Services/Events"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Events
+                      </NavLink>
+
+                      <NavLink
+                        to="/Services/StudentAttachments"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Student Attachments
+                      </NavLink>
+
+                      <NavLink
+                        to="/Services/ClinicalSupervision"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsServicesOpen(false)}
+                      >
+                        Clinical Supervision
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
+              </li>
+
+              {/* Resource Navigation */}
+              <li className={styles.navbarItem}>
+                <div className={`${styles.dropdown} ${styles.resourcesDropdown}`}>
+                  <button
+                    onClick={toggleDropdown}
+                    className={`${styles.navButton} ${isDropdownOpen ? styles.resourcesActive : ''}`}
+                  >
+                    <span className={styles.linkWithIcon}>
+                      Resources <FaChevronDown className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.open : ''}`} />
+                    </span>
+                  </button>
+
+                  {isDropdownOpen && (
+                    <div className={styles.dropdownContent}>
+                      <NavLink
+                        to="/Resources/Blog"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        Blog
+                      </NavLink>
+
+                      <NavLink
+                        to="/Resources/FQA"
+                        className={({ isActive }) =>
+                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                        }
+                        onClick={() => setIsDropdownOpen(false)}
+                      >
+                        FQA
+                      </NavLink>
+                    </div>
+                  )}
+                </div>
+              </li>
+
             </ul>
           </div>
         </div>
@@ -86,15 +268,15 @@ export const Navbar = () => {
 
       {isMobile && (
         <div className={styles.navbarMobileInner}>
-            <NavLink to="/" className={styles.navbarMobileLogoLink} onClick={closeMobileNav}>
-                <img 
-                className={styles.navbarMobileLogoImage} 
-                src="/assets/Logo/Sparkle logo black.webp" 
-                alt="Sparkle Logo" />
-            </NavLink>
-            <button className={styles.navbarHamburger} onClick={toggleMobileNav}>
-                <FaBars />
-            </button>
+          <NavLink to="/" className={styles.navbarMobileLogoLink} onClick={closeMobileNav}>
+            <img
+              className={styles.navbarMobileLogoImage}
+              src="/assets/Logo/Sparkle logo black.webp"
+              alt="Sparkle Logo" />
+          </NavLink>
+          <button className={styles.navbarHamburger} onClick={toggleMobileNav}>
+            <FaBars />
+          </button>
         </div>
       )}
     </section>
