@@ -30,17 +30,31 @@ const trainingTopics = [
   "Adult related mental health programs"
 ];
 
-const PrevArrow = ({ className, onClick }) => (
-  <div className={`${className} ${styles.customArrow}`} onClick={onClick}>
-    <MdKeyboardArrowLeft className={styles.arrowIcon} />
-  </div>
-);
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${styles.arrowWrapper}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <MdKeyboardArrowLeft className={styles.arrowIcon} />
+    </div>
+  );
+};
 
-const NextArrow = ({ className, onClick }) => (
-  <div className={`${className} ${styles.customArrow}`} onClick={onClick}>
-    <MdKeyboardArrowRight className={styles.arrowIcon} />
-  </div>
-);
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={`${className} ${styles.arrowWrapper}`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
+      <MdKeyboardArrowRight className={styles.arrowIcon} />
+    </div>
+  );
+};
 
 const Training = () => {
   const settings = {

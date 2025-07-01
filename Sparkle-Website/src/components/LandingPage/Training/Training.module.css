@@ -1,5 +1,5 @@
 .trainingSection {
-    padding: 4rem 4rem 10rem;
+    padding: 4rem 4rem 6rem;
     background: #f8f7fe;
     text-align: center;
 }
@@ -60,16 +60,25 @@
 .color4 { background-color: #1BB9FF; }
 .color5 { background-color: #CC6AE1; }
 
-/* Slider dot styles */
-.slick-dots li button:before {
-    font-size: 20px;
-    color: #563CAA;
-    opacity: 0.5;
+.customArrow {
+    position: absolute;
+    width: 10%;
+    z-index: 10;
 }
 
-.slick-dots li.slick-active button:before {
-    opacity: 1;
+.arrowIcon {
+    z-index: 30;
+    font-size: 2.5rem;
     color: #563CAA;
+    background: white;
+    border-radius: 50%;
+    padding: 0.3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.arrowIcon:hover {
+    transform: scale(1.2);
 }
 
 .contactUsBtn {
@@ -104,24 +113,14 @@
     pointer-events: none;
 }
 
-.customArrow {
-    position: absolute;
-    width: 10%;
-    z-index: 10;
-}
-
-.arrowIcon {
-    font-size: 2.5rem;
-    color: #563CAA;
-    background: white;
-    border-radius: 50%;
-    padding: 0.3rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.arrowIcon:hover {
-    transform: scale(1.2);
+@media (max-width: 1024px) and (min-width: 768px) {
+    .trainingSection {
+        padding: 4rem 4rem 3.5rem;
+    }
+  
+    .cloudImage {
+        margin-top: 6rem;
+    }
 }
 
 @media (max-width: 767px) and (min-width: 426px) {

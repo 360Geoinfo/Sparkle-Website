@@ -1,0 +1,23 @@
+.pricingSection {
+    padding: 10rem 0rem 4rem;
+    background: white;
+    text-align: center;
+}
+
+.topContent {
+    margin-bottom: 3rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}

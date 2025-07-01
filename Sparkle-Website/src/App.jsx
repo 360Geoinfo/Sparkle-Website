@@ -7,6 +7,7 @@ import Service from './components/LandingPage/Services/Service';
 import Book from './components/LandingPage/Book/Book';
 import Testimonials from './components/LandingPage/Testimonials/Testimonials';
 import Training from './components/LandingPage/Training/Training';
+import Pricing from './components/LandingPage/Pricing/Pricing';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Book />
       <Testimonials />
       <Training />
+      <Pricing />
     </div>
   )
 }
