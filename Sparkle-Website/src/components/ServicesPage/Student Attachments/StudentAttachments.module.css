@@ -19,3 +19,37 @@
     font-weight: bold;
     text-decoration: underline;
 }
+
+.slider {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0; 
+}
+
+.studentSlidesImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+}
+
+.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+.subTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
