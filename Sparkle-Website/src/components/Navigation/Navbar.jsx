@@ -86,28 +86,16 @@ export const Navbar = () => {
               {/* Home Navigation */}
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.homeDropdown}`}>
-                  <button
-                    onClick={toggleHomeDropdown}
-                    className={`${styles.navButton} ${isHomeOpen ? styles.homeActive : ''}`}
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `${styles.navButton} ${isActive ? styles.homeActive : ''}`
+                    }
                   >
                     <span className={styles.linkWithIcon}>
-                      Home <FaChevronDown className={`${styles.dropdownArrow} ${isHomeOpen ? styles.open : ''}`} />
+                      Home
                     </span>
-                  </button>
-
-                  {isHomeOpen && (
-                    <div className={styles.dropdownContent}>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsHomeOpen(false)}
-                      >
-                        Main Home
-                      </NavLink>
-                    </div>
-                  )}
+                  </NavLink>
                 </div>
               </li>
 

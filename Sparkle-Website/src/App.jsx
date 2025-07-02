@@ -10,8 +10,10 @@ import Book from './components/LandingPage/Book/Book';
 import Testimonials from './components/LandingPage/Testimonials/Testimonials';
 import Training from './components/LandingPage/Training/Training';
 
+import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
 import ClinicalPsychology from './components/Services/ClinicalPsychology/ClinicalPsychology';
 import Events from './components/Services/Events/Events';
+import SpeechTherapy from './components/Services/Speech Therapy/SpeechTherapy';
 import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
 
 import Blog from './components/Resource/Blog/Blog';
@@ -35,9 +37,12 @@ function App() {
           </>
         } />
 
-        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
-        <Route path="/Services/Events" element={<Events/>} />
+        <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
         <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
+        <Route path="/Services/Events" element={<Events/>} />
+        {/* Product */}
+        <Route path="/Services/SpeechTherapy" element={<SpeechTherapy />} />
+        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
         
         <Route path="/Resources/Blog" element={<Blog />} />
         <Route path="/Resources/FQA" element={<FQA />} />

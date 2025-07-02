@@ -1,39 +1,83 @@
-import React from 'react';
-import styles from './Footer.module.css';
-import { FaYoutube, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
-import { FiExternalLink } from 'react-icons/fi';
+import React from "react";
+import styles from "./Footer.module.css";
+import { FaYoutube, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContent}>
-        {/* Left Column - Logo & Address */}
-        <div className={styles.footerLeft}>
-        <img
-            src="/assets/Logo/Sparkle logo.webp"
-            alt="Sparkle Therapy Centre Logo"
-            className={styles.logo}
-        />
-        <p>Unit 11, First Floor, Block A,<br />
-            Mim-Nun Jaya Complex,<br />
-            Kg Bebatik Kilanas, BF2320,<br />
-            Negara Brunei Darussalam</p>
-        <p>(+673) 8391407</p>
-        <p>Tuesday – Saturday<br />9AM – 6PM</p>
-        </div>
+    <section className={styles.footerSection}>
+        <footer className={styles.footer}>
+            <div className={styles.footerLeftContent}>
+                <img 
+                    className={styles.footerLogo}
+                    src="/assets/Logo/Sparkle logo.webp" 
+                    alt="Sparkle Therapy Centre" 
+                />
 
-        {/* Right Column - Social Links */}
-        <div className={styles.footerRight}>
-          <h3>Connect With Us!</h3>
-          <ul className={styles.socialLinks}>
-            <li><FaYoutube /> Youtube <FiExternalLink /></li>
-            <li><FaInstagram /> Instagram <FiExternalLink /></li>
-            <li><FaWhatsapp /> Whatsapp <FiExternalLink /></li>
-            <li><FaMapMarkerAlt /> Location <FiExternalLink /></li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+                <div className={styles.footerText}>
+                    <p>
+                        Unit 11, First Floor, Block A,<br />
+                        Mim-Num Jaya Complex,<br />
+                        Kg Bebatik Kilanas, B2320,<br />
+                        Negara Brunei Darussalam<br />
+                    </p>
+                    <p >
+                        (+673) 8391407<br />
+                    </p>
+                    <p>
+                        Tuesday - Saturday<br />
+                        9AM - 6PM
+                    </p>
+                </div>
+            </div>
+
+            <div className={styles.footerRightContent}>
+                <h4 className={styles.footerTitle}>Connect With Us!</h4>
+                <ul className={styles.footerLinks}>
+                    <li>
+                        <div className={styles.footerLink}>
+                            <FaYoutube /> Youtube
+                        </div>
+                        <img 
+                            className={styles.ArrowIcon}
+                            src="/assets/LandingPage/Footer/Arrow up-right.png" 
+                            alt="Arrow Icon" 
+                        />
+                    </li>
+                    <li>
+                        <div className={styles.footerLink}>
+                            <FaInstagram /> Instagram
+                        </div>
+                        <img 
+                            className={styles.ArrowIcon}
+                            src="/assets/LandingPage/Footer/Arrow up-right.png" 
+                            alt="Arrow Icon" 
+                        />
+                    </li>
+                    <li>
+                        <div className={styles.footerLink}>
+                            <FaWhatsapp /> Whatsapp
+                        </div>
+                        <img 
+                            className={styles.ArrowIcon}
+                            src="/assets/LandingPage/Footer/Arrow up-right.png" 
+                            alt="Arrow Icon" 
+                        />
+                    </li>
+                    <li>
+                        <div className={styles.footerLink}>
+                            <FaMapMarkerAlt /> Location
+                        </div>
+                        <img 
+                            className={styles.ArrowIcon}
+                            src="/assets/LandingPage/Footer/Arrow up-right.png" 
+                            alt="Arrow Icon" 
+                        />
+                    </li>
+                </ul>
+            </div>
+
+        </footer>
+    </section>
   );
 };
 

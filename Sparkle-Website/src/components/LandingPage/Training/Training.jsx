@@ -83,9 +83,9 @@ const Training = () => {
         <h3 className={styles.subTitle}>Empowering Adults and Children</h3>
       </div>
       <p className={styles.description}>
-        Speech & Language Therapy and Clinical Psychology training helps to equip parents / caregivers, 
-        teachers or the community with the knowledge and skills to support individuals with communication 
-        and psychological difficulties at home / work / community. It can be delivered through various 
+        Speech & Language Therapy and Clinical Psychology training helps to equip parents / caregivers,
+        teachers or the community with the knowledge and skills to support individuals with communication
+        and psychological difficulties at home / work / community. It can be delivered through various
         methods, including online courses, in-person workshops, and individualized coaching sessions.
       </p>
 
@@ -106,11 +106,20 @@ const Training = () => {
             </div>
           ))}
         </Slider>
-        
       </div>
 
-      <button className={styles.contactUsBtn}><FaWhatsapp className={styles.contactUsIcon}/>Contact us for a training tailored just for you!</button>
-    
+      <a
+        href="https://wa.me/6738391407"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.contactUsLink} // optional for styling
+      >
+        <button className={styles.contactUsBtn}>
+          <FaWhatsapp className={styles.contactUsIcon} />
+          Contact us for a training tailored just for you!
+        </button>
+      </a>
+
       <img
         className={styles.cloudImage}
         src="/assets/LandingPage/Training/Clouds.webp"
