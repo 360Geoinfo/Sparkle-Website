@@ -85,7 +85,7 @@
 }
 
 .eventTitle {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.25rem, 5vw, 2rem);
     color: #563caa;
     font-weight: bold;
 }
@@ -156,4 +156,146 @@
     margin-left: 1rem;
     border-radius: 50%;
     border: 4px solid white;
+}
+
+@media (max-width: 1440px) and (min-width: 1300px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1299px) and (min-width: 1025px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        gap: 1.5rem;
+    }
+
+    .eventImageWrapper {
+        max-width: 600px; 
+    }
+
+    .eventContentOpenDay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 28vw;
+        padding: 1rem 1rem 2rem;
+    }
+
+    .eventContentAnniversary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 45vw;
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .eventTitle {
+        font-size: clamp(1.25rem, 5vw, 1.5rem);
+    }
+
+    .eventDate {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.25rem;
+    }
+
+    .DateIcon {
+        font-size: 1.35rem;
+    }
+
+    .eventDescription {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.5rem;
+    }
+
+    .eventPromotion {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.5rem;
+    }
+
+    .eventPromotion li {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+    }
+
+    .eventButton {
+        padding: 0.45rem 3rem;
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.15rem;
+    }
+
+    .ArrowIcon {
+        width: 38px;
+        margin-top: -0.45rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+
+    .BgImage {
+        width: 100%;
+        height: 400px;
+        display: block;
+        position: relative; 
+        z-index: 1;
+    }
+
+    .LineImage {
+        position: absolute;
+        top: -10px;
+        left: 10px;
+        width: 100%;
+        height: 400px;
+        z-index: 1;
+        pointer-events: none;
+    }
+}
+@media (max-width: 425px) {
+    .supervisionSection {
+        padding: 8rem 1rem 4rem;
+    }
+
+    .card {
+        margin: 2rem 0;
+    }
+
+    .contactButton {
+        font-size: 1rem;
+    }
 }

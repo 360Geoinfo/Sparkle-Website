@@ -90,7 +90,7 @@
   line-height: 1.5;
 }
 
-.attachmentBtn {
+.contactButton {
   background-color: #F0C000;
   color: #563CAA;
   padding: 0.5rem 2rem;
@@ -102,7 +102,7 @@
   margin: 2rem 0 1rem;
 }
 
-.attachmentBtn:hover {
+.contactButton:hover {
   background-color: #cea501;
 }
 
@@ -128,7 +128,7 @@
   width: 100%;
   gap: 1rem;
   margin: 3rem 0;
-  font-size: clamp(1rem, 5vw, 1.25rem);
+  font-size: clamp(1rem, 5vw, 1.2rem);
 }
 
 .downloadLink {
@@ -141,6 +141,7 @@
   border-radius: 5rem;
   text-decoration: none;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .studentDownloadLink {
@@ -168,4 +169,66 @@
 .documentIcon,
 .downloadIcon {
   vertical-align: middle;
+}
+
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 14rem;
+    left: 83%;
+  }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 14rem;
+    left: 82%;
+  }
+}
+@media (max-width: 425px) {
+  .studentSection {
+    padding: 8rem 1rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 12rem;
+    left: 75%;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .contactButton {
+    font-size: 1rem;
+  }
 }

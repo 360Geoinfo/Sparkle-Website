@@ -15,6 +15,7 @@ import Pricing from './components/LandingPage/Pricing/Pricing';
 import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
 import Events from './components/Services/Events/Events';
 import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
+import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
 
 import Blog from './components/Resource/Blog/Blog';
 import FQA from './components/Resource/FQA/FQA';
@@ -39,9 +40,11 @@ function App() {
           </>
         } />
 
-        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
-        <Route path="/Services/Events" element={<Events/>} />
+        
         <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
+        <Route path="/Services/Events" element={<Events/>} />
+        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
+        <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
         
         <Route path="/Resources/Blog" element={<Blog />} />
         <Route path="/Resources/FQA" element={<FQA />} />

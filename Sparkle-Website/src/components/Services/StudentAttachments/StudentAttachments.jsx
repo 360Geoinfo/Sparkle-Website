@@ -14,7 +14,7 @@ const images = [
   "/assets/ServicesPage/Student Attachments/ZophyaS.webp"
 ];
 
-const Student = () => {
+const StudentAttachments = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Student = () => {
             insights into the working life!
           </p>
 
-          <button className={styles.attachmentBtn}>
+          <button className={styles.contactButton}>
             <FaWhatsapp className={styles.whatsAppIcon} /> Send your application here
           </button>
         </div>
@@ -122,4 +122,4 @@ const Student = () => {
   );
 };
 
-export default Student;
+export default StudentAttachments;
