@@ -84,31 +84,15 @@ export const Navbar = () => {
 
             <ul className={styles.menuItems}>
               {/* Home Navigation */}
-              <li className={styles.navbarItem}>
-                <div className={`${styles.dropdown} ${styles.homeDropdown}`}>
-                  <button
-                    onClick={toggleHomeDropdown}
-                    className={`${styles.navButton} ${isHomeOpen ? styles.homeActive : ''}`}
-                  >
-                    <span className={styles.linkWithIcon}>
-                      Home <FaChevronDown className={`${styles.dropdownArrow} ${isHomeOpen ? styles.open : ''}`} />
-                    </span>
-                  </button>
-
-                  {isHomeOpen && (
-                    <div className={styles.dropdownContent}>
-                      <NavLink
-                        to="/"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsHomeOpen(false)}
-                      >
-                        Main Home
-                      </NavLink>
-                    </div>
-                  )}
-                </div>
+              <li className={styles.homeNavbarItem}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `${styles.navButtonLink} ${isActive ? styles.homeActive : ''}`
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
 
               {/* Booking Navigation */}

@@ -10,7 +10,7 @@ import Book from './components/LandingPage/Book/Book';
 import Testimonials from './components/LandingPage/Testimonials/Testimonials';
 import Training from './components/LandingPage/Training/Training';
 
-import ClinicalPsychology from './components/Services/ClinicalPsychology/ClinicalPsychology';
+import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
 import Events from './components/Services/Events/Events';
 import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
 
