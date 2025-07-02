@@ -173,7 +173,19 @@
   min-width: 160px;
   z-index: 1;
   border-radius: 20px;
-  overflow: hidden;
+  overflow: visible;
+}
+
+/* Dropdown menu hidden by default */
+.dropdownContentBooking {
+  position: absolute;
+  top: 115%;
+  left: 0px;
+  background-color: #F08A29;
+  max-width: 145px;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: visible;
 }
 
 .dropdownContentServices {
@@ -189,7 +201,7 @@
 
 .dropdownLink {
   display: block;
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.5rem;
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
@@ -200,6 +212,86 @@
   background-color: #000;
   color: #fff; 
   border-radius: 0rem;
+}
+
+/* Wrap Clinical Psychology button for relative positioning */
+.bookingDropdown .clinicalPsychologyWrapper {
+  position: relative;
+}
+
+.subDropdownContent {
+  padding: 0.2rem 0.2rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subDropdownContentOpen {
+  max-height: 500px; /* Enough height for content */
+  opacity: 1;
+}
+
+.subDropdownContent a {
+  color: #333;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.subDropdownContent a:hover {
+  background-color: #F08A29;
+  color: #fff;
+}
+
+.bookingDropdown button.clinicalPsychologyToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.bookingDropdown button.clinicalPsychologyToggle:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.bookingDropdown button.clinicalPsychologyToggle:focus {
+  outline: none;
+  background-color: rgba(0,0,0,0.15);
+}
+
+/* Rotate arrow when open */
+.bookingDropdown button.clinicalPsychologyToggle .dropdownArrow {
+  font-size: 1rem;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+.bookingDropdown button.clinicalPsychologyToggle.open .dropdownArrow {
+  transform: rotate(180deg);
 }
 
 .dropdownContent a:nth-child(1) {
