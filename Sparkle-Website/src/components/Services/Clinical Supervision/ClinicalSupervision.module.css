@@ -1,65 +1,65 @@
 .navbarSpacer {
-    height: 100px;
-    background-color: #EEF8FF;
+  height: 100px;
+  background-color: #EEF8FF;
 }
 
 .sectionPage {
-    padding: 4rem 2rem;
-    background-color: #EEF8FF;
-    text-align: center;
-    color: #333;
+  padding: 4rem 2rem;
+  background-color: #EEF8FF;
+  text-align: center;
+  color: #333;
 }
 
 .clinicalSupervisionSection {
-    max-width: 900px;
-    margin: 2rem auto;
-    font-family: 'Arial, sans-serif';
-    color: #333;
+  max-width: 900px;
+  margin: 2rem auto;
+  font-family: 'Arial, sans-serif';
+  color: #333;
 }
 
 .title {
-    color: #f47b20;
-    font-size: 1.8rem;
-    font-weight: 700;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 10px;
+  color: #f47b20;
+  font-size: 1.8rem;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 
 .title::after {
-    content: "";
-    display: block;
-    margin: 6px auto 0;
-    width: 80%;
-    height: 3px;
-    background-color: #f47b20;
-    border-radius: 2px;
+  content: "";
+  display: block;
+  margin: 6px auto 0;
+  width: 80%;
+  height: 3px;
+  background-color: #f47b20;
+  border-radius: 2px;
 }
 
 .intro {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1rem;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 1rem;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .containerDiv {
   background-color: #FFFFFF;
   padding: 2rem;
-  padding-top: 0; 
-  border: 1px solid #8D8AFF; 
-  border-radius: 8px; 
+  padding-top: 0;
+  border: 1px solid #8D8AFF;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .contactInfo a {
-    color: #2a5d84;
-    text-decoration: underline;
+  color: #2a5d84;
+  text-decoration: underline;
 }
 
 .contactInfo a:hover {
-    color: #1c3a50;
+  color: #1c3a50;
 }
 
 .ctaButton {
@@ -76,7 +76,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* spacing between icon and text */
+  gap: 0.5rem;
+  /* spacing between icon and text */
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: fit-content;
 }
@@ -88,5 +89,6 @@
 
 .whatsappIcon {
   font-size: 1.25rem;
-  color: #25D366; /* WhatsApp green */
+  color: #25D366;
+  /* WhatsApp green */
 }
