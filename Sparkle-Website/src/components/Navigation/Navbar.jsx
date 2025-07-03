@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaChevronDown, FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import { FaCaretDown } from "react-icons/fa6";
 import Sidebar from './Sidebar';
 import styles from './Navbar.module.css';
 
@@ -122,7 +123,7 @@ export const Navbar = () => {
                   >
                     <span className={styles.linkWithIcon}>
                       Booking
-                      <FaChevronDown
+                      <FaCaretDown
                         className={`${styles.dropdownArrow} ${isBookingOpen ? styles.open : ''}`}
                       />
                     </span>
@@ -137,7 +138,7 @@ export const Navbar = () => {
                     >
 
                       {/* === Speech Therapy Section === */}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      <div className={styles.columnGap}>
                         <button
                           onClick={(e) => {
                             e.preventDefault();
@@ -258,7 +259,7 @@ export const Navbar = () => {
                     className={`${styles.navButton} ${isServicesOpen ? styles.servicesActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Services <FaChevronDown className={`${styles.dropdownArrow} ${isServicesOpen ? styles.open : ''}`} />
+                      Services <FaCaretDown className={`${styles.dropdownArrow} ${isServicesOpen ? styles.open : ''}`} />
                     </span>
                   </button>
 
@@ -336,7 +337,7 @@ export const Navbar = () => {
                     className={`${styles.navButton} ${isDropdownOpen ? styles.resourcesActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Resources <FaChevronDown className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.open : ''}`} />
+                      Resources <FaCaretDown className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.open : ''}`} />
                     </span>
                   </button>
 
@@ -359,7 +360,7 @@ export const Navbar = () => {
                         }
                         onClick={() => setIsDropdownOpen(false)}
                       >
-                        FQA
+                        FAQ
                       </NavLink>
                     </div>
                   )}

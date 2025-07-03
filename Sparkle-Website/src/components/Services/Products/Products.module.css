@@ -1,0 +1,91 @@
+.productsSection {
+    padding: 10rem 0rem 6rem;
+    background: #EEF8FF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.topContent {
+    margin-bottom: 3rem;
+}
+
+.topTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.topSubTitle {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #563caa;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 5rem;
+}
+
+.midContent {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem 0;
+}
+
+.productsImage {
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+    margin-top: -5rem;
+    margin-left: -4rem;
+}
+
+.productsContent {
+    
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    text-align: left;
+}
+
+.title {
+    color: #1BB9FF;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.playtimeImage{
+    width: 100%;
+    max-width: 10rem;
+    height: 100%;
+    margin-top: 12rem;
+    margin-right: 5rem;
+}
+
+.productsContentBottom {
+    display: flex;
+    flex-direction: row;
+    gap: 5rem;
+
+}
+
+.productsSmallImages {
+    width: 100%;
+    max-width: 4rem;
+}
+
+.halalProductsSmallImages {
+    width: 100%;
+    max-width: 3.5rem;
+}

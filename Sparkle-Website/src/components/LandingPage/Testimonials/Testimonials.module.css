@@ -139,6 +139,14 @@
 
 
 @media (max-width: 1440px) and (min-width: 1025px) {
+  .bubbleWrapper {
+    width: 110%;
+  }
+
+  .bubbleContent {
+    padding: 1rem;
+    margin-top: -2rem;
+  }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {

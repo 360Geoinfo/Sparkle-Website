@@ -4,8 +4,6 @@ import styles from "./About.module.css";
 const AboutUs = () => {
   return (
     <section className={styles.aboutSection}>
-      <div className={styles.topCloud}></div>
-
       <div className={styles.contentWrapper}>
         <div className={styles.topText}>
           <img

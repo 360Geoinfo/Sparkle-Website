@@ -13,7 +13,7 @@
   transition: transform 0.3s ease-in-out;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
 }
 
 /* Slide in when open */
@@ -35,7 +35,7 @@
 /* Logo */
 .sidebarLogo {
   width: auto;
-  height: clamp(60px, 12vw, 100px);
+  height: clamp(80px, 12vw, 100px);
   margin-bottom: 3rem;
   align-self: center;
 }
@@ -47,6 +47,7 @@
   gap: 1rem;
   text-decoration: none;
   color: #563CAA;
+  font-weight: bold;
   font-size: clamp(1.15rem, 3.5vw, 1.5rem);
   margin-bottom: 3vw;
   padding-bottom: 0.5rem;
@@ -55,7 +56,7 @@
 
 /* Icons */
 .sidebarIcon {
-  width: clamp(20px, 4vw, 28px);
+  width: clamp(23px, 4vw, 28px);
   height: auto;
 }
 
@@ -85,6 +86,72 @@
   height: 100%;
   touch-action: none;
 }
+
+.sidebarLink {
+  gap: 0.5rem !important;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem) !important;
+  padding: 1rem 0 !important;
+  margin-bottom: 0 !important;
+  border-bottom: none !important;
+}
+
+.sidebarDropdown {
+  width: 100%;
+}
+
+.sidebarDropdownToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  font-size: clamp(1.25rem, 3.5vw, 1.5rem);
+  font-weight: bold;
+  width: 100%;
+  color: #563CAA;
+  padding: 1rem 0;
+  cursor: pointer;
+}
+
+.sidebarDropdownTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+
+.sidebarDropdownSubtitle {
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  color: #ff7a00;
+  margin-top: 0.25rem;
+}
+
+.sidebarDropdownArrow {
+  transition: transform 0.3s ease;
+}
+
+.sidebarDropdownArrow.open {
+  transform: rotate(180deg);
+}
+
+.sidebarDropdownMenu {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebarDropdownMenu a {
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  font-weight: 500;
+}
+
+.sidebarBookingArrow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 
 /* Hide sidebar on larger screens */
 @media (min-width: 1025px) {
