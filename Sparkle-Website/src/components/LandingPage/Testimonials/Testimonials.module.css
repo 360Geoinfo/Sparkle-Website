@@ -129,10 +129,23 @@
 }
 
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   .testimonialContainer {
     flex-direction: row;
     justify-content: center;
   }
+} */
+
+
+
+@media (max-width: 1440px) and (min-width: 1025px) {
 }
 
+@media (max-width: 1024px) and (min-width: 769px) {
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+}
+
+@media (max-width: 425px) {
+}
