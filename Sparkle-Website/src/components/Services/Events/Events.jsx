@@ -9,6 +9,37 @@ const Events = () => {
     <>
     <Navbar />
     <section className={styles.eventsSection}>
+        <img
+            src="/assets/ServicesPage/Events/Circle/Blue Circle.webp"
+            alt="Blue Circle"
+            className={styles.blueCircleImage}
+        />
+        <img
+            src="/assets/ServicesPage/Events/Circle/Green Circle.webp"
+            alt="Green Circle"
+            className={styles.greenCircleImage}
+        />
+        <img
+            src="/assets/ServicesPage/Events/Circle/Orange Circle.webp"
+            alt="Orange Circle"
+            className={styles.orangeCircleImage}
+        />
+        <img
+            src="/assets/ServicesPage/Events/Circle/Purple Circle.webp"
+            alt="Purple Circle"
+            className={styles.purpleCircleImage}
+        />
+        <img
+            src="/assets/ServicesPage/Events/Circle/Red Circle.webp"
+            alt="Red Circle"
+            className={styles.redCircleImage}
+        />
+        <img
+            src="/assets/ServicesPage/Events/Circle/Yellow Circle.webp"
+            alt="Yellow Circle"
+            className={styles.yellowCircleImage}
+        />
+
         <div className={styles.topContent}>
           <h2 className={styles.topTitle}>Join Us</h2>
           <h3 className={styles.topSubTitle}>

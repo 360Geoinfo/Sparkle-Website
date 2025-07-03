@@ -33,25 +33,52 @@ const Pricing = () => {
       <div className={styles.cardWrapper}>
         {activeTab === "speech" && (
           <>
-            <img
-              className={styles.pricingImage}
-              src="/assets/LandingPage/Pricing/PricingBebatik Kilanas.png"
-              alt="Bebatik Kilanas Pricing"
-            />
-            <img
-              className={styles.pricingImage}
-              src="/assets/LandingPage/Pricing/PricingKuala Belait.png"
-              alt="Kuala Belait Pricing"
-            />
+            <div className={styles.BandarPricingCard}>
+              <img
+                className={styles.greenBirdImage}
+                src="/assets/LandingPage/Pricing/green bird.webp"
+                alt="Green Bird"
+              />
+              <img
+                className={styles.pricingImage}
+                src="/assets/LandingPage/Pricing/PricingBebatik Kilanas.png"
+                alt="Bebatik Kilanas Pricing"
+              />
+            </div>
+
+            <div className={styles.BelaitPricingCard}>
+              <img
+                className={styles.twoBirdsImage}
+                src="/assets/LandingPage/Pricing/two birds.webp"
+                alt="Two Birds"
+              />
+              <img
+                className={styles.pricingImage}
+                src="/assets/LandingPage/Pricing/PricingKuala Belait.png"
+                alt="Kuala Belait Pricing"
+              />
+            </div>
           </>
         )}
 
         {activeTab === "psychology" && (
-          <img
-            className={styles.psychologyPricingImage}
-            src="/assets/LandingPage/Pricing/Pricing List.png"
-            alt="Clinical Psychology Pricing"
-          />
+          <>
+            <img
+                className={styles.greenBirdPImage}
+                src="/assets/LandingPage/Pricing/green bird.webp"
+                alt="Green Bird"
+              />
+            <img
+              className={styles.psychologyPricingImage}
+              src="/assets/LandingPage/Pricing/Pricing List.png"
+              alt="Clinical Psychology Pricing"
+            />
+            <img
+                className={styles.twoBirdsPImage}
+                src="/assets/LandingPage/Pricing/two birds.webp"
+                alt="Two Birds"
+              />
+          </>
         )}
       </div>
 
@@ -59,7 +86,16 @@ const Pricing = () => {
         <IoMdInformationCircleOutline className={styles.noticeIcon}/>All prices are in BND. Please contact us to check for available slots.
       </p>
 
-      <button className={styles.contactUsBtn}><FaWhatsapp className={styles.contactUsIcon}/>Contact Us</button>
+      <div className={styles.contactUsSection}>
+        <button className={styles.contactUsBtn}><FaWhatsapp className={styles.contactUsIcon}/>Contact Us</button>
+
+        <img
+          className={styles.flyingBirdsImage}
+          src="/assets/LandingPage/Pricing/flying birds.webp"
+          alt="Flying Birds"
+        />
+
+      </div>
       
     </section>
   );

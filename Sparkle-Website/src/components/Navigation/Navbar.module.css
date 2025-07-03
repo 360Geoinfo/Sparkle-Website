@@ -95,7 +95,7 @@
   max-width: 140px;
   text-align: center;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding: 0rem 0.5rem;
   border-radius: 2rem;
   transition: background-color 0.3s, color 0.3s;
@@ -120,12 +120,20 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* === LINK COLORS === */
-.homeLink {
+.homeNavbarItem a {
   color: #fff;
   background-color: #D21315;
+  font-weight: 600;
+  font-size: 1.25rem;
+  position: relative;
+  padding: 0.5rem 3rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+
+/* === LINK COLORS === */
 .activeLink {
   border-radius: 2rem;
 }

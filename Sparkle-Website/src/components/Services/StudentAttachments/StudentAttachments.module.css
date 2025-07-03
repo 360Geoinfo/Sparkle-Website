@@ -1,21 +1,234 @@
 .studentSection {
-    padding: 10rem 0rem 4rem;
-    background: #F8F7FE;
-    text-align: center;
+  padding: 10rem 6rem 4rem;
+  background: #EEF8FF;
+  text-align: center;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 }
 
 .topContent {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .topTitle {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    color: #ff7a00;
-    font-weight: bold;
-    text-decoration: underline;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #ff7a00;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.gradCapImage {
+  position: absolute;
+  top: 14rem;
+  left: 44.25%;
+  width: 8rem;
+  height: 8rem;
+  z-index: 2;
+}
+
+.attachmentsWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; 
+  gap: 4rem;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.attachmentsCard {
+  width: 100%;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid #563caa21;
+}
+
+.slider {
+  position: relative; 
+  width: 100%;
+  height: 25rem; 
+  overflow: hidden; 
+  border-radius: 1rem;
+}
+
+.studentSlidesImage {
+  position: absolute;
+  width: 100%; 
+  height: 100%;
+  border-radius: 1rem;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  z-index: 0;
+  left: 0;
+}
+
+.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+.subTitle {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #563caa;
+  font-weight: 600;
+  margin: 2rem 0;
+}
+
+.attachmentDescription {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: black;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.contactButton {
+  background-color: #F0C000;
+  color: #563CAA;
+  padding: 0.5rem 2rem;
+  font-size: clamp(1rem, 5vw, 1.25rem);
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
+  margin: 2rem 0 1rem;
+}
+
+.contactButton:hover {
+  background-color: #cea501;
+}
+
+.whatsAppIcon {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  font-size: 1.5rem;
+}
+
+.centercard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.attachmentDownloadLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  margin: 3rem 0;
+  font-size: clamp(1rem, 5vw, 1.2rem);
+}
+
+.downloadLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1rem 2rem;
+  width: 100%;
+  border-radius: 5rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.studentDownloadLink {
+  background-color: #F08A29;
+}
+
+.dressDownloadLink {
+  background-color: #1BB9FF;
+}
+
+.agreementDownloadLink {
+  background-color: #CC6AE1;
+}
+
+.documentIcon {
+  margin-right: 0.25rem;
+  margin-top: -0.35rem;
+  font-size: 1.25rem;
+}
+
+.downloadIcon {
+  font-size: 1.6rem;
+}
+
+.documentIcon,
+.downloadIcon {
+  vertical-align: middle;
+}
+
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 14rem;
+    left: 83%;
+  }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+  .studentSection {
+    padding: 10rem 2rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 14rem;
+    left: 82%;
+  }
+}
+@media (max-width: 425px) {
+  .studentSection {
+    padding: 8rem 1rem 4rem;
+  }
+
+  .attachmentsWrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .gradCapImage {
+    top: 12rem;
+    left: 75%;
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .contactButton {
+    font-size: 1rem;
+  }
 }

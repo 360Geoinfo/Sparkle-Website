@@ -392,7 +392,7 @@
 
 @media (max-width: 425px) {
     .aboutSection {
-        padding: 1rem;
+        padding: 4rem 1rem 1rem;
     }
 
     .contentWrapper {

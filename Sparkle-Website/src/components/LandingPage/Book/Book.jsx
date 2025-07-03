@@ -5,7 +5,7 @@ const Book = () => {
   return (
     <section className={styles.bookSection}>
         <img
-            src="assets/LandingPage/Book/CTA pic (blurred).webp"
+            src="/assets/LandingPage/Book/CTA pic (blurred).webp"
             alt="Book Consultation"
             className={styles.bookImage}
         />

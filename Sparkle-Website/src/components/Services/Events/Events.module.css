@@ -1,5 +1,5 @@
 .eventsSection {
-    padding: 10rem 0rem 4rem;
+    padding: 10rem 0rem 6rem;
     background: #F8F7FE;
     text-align: center;
 
@@ -7,6 +7,48 @@
     flex-direction: column;
     align-items: center;
     z-index: 1;
+}
+
+.purpleCircleImage {
+    position: absolute;
+    top: 13rem;
+    left: 17%;
+    width: 2rem;
+}
+
+.blueCircleImage {
+    position: absolute;
+    top: 17rem;
+    right: 44.5%;
+    width: 1rem;
+}
+
+.greenCircleImage {
+    position: absolute;
+    bottom: 5rem;
+    left: 48%;
+    width: 2.5rem;
+}
+
+.orangeCircleImage {
+    position: absolute;
+    bottom: 1rem;
+    left: 30%;
+    width: 1.5rem;
+}
+
+.redCircleImage {
+    position: absolute;
+    top: 14rem;
+    right: 21%;
+    width: 3rem;
+}
+
+.yellowCircleImage {
+    position: absolute;
+    bottom: 7.6rem;
+    left: 18%;
+    width: 3rem;
 }
 
 .topContent {
@@ -85,7 +127,7 @@
 }
 
 .eventTitle {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: clamp(1.25rem, 5vw, 2rem);
     color: #563caa;
     font-weight: bold;
 }
@@ -156,4 +198,404 @@
     margin-left: 1rem;
     border-radius: 50%;
     border: 4px solid white;
+}
+
+@media (max-width: 1440px) and (min-width: 1300px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 1299px) and (min-width: 1025px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        gap: 1.5rem;
+    }
+
+    .eventImageWrapper {
+        max-width: 600px; 
+    }
+
+    .eventContentOpenDay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 28vw;
+        padding: 1rem 1rem 2rem;
+    }
+
+    .eventContentAnniversary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 45vw;
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .eventTitle {
+        font-size: clamp(1.25rem, 5vw, 1.5rem);
+    }
+
+    .eventDate {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.25rem;
+    }
+
+    .DateIcon {
+        font-size: 1.35rem;
+    }
+
+    .eventDescription {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.5rem;
+    }
+
+    .eventPromotion {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.5rem;
+    }
+
+    .eventPromotion li {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+    }
+
+    .eventButton {
+        padding: 0.45rem 3rem;
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.15rem;
+    }
+
+    .ArrowIcon {
+        width: 38px;
+        margin-top: -0.45rem;
+    }
+
+    .purpleCircleImage {
+        position: absolute;
+        top: 13rem;
+        left: 17%;
+        width: 2rem;
+    }
+
+    .blueCircleImage {
+        position: absolute;
+        top: 17rem;
+        right: 44.5%;
+        width: 1rem;
+    }
+
+    .greenCircleImage {
+        position: absolute;
+        bottom: 6rem;
+        left: 45%;
+        width: 2.5rem;
+    }
+
+    .orangeCircleImage {
+        position: absolute;
+        bottom: 2rem;
+        left: 26%;
+        width: 1.5rem;
+    }
+
+    .redCircleImage {
+        position: absolute;
+        top: 14rem;
+        right: 10%;
+        width: 3rem;
+    }
+
+    .yellowCircleImage {
+        position: absolute;
+        bottom: 9rem;
+        left: 10%;
+        width: 3rem;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .eventsSection {
+        padding: 10rem 2rem 4rem;
+    }
+
+    .eventsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+
+    .purpleCircleImage {
+        position: absolute;
+        top: 13rem;
+        left: 5%;
+        width: 2rem;
+    }
+
+    .blueCircleImage {
+        position: absolute;
+        top: 17rem;
+        right: 44.5%;
+        width: 1rem;
+    }
+
+    .greenCircleImage {
+        position: absolute;
+        bottom: 6rem;
+        left: 45%;
+        width: 2.5rem;
+    }
+
+    .orangeCircleImage {
+        position: absolute;
+        bottom: 2rem;
+        left: 26%;
+        width: 1.5rem;
+    }
+
+    .redCircleImage {
+        position: absolute;
+        top: 14rem;
+        right: 5%;
+        width: 3rem;
+    }
+
+    .yellowCircleImage {
+        position: absolute;
+        bottom: 9rem;
+        left: 10%;
+        width: 3rem;
+    }
+}
+@media (max-width: 768px) and (min-width: 551px) {
+    .eventsSection {
+        padding: 10rem 1rem 4rem;
+    }
+
+    .eventsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+
+    .eventTitle {
+        font-size: clamp(1.25rem, 5vw, 1.5rem);
+    }
+
+    .eventDate {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.25rem;
+    }
+
+    .DateIcon {
+        font-size: 1.35rem;
+    }
+
+    .eventDescription {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 0.5rem;
+    }
+
+    .eventPromotion {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.5rem;
+    }
+
+    .eventPromotion li {
+        font-size: clamp(1rem, 5vw, 1.15rem);
+    }
+
+    .eventButton {
+        padding: 0.45rem 3rem;
+        font-size: clamp(1rem, 5vw, 1.15rem);
+        margin-top: 1.15rem;
+    }
+
+    .ArrowIcon {
+        width: 38px;
+        margin-top: -0.45rem;
+    }
+
+    .purpleCircleImage {
+        position: absolute;
+        top: 13rem;
+        left: 5%;
+        width: 2rem;
+    }
+
+    .blueCircleImage {
+        position: absolute;
+        top: 17rem;
+        right: 44.5%;
+        width: 1rem;
+    }
+
+    .greenCircleImage {
+        position: absolute;
+        bottom: 6rem;
+        left: 45%;
+        width: 2.5rem;
+    }
+
+    .orangeCircleImage {
+        position: absolute;
+        bottom: 2rem;
+        left: 26%;
+        width: 1.5rem;
+    }
+
+    .redCircleImage {
+        position: absolute;
+        top: 14rem;
+        right: 5%;
+        width: 3rem;
+    }
+
+    .yellowCircleImage {
+        position: absolute;
+        bottom: 9rem;
+        left: 10%;
+        width: 3rem;
+    }
+}
+@media (max-width: 550px) {
+    .eventsSection {
+        padding: 10rem 1rem 4rem;
+    }
+
+    .eventsWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        gap: 2rem;
+    }
+
+    /* .BgImage {
+        left: -0.5rem;
+        height: 500px;
+    }
+
+    .LineImage {
+        left: 0rem;
+        height: 500px;
+    } */
+
+    .eventContentOpenDay {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 58vw;
+        padding: 1rem 0.5rem 2rem;
+        left: 0.5rem;
+    }
+
+    .eventContentAnniversary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 86vw;
+        padding: 2.5rem 1rem 2rem;
+        left: 0.5rem;
+    }
+
+    .eventTitle {
+        font-size: clamp(1.25rem, 5vw, 1.25rem);
+    }
+
+    .eventDate {
+        font-size: clamp(1rem, 5vw, 1rem);
+        margin-top: 0rem;
+    }
+
+    .DateIcon {
+        font-size: 1.25rem;
+    }
+
+    .eventDescription {
+        font-size: clamp(0.5rem, 5vw, 1rem);
+        margin-top: 0.25rem;
+    }
+
+    .eventPromotion {
+        font-size: clamp(0.5rem, 5vw, 1rem);
+        margin-top: 1rem;
+    }
+
+    .eventPromotion li {
+        font-size: clamp(0.5rem, 5vw, 1rem);
+    }
+
+    .eventButton {
+        padding: 0.45rem 3rem;
+        font-size: clamp(0.5rem, 5vw, 1rem);
+        margin-top: 0.5rem;
+    }
+
+    .ArrowIcon {
+        width: 38px;
+        margin-top: -0.45rem;
+    }
+
+    .purpleCircleImage {
+        position: absolute;
+        top: 10rem;
+        left: 2%;
+        width: 2rem;
+    }
+
+    .blueCircleImage {
+        position: absolute;
+        top: 16rem;
+        right: 44.5%;
+        width: 1rem;
+    }
+
+    .greenCircleImage {
+        position: absolute;
+        bottom: 17rem;
+        left: 45%;
+        width: 2.5rem;
+    }
+
+    .orangeCircleImage {
+        position: absolute;
+        bottom: -9rem;
+        left: 26%;
+        width: 1.5rem;
+    }
+
+    .redCircleImage {
+        position: absolute;
+        top: 15rem;
+        right: 4%;
+        width: 3rem;
+    }
+
+    .yellowCircleImage {
+        position: absolute;
+        bottom: -7rem;
+        left: 1%;
+        width: 3rem;
+    }
 }
