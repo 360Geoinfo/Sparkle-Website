@@ -2,11 +2,14 @@
     padding: 10rem 0rem 6rem;
     background: #F8F7FE;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1;
+}
+
+.eventCard{
+    z-index: 0;
 }
 
 .purpleCircleImage {
