@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { FaChevronDown, FaBars } from "react-icons/fa";
 import Sidebar from './Sidebar';
 import styles from './Navbar.module.css';
-import { FaCaretDown } from "react-icons/fa";
 
 export const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -11,8 +10,12 @@ export const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isBookingSubOpen, setIsBookingSubOpen] = useState(false);
+  const [isSpeechSubOpen, setIsSpeechSubOpen] = useState(false);
+  const [isBookingHovered, setIsBookingHovered] = useState(false);
   const [isHomeOpen, setIsHomeOpen] = useState(false);
 
+  // Toggle functions
   const toggleHomeDropdown = (e) => {
     e.preventDefault();
     setIsHomeOpen(prev => !prev);
@@ -21,6 +24,12 @@ export const Navbar = () => {
   const toggleBookingDropdown = (e) => {
     e.preventDefault();
     setIsBookingOpen(prev => !prev);
+    if (isBookingSubOpen) setIsBookingSubOpen(false); // close subdropdown when main toggled
+  };
+
+  const toggleBookingSubDropdown = (e) => {
+    e.preventDefault();
+    setIsBookingSubOpen(prev => !prev);
   };
 
   const toggleServicesDropdown = (e) => {
@@ -33,16 +42,20 @@ export const Navbar = () => {
     setIsDropdownOpen(prev => !prev);
   };
 
+  // Close functions
   const closeDropdown = () => setIsDropdownOpen(false);
   const closeHomeDropdown = () => setIsHomeOpen(false);
-  const closeBookingDropdown = () => setIsBookingOpen(false);
+  const closeBookingDropdown = () => {
+    setIsBookingOpen(false);
+    setIsBookingSubOpen(false);
+  };
   const closeServicesDropdown = () => setIsServicesOpen(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest(`.${styles.dropdown}`)) {
         setIsHomeOpen(false);
-        setIsBookingOpen(false);
+        closeBookingDropdown();
         setIsServicesOpen(false);
         setIsDropdownOpen(false);
       }
@@ -84,16 +97,21 @@ export const Navbar = () => {
 
             <ul className={styles.menuItems}>
               {/* Home Navigation */}
-              <li className={styles.homeNavbarItem}>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `${styles.navButtonLink} ${isActive ? styles.homeActive : ''}`
-                  }
-                >
-                  Home
-                </NavLink>
+              <li className={styles.navbarItem}>
+                <div className={`${styles.dropdown} ${styles.homeDropdown}`}>
+                  <NavLink
+                    to="/"
+                    className={({ isActive }) =>
+                      `${styles.navButton} ${isActive ? styles.homeActive : ''}`
+                    }
+                  >
+                    <span className={styles.linkWithIconHome}>
+                      Home
+                    </span>
+                  </NavLink>
+                </div>
               </li>
+
 
               {/* Booking Navigation */}
               <li className={styles.navbarItem}>
@@ -103,22 +121,130 @@ export const Navbar = () => {
                     className={`${styles.navButton} ${isBookingOpen ? styles.bookingActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Booking <FaChevronDown className={`${styles.dropdownArrow} ${isBookingOpen ? styles.open : ''}`} />
+                      Booking
+                      <FaChevronDown
+                        className={`${styles.dropdownArrow} ${isBookingOpen ? styles.open : ''}`}
+                      />
                     </span>
                   </button>
 
-                  {isBookingOpen && (
-                    <div className={styles.dropdownContent}>
-                      <NavLink
-                        to="/Booking"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsBookingOpen(false)}
-                      >
-                        Main Booking
-                      </NavLink>
-                      {/* You can add more booking-related links here */}
+                  {(isBookingOpen || isBookingHovered) && (
+                    <div
+                      className={styles.dropdownContentBooking}
+                      onMouseEnter={() => setIsBookingHovered(true)}
+                      onMouseLeave={() => setIsBookingHovered(false)}
+                      style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+                    >
+
+                      {/* === Speech Therapy Section === */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsSpeechSubOpen(prev => !prev);
+                            if (isBookingSubOpen) setIsBookingSubOpen(false);
+                          }}
+                          className={`${styles.dropdownLink} ${isSpeechSubOpen ? styles.dropdownActive : ''}`}
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            width: '100%',
+                            backgroundColor: '#F08A29',
+                            color: '#fff',
+                            fontWeight: '600',
+                            border: 'none',
+                            padding: '0.6rem 1rem',
+                            borderRadius: '0.75rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Speech Therapy
+                        </button>
+
+                        {isSpeechSubOpen && (
+                          <div className={`${styles.subDropdownContent} ${isSpeechSubOpen ? styles.subDropdownContentOpen : ''}`}>
+                            <div style={{ fontWeight: '600', fontSize: '0.9rem', marginBottom: '0.5rem', color: '#333' }}>
+                              Speech Therapy
+                            </div>
+
+                            <NavLink
+                              to="/Booking/SpeechTherapy/Free 15 min Consultation"
+                              className={({ isActive }) =>
+                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                              }
+                              onClick={closeBookingDropdown}
+                            >
+                              Free 15 min Consultation
+                            </NavLink>
+
+                            <NavLink
+                              to="/Booking/SpeechTherapy/Paid Consultation"
+                              className={({ isActive }) =>
+                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                              }
+                              onClick={closeBookingDropdown}
+                            >
+                              Paid Consultation
+                            </NavLink>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* === Clinical Psychology Section === */}
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            setIsBookingSubOpen(prev => !prev);
+                            if (isSpeechSubOpen) setIsSpeechSubOpen(false);
+                          }}
+                          className={`${styles.dropdownLink} ${isBookingSubOpen ? styles.dropdownActive : ''}`}
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            width: '100%',
+                            backgroundColor: '#F08A29',
+                            color: '#fff',
+                            fontWeight: '600',
+                            border: 'none',
+                            padding: '0.6rem 1rem',
+                            borderRadius: '0.75rem',
+                            cursor: 'pointer',
+                          }}
+                        >
+                          Clinical Psychology
+                        </button>
+
+                        {isBookingSubOpen && (
+                          <div className={styles.subDropdownContent}>
+                            <div style={{ fontWeight: '600', fontSize: '0.9rem', marginBottom: '0.5rem', color: '#333' }}>
+                              Clinical Psychology
+                            </div>
+
+                            <NavLink
+                              to="/Booking/ClinicalPsychology/Free 15 min Consultation"
+                              className={({ isActive }) =>
+                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                              }
+                              onClick={closeBookingDropdown}
+                            >
+                              Free 15 min Consultation
+                            </NavLink>
+
+                            <NavLink
+                              to="/Booking/ClinicalPsychology/Paid Consultation"
+                              className={({ isActive }) =>
+                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
+                              }
+                              onClick={closeBookingDropdown}
+                            >
+                              Paid Consultation
+                            </NavLink>
+                          </div>
+                        )}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -239,7 +365,6 @@ export const Navbar = () => {
                   )}
                 </div>
               </li>
-
             </ul>
           </div>
         </div>

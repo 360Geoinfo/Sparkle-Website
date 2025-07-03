@@ -14,6 +14,7 @@ import Pricing from './components/LandingPage/Pricing/Pricing';
 
 import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
 import Events from './components/Services/Events/Events';
+import SpeechTherapy from './components/Services/Speech Therapy/SpeechTherapy';
 import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
 import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
 
@@ -40,11 +41,12 @@ function App() {
           </>
         } />
 
-        
+        <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
         <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
         <Route path="/Services/Events" element={<Events/>} />
+        {/* Product */}
+        <Route path="/Services/SpeechTherapy" element={<SpeechTherapy />} />
         <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
-        <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
         
         <Route path="/Resources/Blog" element={<Blog />} />
         <Route path="/Resources/FQA" element={<FQA />} />

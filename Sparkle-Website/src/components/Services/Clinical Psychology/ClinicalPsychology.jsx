@@ -59,48 +59,48 @@ const Resource = () => {
                         for support at home, school, or work.
                     </p>
                 </div>
+            </section>
 
-                <section className={styles.interventionSection}>
-                    <h2 className={styles.sectionTitle}>Types of Psychological Interventions</h2>
+            <section className={styles.interventionSection}>
+                <h2 className={styles.sectionTitle}>Types of Psychological Interventions</h2>
 
-                    <div className={styles.cardGrid}>
-                        {interventionData.map((item, index) => (
-                            <div
-                                key={index}
-                                className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
-                                style={{ '--active-color': item.color }}
-                            >
-                                <div className={styles.imageWrapper}>
-                                    <img src={item.image} alt={item.title} className={styles.cardImage} />
-                                    <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
-                                </div>
-
-                                <img src={item.wave} alt="Wave Overlay" className={styles.waveImage} />
-
-                                <div className={styles.cardContent} style={{ backgroundColor: item.color }}>
-                                    <div>
-                                        <h3>{item.title}</h3>
-                                    </div>
-                                    <button
-                                        onClick={() => setActiveCard(index)}
-                                        className={styles.learnMore}
-                                    >
-                                        Learn More <span>→</span>
-                                    </button>
-                                </div>
-
-                                <div className={styles.cardOverlay}>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
+                <div className={styles.cardGrid}>
+                    {interventionData.map((item, index) => (
+                        <div
+                            key={index}
+                            className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
+                            style={{ '--active-color': item.color }}
+                        >
+                            <div className={styles.imageWrapper}>
+                                <img src={item.image} alt={item.title} className={styles.cardImage} />
+                                <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
                             </div>
-                        ))}
-                    </div>
 
-                    <div className={styles.ctaWrapper}>
-                        <a href="/contact" className={styles.ctaButton}>Book your consultation today!</a>
-                    </div>
-                </section>
+                            <img src={item.wave} alt="Wave Overlay" className={styles.waveImage} />
+
+                            <div className={styles.cardContent} style={{ backgroundColor: item.color }}>
+                                <div>
+                                    <h3>{item.title}</h3>
+                                </div>
+                                <button
+                                    onClick={() => setActiveCard(index)}
+                                    className={styles.learnMore}
+                                >
+                                    Learn More <span>→</span>
+                                </button>
+                            </div>
+
+                            <div className={styles.cardOverlay}>
+                                <h3>{item.title}</h3>
+                                <p>{item.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className={styles.ctaWrapper}>
+                    <a href="/contact" className={styles.ctaButton}>Book your consultation today!</a>
+                </div>
             </section>
             <Footer />
         </>
