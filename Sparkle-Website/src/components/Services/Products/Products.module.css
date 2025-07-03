@@ -8,7 +8,7 @@
     z-index: 1;
 }
 
-.topContent {
+.topSection {
     margin-bottom: 3rem;
 }
 
@@ -26,66 +26,114 @@
     margin-top: 0.5rem;
 }
 
-.description {
-    font-size: 1.5rem;
-    line-height: 1.8;
-    text-align: justify;
-    margin-bottom: 5rem;
-}
-
-.midContent {
+.midSection {
     background-color: white;
     display: flex;
     flex-direction: row;
-    padding: 2rem 0;
+    padding: 1rem 0;
 }
 
 .productsImage {
     width: 100%;
     max-width: 30rem;
     height: 100%;
-    margin-top: -5rem;
+    margin-top: -6rem;
     margin-left: -4rem;
 }
 
 .productsContent {
-    
+    text-align: left;
+
 }
 
 .textContent {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 4rem;
     text-align: left;
 }
 
 .title {
     color: #1BB9FF;
+    margin: 0.5rem 0;
     font-weight: 600;
     font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.subtitle {
+    margin: 0.5rem 0;
+    font-weight: 600;
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+}
+
+.description {
+    font-size: 1.5rem;
+    text-align: justify;
+    margin-bottom: 2rem;
+}
+
+.productsSmallImages {
+    width: 100%;
+    max-width: 3.5rem;
+}
+
+.productsContentBottom {
+  display: flex;
+  gap: 2rem; 
+  flex-wrap: wrap; 
+}
+
+.productsContentBottom > div {
+  flex: 1; 
+  min-width: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.halalProductsSmallImages {
+    width: 100%;
+    max-width: 3.5rem;
+}
+
+.contentBottom {
+    gap: 0.5rem;
 }
 
 .playtimeImage{
     width: 100%;
     max-width: 10rem;
     height: 100%;
-    margin-top: 12rem;
-    margin-right: 5rem;
+    margin-top: 9rem;
+    margin-right: 4rem;
 }
 
-.productsContentBottom {
+.bottomSection {
+    background: #EEF8FF;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.toysContent {
     display: flex;
     flex-direction: row;
-    gap: 5rem;
-
+    background-color: #8D8AFF;
+    border-radius: 2rem;
+    margin: 2rem;
 }
 
-.productsSmallImages {
-    width: 100%;
-    max-width: 4rem;
+.toysDescription {
+    padding: 2rem 1rem;
+    color: white;
+    font-weight: bold;
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
 }
 
-.halalProductsSmallImages {
+.LegoImages {
     width: 100%;
-    max-width: 3.5rem;
+    max-width: 10rem;
+    height: 100%;
+    margin-top: 10rem;
 }
