@@ -105,7 +105,7 @@ export const Navbar = () => {
                       `${styles.navButton} ${isActive ? styles.homeActive : ''}`
                     }
                   >
-                    <span className={styles.linkWithIcon}>
+                    <span className={styles.linkWithIconHome}>
                       Home
                     </span>
                   </NavLink>

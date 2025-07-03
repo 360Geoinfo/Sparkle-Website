@@ -1,10 +1,10 @@
 /* === DESKTOP NAVBAR === */
 .navbarSection {
-    width: 100%;
-    top: 0;
-    z-index: 999;
-    background-color: white;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -42,12 +42,12 @@
 }
 
 .menuItems {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbarItem {
@@ -85,7 +85,7 @@
 .homeDropdown {
   background-color: #D21315;
   border-radius: 2rem;
-  padding: 0.5rem;
+  padding: 0.01rem;
 }
 
 .navButton {
@@ -210,7 +210,7 @@
 
 .dropdownLink:hover {
   background-color: #000;
-  color: #fff; 
+  color: #fff;
   border-radius: 0rem;
 }
 
@@ -223,7 +223,7 @@
   padding: 0.2rem 0.2rem;
   background-color: #fff;
   border-radius: 0.5rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   animation: dropdownFade 0.3s ease;
 }
 
@@ -232,6 +232,7 @@
     opacity: 0;
     transform: translateY(-5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -239,7 +240,8 @@
 }
 
 .subDropdownContentOpen {
-  max-height: 500px; /* Enough height for content */
+  max-height: 500px;
+  /* Enough height for content */
   opacity: 1;
 }
 
@@ -275,12 +277,12 @@
 }
 
 .bookingDropdown button.clinicalPsychologyToggle:hover {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .bookingDropdown button.clinicalPsychologyToggle:focus {
   outline: none;
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* Rotate arrow when open */
@@ -330,6 +332,13 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.linkWithIconHome {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .dropdownArrow {
