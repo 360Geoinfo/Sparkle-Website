@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./Training.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -57,17 +57,16 @@ const NextArrow = (props) => {
 };
 
 const Training = () => {
+  const sliderRef = useRef(null); 
   const settings = {
     dots: false,
     infinite: true,
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: true,
+    arrows: false, 
     autoplay: true,
     autoplaySpeed: 6000,
-    prevArrow: <PrevArrow />,
-    nextArrow: <NextArrow />,
   };
 
   const groupedTopics = trainingTopics.reduce((acc, curr, idx) => {
@@ -79,9 +78,15 @@ const Training = () => {
   return (
     <section className={styles.trainingSection}>
       <div className={styles.topContent}>
+        <img
+          className={styles.beeImage}
+          src="/assets/LandingPage/Training/Flying bee.webp"
+          alt="Bee"
+        />
         <h2 className={styles.title}>Training Programs</h2>
         <h3 className={styles.subTitle}>Empowering Adults and Children</h3>
       </div>
+
       <p className={styles.description}>
         Speech & Language Therapy and Clinical Psychology training helps to equip parents / caregivers,
         teachers or the community with the knowledge and skills to support individuals with communication
@@ -89,30 +94,45 @@ const Training = () => {
         methods, including online courses, in-person workshops, and individualized coaching sessions.
       </p>
 
-      <h4 className={styles.topicsSubTitle}>Training Topics</h4>
+      <div className={styles.trainingTopicSection}>
+        <div className={styles.topicsTopContent}>
+          <h4 className={styles.topicsSubTitle}>Training Topics</h4>
 
-      <div className={styles.staticGrid}>
-        <Slider {...settings}>
-          {groupedTopics.map((group, i) => (
-            <div key={i} className={styles.slideGroup}>
-              {group.map((topic, idx) => (
-                <div
-                  className={`${styles.topicBox} ${styles[`color${(i * 6 + idx) % 6}`]}`}
-                  key={idx}
-                >
-                  {topic}
+          <div className={styles.arrowsContainer}>
+            <div onClick={() => sliderRef.current.slickPrev()} className={styles.arrowWrapper}>
+              <MdKeyboardArrowLeft className={styles.arrowIcon} />
+            </div>
+            <div onClick={() => sliderRef.current.slickNext()} className={styles.arrowWrapper}>
+              <MdKeyboardArrowRight className={styles.arrowIcon} />
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.staticGrid}>
+          <div className={styles.sliderWrapper}>
+            <Slider ref={sliderRef} {...settings}>
+              {groupedTopics.map((group, i) => (
+                <div key={i} className={styles.slideGroup}>
+                  {group.map((topic, idx) => (
+                    <div
+                      className={`${styles.topicBox} ${styles[`color${(i * 6 + idx) % 6}`]}`}
+                      key={idx}
+                    >
+                      {topic}
+                    </div>
+                  ))}
                 </div>
               ))}
-            </div>
-          ))}
-        </Slider>
+            </Slider>
+          </div>
+        </div>
       </div>
 
       <a
         href="https://wa.me/6738391407"
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.contactUsLink} // optional for styling
+        className={styles.contactUsLink}
       >
         <button className={styles.contactUsBtn}>
           <FaWhatsapp className={styles.contactUsIcon} />
@@ -125,7 +145,6 @@ const Training = () => {
         src="/assets/LandingPage/Training/Clouds.webp"
         alt="Cloud"
       />
-
     </section>
   );
 };

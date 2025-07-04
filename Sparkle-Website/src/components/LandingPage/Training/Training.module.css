@@ -1,11 +1,15 @@
 .trainingSection {
-    padding: 4rem 4rem 6rem;
+    position: relative;
+    padding: 4rem 0rem 18vw;
     background: #f8f7fe;
     text-align: center;
+    overflow: hidden;
 }
 
 .topContent {
-    margin-bottom: 3rem;
+    position: relative;
+    margin-bottom: 4rem;
+    padding: 0 4rem;
 }
 
 .title {
@@ -22,43 +26,36 @@
     margin-top: 0.5rem;
 }
 
+.beeImage {
+    position: absolute;
+    top: -3rem;
+    right: 0;
+    width: 20vw;
+}
+
 .description { 
     font-size: clamp(1rem, 5vw, 1.5rem);
     margin-bottom: 3rem;
+    padding: 0 4rem;
+}
+
+.topicsTopContent {
+    padding: 1rem 4rem 2rem;
 }
 
 .topicsSubTitle {
     font-size: clamp(1.5rem, 5vw, 2rem);
     color: #563caa;
     font-weight: bold;
-    margin: 1rem 0rem 2rem;
     text-align: left;
 }
 
-.slideGroup {
-    display: grid !important; 
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
-    gap: 1rem;
-    box-sizing: border-box;
+.arrowsContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 3rem;
 }
-
-/* Style for each topic box */
-.topicBox {
-    padding: 3rem 1rem;
-    border-radius: 1rem;
-    color: white;
-    font-size: clamp(0.15rem, 5vw, 1.15rem);
-    text-align: center;
-}
-
-/* Colored backgrounds */
-.color0 { background-color: #D21315; }
-.color1 { background-color: #F08A29; }
-.color2 { background-color: #F0C000; }
-.color3 { background-color: #A0C260; }
-.color4 { background-color: #1BB9FF; }
-.color5 { background-color: #CC6AE1; }
 
 .customArrow {
     position: absolute;
@@ -81,16 +78,76 @@
     transform: scale(1.2);
 }
 
+.staticGrid {
+   padding: 0 3.5rem; 
+}
+
+.slideGroup {
+    display: grid !important; 
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+/* Style for each topic box */
+.topicBox {
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    color: white;
+    font-size: clamp(0.15rem, 5vw, 1.5rem);
+    text-align: center;
+    margin: 0.05rem;
+}
+
+.topicBox {
+    flex: 1 1 30%;         
+    width: 100%;       
+    height: 140px;         
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+/* Colored backgrounds */
+.color0 { background-color: #D21315; }
+.color1 { background-color: #F08A29; }
+.color2 { background-color: #F0C000; }
+.color3 { background-color: #A0C260; }
+.color4 { background-color: #1BB9FF; }
+.color5 { background-color: #CC6AE1; }
+
+.topicsTopContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contactUsLink {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
 .contactUsBtn {
+    display: flex;
+    flex-direction: row;
     background-color: #F0C000;
     color: #563CAA;
     padding: 1rem 2rem;
-    font-size: clamp(1rem, 5vw, 1rem);
+    font-size: clamp(1rem, 5vw, 1.25rem);
     font-weight: 600;
     cursor: pointer;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     border: none;
     margin: 3rem;
+    align-items: center;
 }
 
 .contactUsBtn:hover {
@@ -98,24 +155,50 @@
 }
 
 .contactUsIcon {
-    margin-right: 0.5rem;
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
+    margin-right: 1rem;
 }
 
 .cloudImage {
     position: absolute;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    margin-top: 6rem;
     z-index: 3;
     pointer-events: none;
 }
 
 @media (max-width: 1024px) and (min-width: 768px) {
     .trainingSection {
-        padding: 4rem 4rem 5rem;
+        padding: 4rem 0rem 10rem;
+    }
+
+    .topContent {
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    .beeImage {
+        top: -3rem;
+        right: -4rem;
+        width: 25vw;
+    }
+
+    .description { 
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    .staticGrid {
+        padding: 0 1.5rem; 
+    }
+
+    .topicsTopContent {
+        padding: 1rem 2rem 2rem;
     }
   
     .cloudImage {
@@ -124,60 +207,145 @@
 }
 
 @media (max-width: 767px) and (min-width: 635px) {
-    .trainingSection {
-        padding: 4rem 4rem 6rem;
-    }
-
     .slideGroup {
         grid-template-columns: repeat(2, 1fr);
     }
-  
-    .cloudImage {
-        margin-top: 12rem;
+
+    .trainingSection {
+        padding: 4rem 0rem 8rem;
+    }
+
+    .topContent {
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    .beeImage {
+        top: -3rem;
+        right: -4rem;
+        width: 30vw;
+    }
+
+    .description { 
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    .staticGrid {
+        padding: 0 1.5rem; 
+    }
+
+    .topicsTopContent {
+        padding: 1rem 2rem 2rem;
     }
 }
 
 @media (max-width: 634px) and (min-width: 426px) {
-    .trainingSection {
-        padding: 4rem 2rem 3.25rem;
-    }
-
     .slideGroup {
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .cloudImage {
-        margin-top: 10rem;
+    .trainingSection {
+        padding: 4rem 0rem 8rem;
+    }
+
+    .topContent {
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    .beeImage {
+        top: -3rem;
+        right: -4rem;
+        width: 30vw;
+    }
+
+    .description { 
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    .topicsTopContent {
+        padding: 1rem 2rem 2rem;
+    }
+
+    .staticGrid {
+        padding: 0 1.5rem; 
+    }
+
+    .topicBox {   
+        height: 60px;         
+    }
+
+    .contactUsBtn {
+        width: 100%;
+        padding: 0.65rem 1rem;
+        margin: 2rem;
+        border-radius: 1rem;
+    }
+
+    .contactUsIcon {
+        margin-left: 1rem;
+        font-size: 2rem;
     }
 }
 
 @media (max-width: 425px) {
-    .trainingSection {
-        padding: 4rem 2rem 5rem;
-    }
-
     .slideGroup {
         grid-template-columns: 1fr;
     }
 
-    .description { 
-        text-align: justify;
+    .trainingSection {
+        padding: 4rem 0rem 5rem;
     }
 
-    .topicBox {
-        padding: 1rem 0.5rem;
-        font-size: 1rem;
+    .topContent {
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+    }
+
+    .beeImage {
+        top: -2rem;
+        right: -4rem;
+        width: 37vw;
+    }
+
+    .description { 
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+        text-align: justify;
+        line-height: 1.5;
+    }
+
+    .topicsTopContent {
+        padding: 1rem 2rem 1rem;
+    }
+
+    .arrowsContainer {
+        gap: 1rem;
+    }
+
+    .staticGrid {
+        padding: 0 1.5rem; 
+    }
+
+    .topicBox {   
+        height: 60px;         
     }
 
     .contactUsBtn {
-        padding: 0.5rem 0.5rem;
-        font-size: clamp(0.5rem, 5vw, 1rem);
-        width: 100%;
-        margin: 1rem 0;
+        padding: 1rem;
+        margin: 2rem;
+        border-radius: 1rem;
     }
-    
-    .cloudImage {
-        margin-top: 8rem;
+
+    .contactUsIcon {
+        margin-left: 1rem;
+        font-size: 3rem;
     }
 }
 

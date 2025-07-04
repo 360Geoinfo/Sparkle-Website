@@ -40,9 +40,17 @@
     font-size: clamp(0.5rem, 5vw, 1.25rem);
     font-weight: 600;
     cursor: pointer;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     border: none;
     margin: 2rem 0 1rem;
+    text-decoration: none;
+}
+
+.contactButton a {
+    color: #563CAA;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .contactButton:hover {

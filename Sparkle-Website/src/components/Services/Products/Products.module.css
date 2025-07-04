@@ -30,7 +30,7 @@
     background-color: white;
     display: flex;
     flex-direction: row;
-    padding: 1rem 0;
+    padding: 1rem 0 0;
 }
 
 .productsImage {
@@ -63,10 +63,10 @@
     font-size: clamp(1.25rem, 5vw, 1.5rem);
 }
 
-.description {
+.productDescription {
     font-size: 1.5rem;
     text-align: justify;
-    margin-bottom: 2rem;
+    margin: 1rem 0 2rem;
 }
 
 .productsSmallImages {
@@ -102,7 +102,7 @@
     width: 100%;
     max-width: 10rem;
     height: 100%;
-    margin-top: 9rem;
+    margin-top: 11rem;
     margin-right: 4rem;
 }
 
@@ -113,27 +113,305 @@
     flex-direction: column;
     align-items: center;
     z-index: 1;
-    padding: 1rem;
+    padding: 2rem 0 0;
 }
 
 .toysContent {
+    position: relative; 
     display: flex;
+    align-items: center;
     flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
     background-color: #8D8AFF;
     border-radius: 2rem;
     margin: 2rem;
 }
 
+.ToysImages {
+    width: 100%;
+    max-width: 30rem;
+    height: 100%;
+}
+
 .toysDescription {
-    padding: 2rem 1rem;
+    padding: 2rem 20rem 2rem 3rem;
     color: white;
+    line-height: 1.5;
     font-weight: bold;
     font-size: clamp(1.25rem, 5vw, 1.5rem);
 }
 
 .LegoImages {
-    width: 100%;
-    max-width: 10rem;
-    height: 100%;
-    margin-top: 10rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px; 
+    height: auto;
+    object-fit: contain;
+    border-bottom-right-radius: 2rem;
+}
+
+
+@media (max-width: 1440px) and (min-width: 1025px) {
+    .midSection {
+        position: relative;
+        display: flex; 
+        flex-direction: row;
+        padding: 1rem 0 1rem;
+        width: 100%;
+    }
+
+    .productsImage {
+        max-width: 28%;
+        margin-top: -4rem;
+        margin-left: -2.5rem;
+    }
+
+    .productsContent {
+        margin-left: -2vw;
+        width: 63vw;
+    }
+
+    .productDescription {
+        text-align: justify;
+    }
+
+    .productsSmallImages {
+        width: 100%;
+        max-width: 3.5rem;
+    }
+
+    .playtimeImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 140px; 
+        height: auto;
+        object-fit: contain;
+        margin-right: 3vw;
+    }
+
+    .ToysImages {
+        max-width: 30vw;
+    }
+
+    .toysDescription {
+        padding: 2rem 12vw 0rem 1rem;
+    }
+
+    .LegoImages {
+        width: 14vw; 
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .midSection {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0 2rem;
+    }
+
+    .productsImage {
+        max-width: 30%;
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+
+    .productsContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 0rem;
+        width: 88%;
+    }
+
+    .productsContentBottom {
+        width: 80%;
+    }
+
+    .productDescription {
+        text-align: justify;
+    }
+
+    .productsSmallImages {
+        width: 100%;
+        max-width: 3rem;
+    }
+
+    .playtimeImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 140px; 
+        height: auto;
+        object-fit: contain;
+        margin-right: 0;
+    }
+
+    .ToysImages {
+        max-width: 40vw;
+    }
+
+    .toysDescription {
+        padding: 1rem 6rem;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .LegoImages {
+        width: 18vw; 
+    }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+    .midSection {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0 9rem;
+    }
+
+    .productsImage {
+        max-width: 60%;
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+
+    .productsContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 0rem;
+        width: 90%;
+    }
+
+    .productsContentBottom {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .productsContentBottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .productDescription {
+        text-align: justify;
+    }
+
+    .productsSmallImages {
+        width: 100%;
+        max-width: 3rem;
+    }
+
+    .playtimeImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 140px; 
+        height: auto;
+        object-fit: contain;
+        margin-right: 0;
+    }
+
+    .toysContent {
+        flex-direction: column;
+    }
+
+    .ToysImages {
+        max-width: 60vw;
+    }
+
+    .toysDescription {
+        padding: 1rem 2rem 3rem;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .LegoImages {
+        width: 10rem; 
+    }
+}
+@media (max-width: 425px) {
+    .midSection {
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0 9rem;
+    }
+
+    .productsImage {
+        max-width: 60%;
+        margin-top: 0rem;
+        margin-left: 0rem;
+    }
+
+    .productsContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-left: 0rem;
+        width: 90%;
+    }
+
+    .productsContentBottom {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .productsContentBottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .productDescription {
+        text-align: justify;
+    }
+
+    .productsSmallImages {
+        width: 100%;
+        max-width: 3rem;
+    }
+
+    .playtimeImage {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 140px; 
+        height: auto;
+        object-fit: contain;
+        margin-right: 0;
+    }
+
+    .toysContent {
+        flex-direction: column;
+    }
+
+    .ToysImages {
+        max-width: 60vw;
+    }
+
+    .toysDescription {
+        padding: 1rem 2rem 3rem;
+    }
+
+    .description {
+        text-align: center;
+    }
+
+    .LegoImages {
+        width: 9rem; 
+    }
 }

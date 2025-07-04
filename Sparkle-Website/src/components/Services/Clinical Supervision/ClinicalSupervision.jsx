@@ -30,7 +30,6 @@ const ClinicalSupervision = () => {
                             href="https://wa.me/6738391407"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={styles.ctaLink} // optional: if you want to style the anchor
                         >
                             <FaWhatsapp className={styles.whatsAppIcon} /> Send your application here
                         </a>
