@@ -13,8 +13,6 @@ const Testimonials = () => {
     infinite: true,
     speed: 600,
     slidesToShow: 1,
-    centerMode: true,
-    centerPadding: "15%", 
     arrows: false,
     autoplay: true,
     autoplaySpeed: 6000,

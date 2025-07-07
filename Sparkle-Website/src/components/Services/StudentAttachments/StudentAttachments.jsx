@@ -79,39 +79,39 @@ const StudentAttachments = () => {
               If you're interested in applying for a student attachment, please download and send your application details.
             </p>
 
-            <div className={styles.attachmentDownloadLinks}>
-              <a
-                className={`${styles.downloadLink} ${styles.studentDownloadLink}`}
-                href="/forms/student-attachment.pdf"
-                download
-              >
-                <div>
-                  <GrDocumentText className={styles.documentIcon}/> Student Attachment
-                </div>
-                <MdOutlineFileDownload className={styles.downloadIcon}/>
-              </a>
+            <div className={styles.downloadLinkWrapper}>
+              <div className={styles.studentDownloadLinkWrapper}>
+                <a
+                  className={`${styles.downloadLink} ${styles.studentDownloadLink}`}
+                  href="/forms/student-attachment.pdf"
+                  download
+                >
+                    <GrDocumentText className={styles.documentIcon}/> Student Attachment
+                  <MdOutlineFileDownload className={styles.downloadIcon}/>
+                </a>
+              </div>
 
-              <a
-                className={`${styles.downloadLink} ${styles.dressDownloadLink}`}
-                href="/forms/student-attachment.pdf"
-                download
-              >
-                <div>
-                  <GrDocumentText className={styles.documentIcon}/> Dress Code for Students
-                </div>
-                <MdOutlineFileDownload className={styles.downloadIcon}/>
-              </a>
+              <div className={styles.dressDownloadLinkWrapper}>
+                <a
+                  className={`${styles.downloadLink} ${styles.dressDownloadLink}`}
+                  href="/forms/student-attachment.pdf"
+                  download
+                >
+                    <GrDocumentText className={styles.documentIcon}/> Dress Code for Students
+                  <MdOutlineFileDownload className={styles.downloadIcon}/>
+                </a>
+              </div>
 
-              <a
-                className={`${styles.downloadLink} ${styles.agreementDownloadLink}`}
-                href="/forms/student-attachment.pdf"
-                download
-              >
-                <div>
-                  <GrDocumentText className={styles.documentIcon}/> Patient Information Confidentiality Agreement
-                </div>
-                <MdOutlineFileDownload className={styles.downloadIcon}/>
-              </a>
+              <div className={styles.agreementDownloadLinkWrapper}>
+                <a
+                  className={`${styles.downloadLink} ${styles.agreementDownloadLink}`}
+                  href="/forms/student-attachment.pdf"
+                  download
+                >
+                    <GrDocumentText className={styles.documentIcon}/> Patient Information Confidentiality Agreement
+                  <MdOutlineFileDownload className={styles.agreementDownloadIcon}/>
+                </a>
+              </div>
             </div>
           </div>
         </div>

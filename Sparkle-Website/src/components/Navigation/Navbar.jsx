@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaCaretRight, FaCaretLeft } from "react-icons/fa";
 import { FaCaretDown } from "react-icons/fa6";
 import Sidebar from './Sidebar';
 import styles from './Navbar.module.css';
@@ -8,57 +8,48 @@ import styles from './Navbar.module.css';
 export const Navbar = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [isBookingSubOpen, setIsBookingSubOpen] = useState(false);
-  const [isSpeechSubOpen, setIsSpeechSubOpen] = useState(false);
-  const [isBookingHovered, setIsBookingHovered] = useState(false);
-  const [isHomeOpen, setIsHomeOpen] = useState(false);
 
-  // Toggle functions
-  const toggleHomeDropdown = (e) => {
-    e.preventDefault();
-    setIsHomeOpen(prev => !prev);
+  // Group all dropdown states in one object
+  const [dropdownStates, setDropdownStates] = useState({
+    home: false,
+    booking: false,
+    services: false,
+    resources: false,
+    speech: false,
+    clinical: false
+  });
+
+  // Toggle main dropdowns (booking, services, etc.)
+  const toggleMainDropdown = (key) => {
+    setDropdownStates((prev) => {
+      const reset = { home: false, booking: false, services: false, resources: false };
+      return { ...prev, ...reset, [key]: !prev[key] };
+    });
   };
 
-  const toggleBookingDropdown = (e) => {
-    e.preventDefault();
-    setIsBookingOpen(prev => !prev);
-    if (isBookingSubOpen) setIsBookingSubOpen(false); // close subdropdown when main toggled
+  // Toggle sub-dropdowns (speech, clinical)
+  const toggleSubDropdown = (key) => {
+    setDropdownStates((prev) => {
+      const reset = { speech: false, clinical: false };
+      return { ...prev, ...reset, [key]: !prev[key] };
+    });
   };
 
-  const toggleBookingSubDropdown = (e) => {
-    e.preventDefault();
-    setIsBookingSubOpen(prev => !prev);
+  const closeAllDropdowns = () => {
+    setDropdownStates({
+      home: false,
+      booking: false,
+      services: false,
+      resources: false,
+      speech: false,
+      clinical: false
+    });
   };
-
-  const toggleServicesDropdown = (e) => {
-    e.preventDefault();
-    setIsServicesOpen(prev => !prev);
-  };
-
-  const toggleDropdown = (e) => {
-    e.preventDefault();
-    setIsDropdownOpen(prev => !prev);
-  };
-
-  // Close functions
-  const closeDropdown = () => setIsDropdownOpen(false);
-  const closeHomeDropdown = () => setIsHomeOpen(false);
-  const closeBookingDropdown = () => {
-    setIsBookingOpen(false);
-    setIsBookingSubOpen(false);
-  };
-  const closeServicesDropdown = () => setIsServicesOpen(false);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (!event.target.closest(`.${styles.dropdown}`)) {
-        setIsHomeOpen(false);
-        closeBookingDropdown();
-        setIsServicesOpen(false);
-        setIsDropdownOpen(false);
+        closeAllDropdowns();
       }
     };
 
@@ -70,7 +61,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     const checkIsMobile = () => setIsMobile(window.innerWidth <= 1024);
-    checkIsMobile(); // Set initial value
+    checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
@@ -95,9 +86,8 @@ export const Navbar = () => {
                 alt="Sparkle Logo"
               />
             </NavLink>
-
             <ul className={styles.menuItems}>
-              {/* Home Navigation */}
+              {/* Home */}
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.homeDropdown}`}>
                   <NavLink
@@ -106,85 +96,52 @@ export const Navbar = () => {
                       `${styles.navButton} ${isActive ? styles.homeActive : ''}`
                     }
                   >
-                    <span className={styles.linkWithIconHome}>
-                      Home
-                    </span>
+                    <span className={styles.linkWithIconHome}>Home</span>
                   </NavLink>
                 </div>
               </li>
 
-
-              {/* Booking Navigation */}
+              {/* Booking */}
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.bookingDropdown}`}>
                   <button
-                    onClick={toggleBookingDropdown}
-                    className={`${styles.navButton} ${isBookingOpen ? styles.bookingActive : ''}`}
+                    onClick={() => toggleMainDropdown('booking')}
+                    className={`${styles.navButton} ${dropdownStates.booking ? styles.bookingActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
                       Booking
-                      <FaCaretDown
-                        className={`${styles.dropdownArrow} ${isBookingOpen ? styles.open : ''}`}
-                      />
+                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.booking ? styles.open : ''}`} />
                     </span>
                   </button>
-
-                  {(isBookingOpen || isBookingHovered) && (
-                    <div
-                      className={styles.dropdownContentBooking}
-                      onMouseEnter={() => setIsBookingHovered(true)}
-                      onMouseLeave={() => setIsBookingHovered(false)}
-                      style={{ padding: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
-                    >
-
-                      {/* === Speech Therapy Section === */}
+                  {dropdownStates.booking && (
+                    <div className={styles.dropdownContentBooking}>
+                      {/* Speech Therapy */}
                       <div className={styles.columnGap}>
                         <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setIsSpeechSubOpen(prev => !prev);
-                            if (isBookingSubOpen) setIsBookingSubOpen(false);
-                          }}
-                          className={`${styles.dropdownLink} ${isSpeechSubOpen ? styles.dropdownActive : ''}`}
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            width: '100%',
-                            backgroundColor: '#F08A29',
-                            color: '#fff',
-                            fontWeight: '600',
-                            border: 'none',
-                            padding: '0.6rem 1rem',
-                            borderRadius: '0.75rem',
-                            cursor: 'pointer',
-                          }}
+                          onClick={() => toggleSubDropdown('speech')}
+                          className={`${styles.dropdownLink} ${dropdownStates.speech ? styles.dropdownActive : ''} ${styles.bookingButton}`}
                         >
-                          Speech Therapy
+                          <div className={styles.dropdownTitle}>
+                            Speech Therapy
+                            <span style={{ marginLeft: 'auto' }}>
+                              {dropdownStates.speech ? <FaCaretLeft /> : <FaCaretRight />}
+                            </span>
+                          </div>
                         </button>
-
-                        {isSpeechSubOpen && (
-                          <div className={`${styles.subDropdownContent} ${isSpeechSubOpen ? styles.subDropdownContentOpen : ''}`}>
-                            <div style={{ fontWeight: '600', fontSize: '0.9rem', marginBottom: '0.5rem', color: '#333' }}>
-                              Speech Therapy
-                            </div>
-
+                        {dropdownStates.speech && (
+                          <div className={styles.subDropdownContent}>
+                            <div className={styles.subDropdownLabel}>Speech Therapy</div>
                             <NavLink
                               to="/Booking/SpeechTherapy/Free 15 min Consultation"
-                              className={({ isActive }) =>
-                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                              }
-                              onClick={closeBookingDropdown}
+                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                              onClick={closeAllDropdowns}
                             >
                               Free 15 min Consultation
                             </NavLink>
-
                             <NavLink
                               to="/Booking/SpeechTherapy/Paid Consultation"
-                              className={({ isActive }) =>
-                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                              }
-                              onClick={closeBookingDropdown}
+                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                              onClick={closeAllDropdowns}
                             >
                               Paid Consultation
                             </NavLink>
@@ -192,54 +149,33 @@ export const Navbar = () => {
                         )}
                       </div>
 
-                      {/* === Clinical Psychology Section === */}
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                      {/* Clinical Psychology */}
+                      <div className={styles.columnGap}>
                         <button
-                          onClick={(e) => {
-                            e.preventDefault();
-                            setIsBookingSubOpen(prev => !prev);
-                            if (isSpeechSubOpen) setIsSpeechSubOpen(false);
-                          }}
-                          className={`${styles.dropdownLink} ${isBookingSubOpen ? styles.dropdownActive : ''}`}
-                          style={{
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            alignItems: 'center',
-                            width: '100%',
-                            backgroundColor: '#F08A29',
-                            color: '#fff',
-                            fontWeight: '600',
-                            border: 'none',
-                            padding: '0.6rem 1rem',
-                            borderRadius: '0.75rem',
-                            cursor: 'pointer',
-                          }}
+                          onClick={() => toggleSubDropdown('clinical')}
+                          className={`${styles.dropdownLink} ${dropdownStates.clinical ? styles.dropdownActive : ''} ${styles.bookingButton}`}
                         >
-                          Clinical Psychology
+                          <div className={styles.dropdownTitle}>
+                            Clinical Psychology
+                            <span style={{ marginLeft: 'auto' }}>
+                              {dropdownStates.clinical ? <FaCaretLeft /> : <FaCaretRight />}
+                            </span>
+                          </div>
                         </button>
-
-                        {isBookingSubOpen && (
+                        {dropdownStates.clinical && (
                           <div className={styles.subDropdownContent}>
-                            <div style={{ fontWeight: '600', fontSize: '0.9rem', marginBottom: '0.5rem', color: '#333' }}>
-                              Clinical Psychology
-                            </div>
-
+                            <div className={styles.subDropdownLabel}>Clinical Psychology</div>
                             <NavLink
                               to="/Booking/ClinicalPsychology/Free 15 min Consultation"
-                              className={({ isActive }) =>
-                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                              }
-                              onClick={closeBookingDropdown}
+                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                              onClick={closeAllDropdowns}
                             >
                               Free 15 min Consultation
                             </NavLink>
-
                             <NavLink
                               to="/Booking/ClinicalPsychology/Paid Consultation"
-                              className={({ isActive }) =>
-                                `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                              }
-                              onClick={closeBookingDropdown}
+                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                              onClick={closeAllDropdowns}
                             >
                               Paid Consultation
                             </NavLink>
@@ -251,117 +187,47 @@ export const Navbar = () => {
                 </div>
               </li>
 
-              {/* Service Navigation */}
+              {/* Services */}
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.servicesDropdown}`}>
                   <button
-                    onClick={toggleServicesDropdown}
-                    className={`${styles.navButton} ${isServicesOpen ? styles.servicesActive : ''}`}
+                    onClick={() => toggleMainDropdown('services')}
+                    className={`${styles.navButton} ${dropdownStates.services ? styles.servicesActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Services <FaCaretDown className={`${styles.dropdownArrow} ${isServicesOpen ? styles.open : ''}`} />
+                      Services
+                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.services ? styles.open : ''}`} />
                     </span>
                   </button>
-
-                  {isServicesOpen && (
+                  {dropdownStates.services && (
                     <div className={styles.dropdownContentServices}>
-                      <NavLink
-                        to="/Services/SpeechTherapy"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Speech Therapy
-                      </NavLink>
-
-                      <NavLink
-                        to="/Services/ClinicalPsychology"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Clinical Psychology
-                      </NavLink>
-
-                      <NavLink
-                        to="/Services/Products"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Products
-                      </NavLink>
-
-                      <NavLink
-                        to="/Services/Events"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Events
-                      </NavLink>
-
-                      <NavLink
-                        to="/Services/StudentAttachments"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Student Attachments
-                      </NavLink>
-
-                      <NavLink
-                        to="/Services/ClinicalSupervision"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsServicesOpen(false)}
-                      >
-                        Clinical Supervision
-                      </NavLink>
+                      <NavLink to="/Services/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Speech Therapy</NavLink>
+                      <NavLink to="/Services/ClinicalPsychology" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Clinical Psychology</NavLink>
+                      <NavLink to="/Services/Products" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Products</NavLink>
+                      <NavLink to="/Services/Events" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Events</NavLink>
+                      <NavLink to="/Services/StudentAttachments" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Student Attachments</NavLink>
+                      <NavLink to="/Services/ClinicalSupervision" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Clinical Supervision</NavLink>
                     </div>
                   )}
                 </div>
               </li>
 
-              {/* Resource Navigation */}
+              {/* Resources */}
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.resourcesDropdown}`}>
                   <button
-                    onClick={toggleDropdown}
-                    className={`${styles.navButton} ${isDropdownOpen ? styles.resourcesActive : ''}`}
+                    onClick={() => toggleMainDropdown('resources')}
+                    className={`${styles.navButton} ${dropdownStates.resources ? styles.resourcesActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Resources <FaCaretDown className={`${styles.dropdownArrow} ${isDropdownOpen ? styles.open : ''}`} />
+                      Resources
+                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.resources ? styles.open : ''}`} />
                     </span>
                   </button>
-
-                  {isDropdownOpen && (
+                  {dropdownStates.resources && (
                     <div className={styles.dropdownContent}>
-                      <NavLink
-                        to="/Resources/Blog"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        Blog
-                      </NavLink>
-
-                      <NavLink
-                        to="/Resources/FQA"
-                        className={({ isActive }) =>
-                          `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`
-                        }
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        FAQ
-                      </NavLink>
+                      <NavLink to="/Resources/Blog" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Blog</NavLink>
+                      <NavLink to="/Resources/FAQ" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>FAQ</NavLink>
                     </div>
                   )}
                 </div>
@@ -371,22 +237,14 @@ export const Navbar = () => {
         </div>
       </nav>
 
-      {/* Render sidebar outside the button */}
-      {isMobile && (
-        <Sidebar isOpen={isMobileNavOpen} onClose={closeMobileNav} />
-      )}
-
+      {/* Mobile Nav */}
+      {isMobile && <Sidebar isOpen={isMobileNavOpen} onClose={closeMobileNav} />}
       {isMobile && (
         <div className={styles.navbarMobileInner}>
           <NavLink to="/" className={styles.navbarMobileLogoLink} onClick={closeMobileNav}>
-            <img
-              className={styles.navbarMobileLogoImage}
-              src="/assets/Logo/Sparkle logo black.webp"
-              alt="Sparkle Logo" />
+            <img className={styles.navbarMobileLogoImage} src="/assets/Logo/Sparkle logo black.webp" alt="Sparkle Logo" />
           </NavLink>
-          <button className={styles.navbarHamburger} onClick={toggleMobileNav}>
-            <FaBars />
-          </button>
+          <button className={styles.navbarHamburger} onClick={toggleMobileNav}><FaBars /></button>
         </div>
       )}
     </section>

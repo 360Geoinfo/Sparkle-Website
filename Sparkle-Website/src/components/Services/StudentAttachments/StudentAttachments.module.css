@@ -136,12 +136,11 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 1rem 2rem;
+  padding: 1rem;
   width: 100%;
   border-radius: 5rem;
   text-decoration: none;
-  margin-bottom: 1rem;
-  text-align: left;
+  text-align: center;
 }
 
 .studentDownloadLink {
@@ -156,10 +155,35 @@
   background-color: #CC6AE1;
 }
 
+.studentDownloadLinkWrapper {
+  border: 3px dashed #F08A29; 
+  padding: 0.25rem; 
+  border-radius: 3rem; 
+  margin-bottom: 1rem;
+}
+
+.dressDownloadLinkWrapper {
+  border: 3px dashed #1BB9FF; 
+  padding: 0.25rem; 
+  border-radius: 3rem; 
+  margin-bottom: 1rem;
+}
+
+.agreementDownloadLinkWrapper {
+  border: 3px dashed #CC6AE1; 
+  padding: 0.25rem; 
+  border-radius: 3rem; 
+  margin-bottom: 1rem;
+}
+
 .documentIcon {
   margin-right: 0.25rem;
   margin-top: -0.35rem;
   font-size: 1.25rem;
+}
+
+.agreementDownloadIcon{
+  font-size: 1.6rem;
 }
 
 .downloadIcon {
@@ -210,6 +234,10 @@
     top: 14rem;
     left: 82%;
   }
+
+  .agreementDownloadIcon{
+    font-size: 1.7rem;
+  }
 }
 @media (max-width: 425px) {
   .studentSection {
@@ -230,5 +258,9 @@
 
   .contactButton {
     font-size: 1rem;
+  }
+
+  .agreementDownloadIcon{
+    font-size: 2.35rem;
   }
 }

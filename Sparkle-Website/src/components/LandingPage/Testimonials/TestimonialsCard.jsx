@@ -11,16 +11,18 @@ const TestimonialsCard = ({ testimonial }) => {
 
         <div className={styles.bubbleContent}>
             <p className={styles.text}>{text}</p>
-            <p className={styles.name}>{name}</p>
-            <div className={styles.stars}>
-                {[...Array(stars)].map((_, i) => (
-                    <img
-                        key={i}
-                        src="assets/LandingPage/Testimonials/star.webp"
-                        alt="Star"
-                        className={styles.starIcon}
-                    />
-                ))}
+            <div className={styles.bottomContent}>
+                <p className={styles.name}>{name}</p>
+                <div className={styles.stars}>
+                    {[...Array(stars)].map((_, i) => (
+                        <img
+                            key={i}
+                            src="assets/LandingPage/Testimonials/star.webp"
+                            alt="Star"
+                            className={styles.starIcon}
+                        />
+                    ))}
+                </div>
             </div>
             <img src={quoteImage} alt="Quote" className={`${styles.quote} ${styles.bottomRight}`} />
             

@@ -1,5 +1,5 @@
 .testimonialsSection {
-    padding: 5rem 0rem 4rem;
+    padding: 8rem 0rem 4rem;
     background: #f8f7fe;
     text-align: center;
 }
@@ -25,23 +25,41 @@
 .testimonialContainer {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 }
 
 .testimonialCard {
     position: relative;
-    width: 100%;
-    max-width: 900px;
+}
+
+.sliderContainer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+.cardWrapper {
+  padding: 0 5rem; 
+  box-sizing: border-box;
+}
+
+.slick-dots li button:before {
+  font-size: 30px;
+  color: #563CAA;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #563CAA;
 }
 
 .bubbleWrapper {
   position: relative;
-  width: 70%;
   overflow: visible; 
 }
 
 .bubbleImage {
-    width: 100%;
+    width: 60%;
     height: auto;
     display: block;
     padding: 0rem;
@@ -52,7 +70,7 @@
     top: 0;
     left: 0;
     padding: 2rem;
-    width: 90%;
+    width: 55%;
     height: 100%;
     display: flex;
     margin-top: -3rem;
@@ -69,12 +87,16 @@
     margin-bottom: 1rem;
 }
 
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+}
+
 .name {
     text-align: left;
     font-size: clamp(1rem, 5vw, 1.15rem);
     font-weight: bold;
     color: #563caa;
-    margin-bottom: 1rem;
 }
 
 .stars {
@@ -100,34 +122,10 @@
 }
 
 .bottomRight {
-  bottom: 60px;
+  bottom: 4vw;
   right: -80px;
   transform: rotate(20deg);
 }
-
-.sliderContainer {
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem 0rem;
-}
-
-.cardWrapper {
-  padding: 0rem; 
-  margin-left: -20rem;
-  box-sizing: border-box;
-}
-
-.slick-dots li button:before {
-  font-size: 30px;
-  color: #563CAA;
-  opacity: 0.5;
-}
-
-.slick-dots li.slick-active button:before {
-  opacity: 1;
-  color: #563CAA;
-}
-
 
 /* @media (min-width: 768px) {
   .testimonialContainer {
@@ -139,13 +137,33 @@
 
 
 @media (max-width: 1440px) and (min-width: 1025px) {
-  .bubbleWrapper {
-    width: 110%;
+  .bubbleImage {
+    width: 60vw;
+    height: 30rem;
+    display: block;
+    padding: 0rem;
+  }
+
+  .cardWrapper {
+    margin-left: -22vw;
   }
 
   .bubbleContent {
-    padding: 1rem;
-    margin-top: -2rem;
+    width: 118%;
+    margin-top: -2.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .topLeft {
+    top: -2px;
+    left: -30px;
+    transform: rotate(200deg);
+  }
+
+  .bottomRight {
+    bottom: 7vw;
+    right: -50px;
+    transform: rotate(20deg);
   }
 }
 

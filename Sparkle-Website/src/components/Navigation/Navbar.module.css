@@ -208,8 +208,6 @@
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
-  background-color: transparent;
-  margin: 0.5rem 0;
 }
 
 .dropdownLink:hover {
@@ -262,9 +260,99 @@
   transition: transform 0.3s ease;
 }
 
-.dropdown:hover .dropdownArrow {
+.dropdownArrow {
+  transition: transform 0.3s ease;
+}
+
+.open {
   transform: rotate(180deg);
 }
+
+
+
+
+
+
+
+.dropdownContentBooking {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #F08A29;
+  border-radius: 1rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  margin-top: 0.5rem;
+}
+
+.bookingButton {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 14rem;
+  background-color: #F08A29;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.columnGap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.subDropdownContent {
+  position: absolute;
+  top: 0rem;
+  left: 15rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: #F08A29;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  width: max-content;
+  z-index: 1000;
+}
+
+.subDropdownLabel {
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.dropdownLink {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+.dropdownLink:hover {
+  border-radius: 0rem;
+  background-color: #d17926;
+}
+
+.dropdownTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
 
 /* === MOBILE STYLES === */
 @media (max-width: 1024px) {

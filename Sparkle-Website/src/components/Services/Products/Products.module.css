@@ -245,18 +245,18 @@
         position: absolute;
         bottom: 0;
         right: 0;
-        width: 140px; 
+        width: 130px; 
         height: auto;
         object-fit: contain;
         margin-right: 0;
     }
 
     .ToysImages {
-        max-width: 40vw;
+        max-width: 35vw;
     }
 
     .toysDescription {
-        padding: 1rem 6rem;
+        padding: 1rem 7rem 1rem 0rem;
     }
 
     .description {
@@ -330,7 +330,7 @@
     }
 
     .toysDescription {
-        padding: 1rem 2rem 3rem;
+        padding: 1rem 3rem 3rem;
     }
 
     .description {
@@ -338,7 +338,7 @@
     }
 
     .LegoImages {
-        width: 10rem; 
+        width: 8.5rem; 
     }
 }
 @media (max-width: 425px) {
@@ -404,7 +404,7 @@
     }
 
     .toysDescription {
-        padding: 1rem 2rem 3rem;
+        padding: 1rem 1.5rem 3rem;
     }
 
     .description {
@@ -412,6 +412,6 @@
     }
 
     .LegoImages {
-        width: 9rem; 
+        width: 8rem; 
     }
 }
