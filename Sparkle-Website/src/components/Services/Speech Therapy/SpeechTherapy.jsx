@@ -39,55 +39,58 @@ const SpeechTherapy = () => {
 
     return (
         <>
-            <div className={styles.navbarSpacer}></div>
             <section className={styles.speechTherapySection}>
-                <div className={styles.container}>
-                    <h1 className={styles.sectionHeader}>Speech Therapy</h1>
-                    <h3 className={styles.sectionSubTitle}>What is Speech Therapy?</h3>
-                    <p className={styles.description}>
-                        We support children and adults with speech, language, communication, and swallowing difficulties. Our experienced therapists assess and treat using evidence-based techniques such as articulation therapy, language intervention, play-based, child-led approaches and more! Each therapy plan is tailored to the individual, helping them build their confidence, improve everyday communication and thrive at home, school and within the community.
-                    </p>
-                </div>
-            </section>
-
-            {/* Intervention Section */}
-            <section className={styles.interventionSection}>
-                <h2 className={styles.sectionTitle}>How Speech Therapy Works</h2>
-
-                <div className={styles.cardGrid}>
-                    {interventionData.map((item, index) => (
-                        <div
-                            key={index}
-                            className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
-                            style={{ '--active-color': item.color }}
-                        >
-                            <div className={styles.imageWrapper}>
-                                <img src={item.image} alt={item.title} className={styles.cardImage} />
-                                <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
-                            </div>
-
-                            <img src={item.wave} alt="Wave Overlay" className={styles.waveImage} />
-
-                            <div className={styles.cardContent} style={{ backgroundColor: item.color }}>
-                                <h3>{item.title}</h3>
-                                <button
-                                    onClick={() => setActiveCard(index)}
-                                    className={styles.learnMore}
-                                >
-                                    Learn More <span>→</span>
-                                </button>
-                            </div>
-
-                            <div className={styles.cardOverlay}>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                            </div>
-                        </div>
-                    ))}
+                <div className={styles.topSection}>
+                    <h1 className={styles.topTitle}>Speech Therapy</h1>
+                    <h3 className={styles.topSubTitle}>What is Speech Therapy?</h3>
+                    <div className={styles.descriptionBox}>
+                        <p className={styles.description}>
+                            We support children and adults with speech, language, communication, and swallowing difficulties. Our experienced therapists assess and treat using evidence-based techniques such as articulation therapy, language intervention, play-based, child-led approaches and more! Each therapy plan is tailored to the individual, helping them build their confidence, improve everyday communication and thrive at home, school and within the community.
+                        </p>
+                    </div>
                 </div>
 
-                <div className={styles.ctaWrapper}>
-                    <a href="/contact" className={styles.ctaButton}>Book your consultation today!</a>
+                {/* Intervention Section */}
+                <div className={styles.interventionSection}>
+                    <h2 className={styles.sectionTitle}>How Speech Therapy Works</h2>
+
+                    <div className={styles.cardGrid}>
+                        {interventionData.map((item, index) => (
+                            <div
+                                key={index}
+                                className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
+                                style={{ '--active-color': item.color }}
+                            >
+                                <div className={styles.cardImage}>
+                                    <div className={styles.imageWrapper}>
+                                        <img src={item.image} alt={item.title} className={styles.cardImage} />
+                                        <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
+                                    </div>
+
+                                    <img src={item.wave} alt="Wave Overlay" className={styles.waveImage} />
+
+                                    <div className={styles.cardContent} style={{ backgroundColor: item.color }}>
+                                        <h3>{item.title}</h3>
+                                        <button
+                                            onClick={() => setActiveCard(index)}
+                                            className={styles.learnMore}
+                                        >
+                                            Learn More <span>→</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div className={styles.cardOverlay}>
+                                    <h3>{item.title}</h3>
+                                    <p>{item.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className={styles.ctaWrapper}>
+                        <a href="/contact" className={styles.ctaButton}>Book your consultation today!</a>
+                    </div>
                 </div>
             </section>
             <Footer />

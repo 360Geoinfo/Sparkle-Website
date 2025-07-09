@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import styles from './FQA.module.css';
+import styles from './FAQ.module.css';
 import Footer from '../../../../Element/Footer/Footer';
 
-const FQA = () => {
+const FAQ = () => {
     const [activeTab, setActiveTab] = useState('speech');
     const [openIndexes, setOpenIndexes] = useState({ speech: null, clinical: null });
 
@@ -217,4 +217,4 @@ const FQA = () => {
     );
 };
 
-export default FQA;
+export default FAQ;

@@ -3,24 +3,24 @@ import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navigation/Navbar';
 import Footer from './components/Footer/Footer';
 
-import Hero from './components/LandingPage/Hero/Hero';
-import About from './components/LandingPage/About/About';
-import Team from './components/LandingPage/Team/Team';
-import Service from './components/LandingPage/Services/Service';
-import Book from './components/LandingPage/Book/Book';
-import Testimonials from './components/LandingPage/Testimonials/Testimonials';
-import Training from './components/LandingPage/Training/Training';
-import Pricing from './components/LandingPage/Pricing/Pricing';
+import Hero from './components/Home/Hero/Hero';
+import About from './components/Home/About/About';
+import Team from './components/Home/Team/Team';
+import Service from './components/Home/Services/Service';
+import Book from './components/Home/Book/Book';
+import Testimonials from './components/Home/Testimonials/Testimonials';
+import Training from './components/Home/Training/Training';
+import Pricing from './components/Home/Pricing/Pricing';
 
 import SpeechTherapy from './components/Services/Speech Therapy/SpeechTherapy';
 import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
 import Products from './components/Services/Products/Products';
 import Events from './components/Services/Events/Events';
-import StudentAttachment from './components/Services/StudentAttachments/StudentAttachments';
+import StudentAttachment from './components/Services/Student Attachments/StudentAttachments';
 import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
 
 import Blog from './components/Resource/Blog/Blog';
-import FQA from './components/Resource/FQA/FQA';
+import FAQ from './components/Resource/FAQ/FAQ';
 
 function App() {
   return (
@@ -50,7 +50,7 @@ function App() {
         <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
         
         <Route path="/Resources/Blog" element={<Blog />} />
-        <Route path="/Resources/FQA" element={<FQA />} />
+        <Route path="/Resources/FAQ" element={<FAQ />} />
       </Routes>
 
     </div>

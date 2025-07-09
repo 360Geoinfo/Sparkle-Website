@@ -86,7 +86,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             SPEECH THERAPY
                         </h3>
                         <NavLink
-                            to="/Booking/Blog"
+                            to="/Booking"
                             onClick={onClose}
                             className={({ isActive }) =>
                             isActive ? styles.activeLink : undefined
@@ -112,7 +112,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             CLINICAL PSYCHOLOGY
                         </h3>
                         <NavLink
-                            to="/Booking/FQA"
+                            to="/Booking/FAQ"
                             onClick={onClose}
                             className={({ isActive }) =>
                             isActive ? styles.activeLink : undefined
@@ -123,7 +123,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             </div>
                         </NavLink>
                         <NavLink
-                            to="/Booking/FQA"
+                            to="/Booking/FAQ"
                             onClick={onClose}
                             className={({ isActive }) =>
                             isActive ? styles.activeLink : undefined
@@ -239,7 +239,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                         Blog
                     </NavLink>
                     <NavLink
-                        to="/Resources/FQA"
+                        to="/Resources/FAQ"
                         onClick={onClose}
                         className={({ isActive }) =>
                         isActive ? styles.activeLink : undefined

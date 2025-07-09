@@ -50,7 +50,7 @@
 
 .heroContent {
   position: absolute;
-  z-index: 3;
+  z-index: 0;
   background-color: #563CAA;
   border-radius: 2rem;
   color: white;

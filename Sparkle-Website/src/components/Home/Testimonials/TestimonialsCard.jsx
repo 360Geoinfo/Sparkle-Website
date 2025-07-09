@@ -6,8 +6,8 @@ const TestimonialsCard = ({ testimonial }) => {
 
   return (
     <div className={styles.bubbleWrapper}>
-        <img src={bubbleImage} alt="Bubble" className={styles.bubbleImage} />
         <img src={quoteImage} alt="Quote" className={`${styles.quote} ${styles.topLeft}`} />
+        <img src={bubbleImage} alt="Bubble" className={styles.bubbleImage} />
 
         <div className={styles.bubbleContent}>
             <p className={styles.text}>{text}</p>

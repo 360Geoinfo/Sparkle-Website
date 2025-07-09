@@ -8,24 +8,26 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const Testimonials = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 600,
-    slidesToShow: 1,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 6000,
-    responsive: [
-        {
-        breakpoint: 768,
-        settings: {
-            centerMode: false,
-            slidesToShow: 1,
-            centerPadding: "0",
-        },
-        },
-    ],
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 600,
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "8%", 
+        arrows: false,
+        autoplay: true,
+        autoplaySpeed: 6000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    centerMode: false,
+                    slidesToShow: 1,
+                    centerPadding: "0",
+                },
+            },
+        ],
     };
 
     return (
