@@ -1,4 +1,4 @@
-.pageBackground {
+.faqSection {
     background-color: #F8F7FE;
     min-height: 100vh;
 }
@@ -73,7 +73,7 @@
     color: white;
 }
 
-.faqSection {
+.faqContainer {
     max-width: 800px;
     margin: 2rem auto 4rem;
     padding: 3rem 3rem;

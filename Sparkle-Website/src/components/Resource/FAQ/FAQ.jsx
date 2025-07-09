@@ -146,9 +146,8 @@ const FAQ = () => {
     const currentFaq = faqData[activeTab];
 
     return (
-        <div className={styles.pageBackground}>
-            <div className={styles.navbarSpacer}></div>
-
+        <>
+        <section className={styles.faqSection}>
             <div className={styles.header}>
                 <h1 className={styles.headerTitle}>Frequently Asked Questions</h1>
                 <p className={styles.headerDescription}>
@@ -171,7 +170,7 @@ const FAQ = () => {
                 </button>
             </div>
 
-            <section className={styles.faqSection}>
+            <div className={styles.faqContainer}>
                 {currentFaq.map((item, index) => (
                     <div key={index} className={styles.faqItem}>
                         <button
@@ -211,9 +210,10 @@ const FAQ = () => {
                         {index !== currentFaq.length - 1 && <div className={styles.divider}></div>}
                     </div>
                 ))}
-            </section>
-            <Footer />
-        </div>
+            </div>
+        </section>
+        <Footer />
+        </>
     );
 };
 

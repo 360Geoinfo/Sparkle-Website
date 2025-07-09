@@ -64,20 +64,28 @@ const Pricing = () => {
         {activeTab === "psychology" && (
           <>
             <img
-                className={styles.greenBirdPImage}
-                src="/assets/LandingPage/Pricing/green bird.webp"
-                alt="Green Bird"
-              />
+              className={styles.greenBirdPImage}
+              src="/assets/LandingPage/Pricing/green bird.webp"
+              alt="Green Bird"
+            />
+
             <img
-              className={styles.psychologyPricingImage}
+              className={styles.pricingLarge}
               src="/assets/LandingPage/Pricing/Pricing List.png"
               alt="Clinical Psychology Pricing"
             />
+
             <img
-                className={styles.twoBirdsPImage}
-                src="/assets/LandingPage/Pricing/two birds.webp"
-                alt="Two Birds"
-              />
+              className={styles.pricingSmall}
+              src="/assets/LandingPage/Pricing/Pricing List Small.png"
+              alt="Clinical Psychology Pricing Small"
+            />
+
+            <img
+              className={styles.twoBirdsPImage}
+              src="/assets/LandingPage/Pricing/two birds.webp"
+              alt="Two Birds"
+            />
           </>
         )}
       </div>

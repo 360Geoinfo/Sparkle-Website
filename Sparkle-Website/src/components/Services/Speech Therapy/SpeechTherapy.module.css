@@ -1,7 +1,7 @@
 /* src/pages/Services/SpeechTherapy.module.css */
 
 .speechTherapySection {
-    padding: 10rem 0rem 4rem;
+    padding: 10rem 0rem 0rem;
     background: #EEF8FF;
     text-align: center;
     display: flex;
@@ -41,16 +41,16 @@
 .description {
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: black;
-    margin-bottom: 2rem;
     line-height: 1.5;
 }
 
 .interventionSection {
     width: 100%;
     margin-top: 2rem;
-    margin-bottom: 4rem;
+    padding-bottom: 4rem;
     padding: 4rem;
     background-color: #FFFFFF;
+    justify-items: center;
 }
 
 .sectionTitle {
@@ -60,23 +60,10 @@
     font-weight: bold;
 }
 
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin-top: 3rem;
-  justify-items: center;
-}
-
 .card {
   position: relative;
   width: 100%;
-  max-width: 350px;
   border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-  background: #fff;
 }
 
 .imageWrapper {
@@ -86,27 +73,17 @@
 .cardImage {
   width: 100%;
   height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-.waveImage {
-  position: absolute;
-  top: 20rem;
-  left: 0;
-  width: 101%;
+  border-radius: 1rem;
 }
 
 .cardGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0rem 10rem;
+  width: 60rem;
   gap: 3rem;
   justify-items: center;
-  margin-top: 2rem;
-  overflow: hidden;
+  margin-top: 4rem;
 }
-
 
 .activeCard {
     transform: scale(1.05);
@@ -117,21 +94,22 @@
 .cardOverlay {
     position: absolute;
     inset: 0;
-    background: rgba(255, 255, 255, 0.95);
     background-color: var(--active-color, #000);
     color: #fff;
     display: none;
     flex-direction: column;
-    text-align: center;
+    justify-items: center;
+    align-items: center;
     z-index: 3;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: bold;
-    padding: 3rem 1.5rem 2rem;
+    padding-top: 1.5rem;
     gap: 0.5rem;
+    border-radius: 1rem;
 }
 
 .cardOverlay h3 {
-    font-size: 1.4rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     font-weight: 700;
     text-align: center;
     margin: 0;
@@ -139,12 +117,11 @@
 }
 
 .cardOverlay p {
-    font-size: 1rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
     font-weight: 400;
     text-align: justify;
     margin: 0;
     max-width: 90%;
-    line-height: 1.6;
     margin-top: 1rem;
 }
 
@@ -178,7 +155,6 @@
         transform: translateY(0);
     }
 }
-
 
 .badge {
     position: absolute;
@@ -224,23 +200,23 @@
     border-color: #FF6666;
 }
 
+.cardContentBox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.waveImage {
+  width: 100.3%;
+  margin-bottom: -0.5rem;
+}
+
 .cardContent {
-    position: relative;
-    height: 100%;
-    padding: 1rem;
-    border-radius: 0 0 12px 12px;
-    overflow: hidden;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-    min-height: 120px;
-    top: -20px;
-    z-index: 1;
-    transition: transform 0.4s ease;
-    background-color: var(--active-color);
+    width: 100%;
+    height: auto;
+    color: white;
+    padding: 1rem 1rem 2rem;
+    border-radius: 0rem 0rem 1rem 1rem ;
 }
 
 .cardContent>* {
@@ -249,36 +225,38 @@
 }
 
 .cardContent h3 {
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
     margin-bottom: 0.75rem;
     line-height: 1.3;
-    font-size: 23px;
 }
 
 .learnMore {
-    margin-top: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 500;
-    background: rgba(255, 255, 255, 0.2);
+    background-color: white;
     padding: 6px 12px;
+    border: none;
     border-radius: 999px;
-    color: #fff;
     text-decoration: none;
     transition: background 0.2s;
     width: 50%;
     cursor: pointer;
 }
 
+.learnMore:hover {
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
 .learnMore span {
     font-weight: bold;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .learnMore:hover span {
+    font-weight: 600;
     transform: translateX(4px);
 }
 
@@ -289,9 +267,10 @@
 
 .ctaButton {
     background-color: #FFD500;
-    color: #000;
+    color: #563CAA;
     padding: 0.75rem 2rem;
-    font-weight: bold;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
+    font-weight: 600;
     border-radius: 2rem;
     text-decoration: none;
     display: inline-block;
@@ -302,32 +281,78 @@
     background-color: #E6C000;
 }
 
+@media (max-width: 1440px) and (min-width: 1025px) {}
+@media (max-width: 1024px) and (min-width: 769px) {
+    .speechTherapySection {
+        padding: 10rem 0rem 0rem;
+    }
 
+    .topSection {
+        padding: 0rem 2rem 0rem;
+    }
 
+    .descriptionBox {
+        padding: 1rem;
+    }
 
+    .description {
+        margin-bottom: 0rem;
+    }
 
+    .interventionSection {
+        margin-top: 0rem;
+        padding: 2rem 2rem 6rem;
+    }
 
+    .cardGrid {
+        width: 90vw;
+        gap: 2rem;
+    }
 
-
-
-/* CTA */
-.ctaWrapper {
-  text-align: center;
-  margin-top: 3rem;
+    .cardOverlay p {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        margin-top: 0.5rem;
+    }
 }
+@media (max-width: 768px) {
+    .speechTherapySection {
+        padding: 10rem 0rem 0rem;
+    }
 
-.ctaButton {
-  background: #F0C000;
-  color: #111;
-  padding: 0.7rem 2rem;
-  font-weight: 600;
-  border-radius: 999px;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.3s ease;
+    .topSection {
+        padding: 0rem 2rem 0rem;
+    }
+
+    .descriptionBox {
+        padding: 1rem;
+    }
+
+    .description {
+        margin-bottom: 0rem;
+        text-align: justify;
+    }
+
+    .interventionSection {
+        margin-top: 0rem;
+        padding: 2rem 1rem 6rem;
+    }
+    
+    .cardGrid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        width: 80vw;
+        gap: 3rem;
+        justify-items: center;
+        margin-top: 4rem;
+    }
+
+    .cardOverlay h3 {
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        margin-top: 3rem;
+    }
+
+    .cardOverlay p {
+        font-size: clamp(1rem, 3vw, 1.25rem);
+        line-height: 1.5;
+    }
 }
-
-.ctaButton:hover {
-  background: #e0ae00;
-}
-

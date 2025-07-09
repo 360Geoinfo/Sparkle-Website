@@ -102,11 +102,11 @@
 @media (max-width: 1024px) and (min-width: 769px) {
   .footerSection {
     padding: 2rem 2rem;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   .footer {
-    gap: 4rem;
+    gap: 2rem;
   }
 
   .footerLeftContent {
