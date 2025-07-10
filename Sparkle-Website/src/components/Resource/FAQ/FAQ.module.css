@@ -1,5 +1,5 @@
 .faqSection {
-    padding: 10rem 0rem 0rem;
+    padding: 10rem 0rem;
     background: #EEF8FF;
     text-align: center;
     display: flex;
@@ -105,7 +105,7 @@
 
 .faqContainer {
     width: 56rem;
-    padding: 2rem;
+    padding: 1rem 2rem;
     background-color: white;
     border-radius: 1rem;
 }
