@@ -7,6 +7,7 @@ export const testimonials = [
     stars: 5,
     bubbleImage: "assets/LandingPage/Testimonials/Bubble Purple.png",
     quoteImage: "assets/LandingPage/Testimonials/Quote Purple.webp",
+    color: "purple",
   },
   {
     id: 2,
@@ -19,5 +20,6 @@ export const testimonials = [
     stars: 5,
     bubbleImage: "assets/LandingPage/Testimonials/Bubble Green.png",
     quoteImage: "assets/LandingPage/Testimonials/Quote Green.webp",
+    color: "green",
   },
 ];

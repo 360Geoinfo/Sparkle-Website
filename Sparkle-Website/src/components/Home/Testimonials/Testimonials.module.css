@@ -177,10 +177,11 @@
   }
 }
 
-@media (max-width: 768px) and (min-width: 426px) {
+@media (max-width: 768px) {
   .cardWrapper {
+    justify-items: center;
     padding: 0rem; 
-    margin-left: 1.6rem;
+    margin-left: 0rem;
   }
 
   .bubbleWrapper {
@@ -190,58 +191,32 @@
   .bubbleImage {
     width: 100%;
     height: 40rem;
+    display: none !important;
+  }
+
+  .bubbleBox {
+    width: 100%;
+    height: 27rem;
+    border-radius: 2rem;
+  }
+
+  .purple {
+    background-color: #CDC8FF; 
+  }
+
+  .green {
+    background-color: #CDEED5;
   }
 
   .bubbleContent {
     width: 98%;
     height: 100%;
-    margin-top: -4.5rem;
+    margin-top: 0rem;
     margin-left: 0.5rem;
   }
 
-  .topLeft {
-    top: 0px;
-    left: -20px;
-    transform: rotate(200deg);
-  }
-
-  .bottomRight {
-    bottom: 18vw;
-    right: -3.5vw;
-    transform: rotate(20deg);
-  }
-}
-
-@media (max-width: 425px) {
-  .testimonialsSection {
-    padding: 8rem 0rem 1rem;
-  }
-
-  .sliderContainer {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem 0rem;
-  }
-
-  .cardWrapper {
-    padding: 0rem; 
-    margin-left: 1.6rem;
-  }
-
-  .bubbleWrapper {
-    width: 87.5%;
-  }
-
-  .bubbleImage {
-    width: 100%;
-    height: 40rem;
-  }
-
-  .bubbleContent {
-    width: 100%;
-    height: 100%;
-    margin-top: -4.5rem;
-    margin-left: 0rem;
+  .quote {
+    width: 2.5rem;
   }
 
   .topLeft {
@@ -251,7 +226,7 @@
   }
 
   .bottomRight {
-    bottom: 18vw;
+    bottom: 0vw;
     right: -3.5vw;
     transform: rotate(20deg);
   }
