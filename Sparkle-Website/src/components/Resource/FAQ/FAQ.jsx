@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import styles from './FAQ.module.css';
-import Footer from '../../../../Element/Footer/Footer';
+import { FaAngleUp, FaAngleDown } from "react-icons/fa";
+import Footer from "../../Footer/Footer";
 
 const FAQ = () => {
     const [activeTab, setActiveTab] = useState('speech');
     const [openIndexes, setOpenIndexes] = useState({ speech: null, clinical: null });
+
+    const handleTabSwitch = (tab) => {
+        setActiveTab(tab);
+        setOpenIndexes((prev) => ({
+            ...prev,
+            [tab]: null
+        }));
+    };
 
     const toggleAnswer = (index) => {
         setOpenIndexes((prev) => ({
@@ -148,26 +157,27 @@ const FAQ = () => {
     return (
         <>
         <section className={styles.faqSection}>
-            <div className={styles.header}>
-                <h1 className={styles.headerTitle}>Frequently Asked Questions</h1>
-                <p className={styles.headerDescription}>
-                    Got questions? We’ve got answers. If you still have queries, feel free to contact us directly.
+            <div className={styles.topSection}>
+                <h1 className={styles.topTitle}>FAQ</h1>
+                <p className={styles.topSubTitle}>
+                    Do you have any questions?
                 </p>
-            </div>
+            
 
-            <div className={styles.miniNav}>
-                <button
-                    className={`${styles.navButton} ${activeTab === 'speech' ? styles.active : ''}`}
-                    onClick={() => setActiveTab('speech')}
-                >
-                    Speech Therapy
-                </button>
-                <button
-                    className={`${styles.navButton} ${activeTab === 'clinical' ? styles.active : ''}`}
-                    onClick={() => setActiveTab('clinical')}
-                >
-                    Clinical Psychology
-                </button>
+                <div className={styles.toggleTabs} data-active={activeTab}>
+                    <span
+                        className={activeTab === "speech" ? styles.activeTab : styles.inactiveTab}
+                        onClick={() => handleTabSwitch("speech")}
+                    >
+                        Speech Therapy
+                    </span>
+                    <span
+                        className={activeTab === "clinical" ? styles.activeTab : styles.inactiveTab}
+                        onClick={() => handleTabSwitch("clinical")}
+                    >
+                        Clinical Psychology
+                    </span>
+                </div>
             </div>
 
             <div className={styles.faqContainer}>
@@ -178,17 +188,15 @@ const FAQ = () => {
                             onClick={() => toggleAnswer(index)}
                         >
                             {item.question}
-                            <span
-                                className={`${styles.arrow} ${openIndexes[activeTab] === index ? styles.open : ''
-                                    }`}
-                            >
-                                ▼
+                            <span className={styles.arrow}>
+                                {openIndexes[activeTab] === index ? <FaAngleUp /> : <FaAngleDown />}
                             </span>
                         </button>
 
                         <div
-                            className={`${styles.answerWrapper} ${openIndexes[activeTab] === index ? styles.open : ''
-                                }`}
+                            className={`${styles.answerWrapper} ${
+                                openIndexes[activeTab] === index ? styles.open : ''
+                            }`}
                         >
                             {Array.isArray(item.answer) ? (
                                 <div>
@@ -206,8 +214,6 @@ const FAQ = () => {
                                 <p className={styles.answer}>{item.answer}</p>
                             )}
                         </div>
-
-                        {index !== currentFaq.length - 1 && <div className={styles.divider}></div>}
                     </div>
                 ))}
             </div>

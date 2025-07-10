@@ -349,7 +349,7 @@
 
   .cardOverlay h3 {
     font-size: clamp(1.25rem, 3vw, 1.5rem);
-    margin-top: 3rem;
+    margin-top: 1rem;
   }
 
   .cardOverlay p {
