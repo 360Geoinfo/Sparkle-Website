@@ -101,7 +101,7 @@ export default function Team() {
                                 <div className={styles.cardBack}>
                                     <div className={styles.backContent}>
                                         <p className={styles.description}>{member.description}</p>
-                                        <button
+                                        {/* <button
                                             onClick={(e) => {
                                                 e.stopPropagation(); // prevent bubbling
                                                 setFlippedIndex(null); // reset flip immediately
@@ -109,7 +109,7 @@ export default function Team() {
                                             className={styles.backBtn}
                                             >
                                             ← Back
-                                        </button>
+                                        </button> */}
 
                                     </div>
                                 </div>

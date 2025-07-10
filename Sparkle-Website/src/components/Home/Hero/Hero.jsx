@@ -42,10 +42,22 @@ const Hero = () => {
         </p>
         <div className={styles.heroBtn}>
           <button className={styles.heroBookBtn}>
-            Book a session now!
+            <a
+              href="https://calendly.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a session now!
+            </a>
           </button>
           <button className={styles.heroQuestionBtn}>
-            Ask a question!
+            <a
+              href="https://wa.me/6738391407"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ask a question!
+            </a>
           </button>
         </div>
       </div>
