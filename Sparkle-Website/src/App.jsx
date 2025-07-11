@@ -1,5 +1,7 @@
+import { Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop"; 
+
 import styles from './App.module.css';
-import { Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navigation/Navbar';
 import Footer from './components/Footer/Footer';
 
@@ -24,36 +26,39 @@ import FAQ from './components/Resource/FAQ/FAQ';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <Navbar />
+    <>
+      <ScrollToTop />
+      <div className={styles.App}>
+        <Navbar />
 
-      <Routes>
-        <Route path="/" element={
-          <>
-            <Hero />
-            <About />
-            <Team />
-            <Service />
-            <Book />
-            <Testimonials />
-            <Training />
-            <Pricing />
-            <Footer />
-          </>
-        } />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Hero />
+              <About />
+              <Team />
+              <Service />
+              <Book />
+              <Testimonials />
+              <Training />
+              <Pricing />
+              <Footer />
+            </>
+          } />
 
-        <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
-        <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
-        <Route path="/Services/Events" element={<Events/>} />
-        <Route path="/Services/Products" element={<Products/>} />
-        <Route path="/Services/SpeechTherapy" element={<SpeechTherapy />} />
-        <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
-        
-        <Route path="/Resources/Blog" element={<Blog />} />
-        <Route path="/Resources/FAQ" element={<FAQ />} />
-      </Routes>
+          <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
+          <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
+          <Route path="/Services/Events" element={<Events/>} />
+          <Route path="/Services/Products" element={<Products/>} />
+          <Route path="/Services/SpeechTherapy" element={<SpeechTherapy />} />
+          <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
+          
+          <Route path="/Resources/Blog" element={<Blog />} />
+          <Route path="/Resources/FAQ" element={<FAQ />} />
+        </Routes>
 
-    </div>
+      </div>
+    </>
   );
 }
 

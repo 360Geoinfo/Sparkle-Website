@@ -98,21 +98,16 @@ export default function Team() {
                                 </div>
 
                                 {/* BACK SIDE */}
-                                <div className={styles.cardBack}>
-                                    <div className={styles.backContent}>
-                                        <p className={styles.description}>{member.description}</p>
-                                        {/* <button
-                                            onClick={(e) => {
-                                                e.stopPropagation(); // prevent bubbling
-                                                setFlippedIndex(null); // reset flip immediately
-                                            }}
-                                            className={styles.backBtn}
-                                            >
-                                            ← Back
-                                        </button> */}
-
-                                    </div>
+                                <div
+                                className={styles.cardBack}
+                                onClick={() => setFlippedIndex(null)} 
+                                >
+                                <div className={styles.backContent}>
+                                    <p className={styles.description}>{member.description}</p>
+                                    <p className={styles.tapToReturn}>Tap to return</p>
                                 </div>
+                                </div>
+
                             </div>
                         </div>
                     ))}

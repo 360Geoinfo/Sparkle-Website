@@ -12,45 +12,45 @@ const Service = () => {
         </h3>
       </div>
 
-      <div className={styles.serviceWrapper}>
-        {/* Speech Therapy Card */}
-        <div className={styles.imageWrapper}>
+      <div className={styles.cardWrapper}>
+        {/* Speech Therapy */}
+        <div className={styles.card}>
           <img
-            src="assets/LandingPage/Services/Speech Therapy.webp"
+            src="/assets/LandingPage/Services/Speech Therapy.webp"
             alt="Speech Therapy"
-            className={styles.baseImage}
+            className={styles.cardImage}
           />
-          <div className={styles.contentImageWrapper}>
+          <div className={styles.overlayWrapper}>
             <img
-              src="assets/LandingPage/Services/Blue Wave.png"
+              src="/assets/LandingPage/Services/Blue Wave.png"
               alt="Blue Wave"
               className={styles.overlayImage}
             />
-            <div className={styles.speechContentBox}>
-              <h3 className={styles.contentTitle}>Speech Therapy</h3>
-              <Link to="/Services/SpeechTherapy" className={styles.speechLearnMoreBtn}>
+            <div className={`${styles.cardContent} ${styles.speechBg}`}>
+              <h3>Speech Therapy</h3>
+              <Link to="/Services/SpeechTherapy" className={styles.learnMoreBtn}>
                 Learn More →
               </Link>
             </div>
           </div>
         </div>
 
-        {/* Clinical Psychology Card */}
-        <div className={styles.imageWrapper}>
+        {/* Clinical Psychology */}
+        <div className={styles.card}>
           <img
-            src="assets/LandingPage/Services/Clinical Psychology.webp"
+            src="/assets/LandingPage/Services/Clinical Psychology.webp"
             alt="Clinical Psychology"
-            className={styles.baseImage}
+            className={styles.cardImage}
           />
-          <div className={styles.contentImageWrapper}>
+          <div className={styles.overlayWrapper}>
             <img
-              src="assets/LandingPage/Services/Green Wave.png"
+              src="/assets/LandingPage/Services/Green Wave.png"
               alt="Green Wave"
               className={styles.overlayImage}
             />
-            <div className={styles.clinicalContentBox}>
-              <h3 className={styles.contentTitle}>Clinical Psychology</h3>
-              <Link to="/Services/ClinicalPsychology" className={styles.clinicalLearnMoreBtn}>
+            <div className={`${styles.cardContent} ${styles.psychologyBg}`}>
+              <h3>Clinical Psychology</h3>
+              <Link to="/Services/ClinicalPsychology" className={styles.learnMoreBtnGreen}>
                 Learn More →
               </Link>
             </div>
@@ -58,9 +58,17 @@ const Service = () => {
         </div>
       </div>
 
-      <button className={styles.BookBtn}>Book a session now!</button>
+      <a
+        href="https://calendly.com"
+        className={styles.bookBtn}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Book a session now!
+      </a>
     </section>
   );
 };
 
 export default Service;
+

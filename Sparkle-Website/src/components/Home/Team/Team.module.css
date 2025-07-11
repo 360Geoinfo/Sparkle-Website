@@ -68,7 +68,7 @@
   transform-style: preserve-3d;
 }
 
-.card:hover .cardInner {
+.cardInner.flipped {
   transform: rotateY(180deg);
 }
 
@@ -105,18 +105,14 @@
   height: 240px;
   object-fit: cover;
   border-radius: 1rem;
-  padding-bottom: 2.5rem;
+  padding-bottom: 3rem;
   transform: scale(2.25);
   transition: transform 0.3s ease-in-out;
 }
 
-.card:hover .image {
-  transform: scale(1.05);
-}
-
 .textContainer {
   padding: 0.5rem;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
@@ -146,6 +142,15 @@
   line-height: 1.4;
   color: black;
 }
+
+.tapToReturn {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: black;
+  opacity: 0.8;
+}
+
 
 /* Slick slider dots styling */
 .teamSlider .slick-dots {
@@ -279,9 +284,19 @@
   .textContainer {
     margin-top: 2.5rem;
   }
+
+  .image {
+    height: 240px;
+    padding-bottom: 4.5rem;
+  }
+
+  .textContainer {
+    padding: 0rem 2.25rem;
+    margin-top: 0rem;
+  }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 425px) and (min-width: 341px){
   .teamSection {
     padding: 5rem 0rem;
   }
@@ -309,6 +324,39 @@
 
   .textContainer {
     margin-top: 3rem;
+  }
+}
+
+@media (max-width: 340px){
+  .teamSection {
+    padding: 5rem 0rem;
+  }
+
+  .teamContainer {
+    padding: 2rem;
+    border-radius: 0rem;
+  }
+
+  .teamGrid {
+    display: none;
+  }
+
+  .teamSlider {
+    display: block;
+  }
+
+  .card {
+    max-width: 300px;
+  }
+
+  .image {
+    height: 240px;
+    padding-bottom: 4.5rem;
+  }
+
+  .textContainer {
+    padding: 0rem 2.25rem;
+    margin-top: -0.35rem;
   }
 }
 

@@ -94,17 +94,24 @@
 
 .heroBookBtn {
   background-color: #F0C000;
-  color: #563CAA;
-  
 }
+.heroBookBtn a {
+  color: #563CAA;
+  text-decoration: none;
+}
+
 .heroQuestionBtn {
   background-color: #563CAA;
   color: #F0C000;
   border: 1px solid #F0C000;
 }
+.heroQuestionBtn a{
+  color: #F0C000;
+  text-decoration: none;
+}
 
 .heroBookBtn:hover, .heroQuestionBtn:hover {
-  background-color: #e0d8ff;
+  box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6); 
 }
 
 .cloudImage {

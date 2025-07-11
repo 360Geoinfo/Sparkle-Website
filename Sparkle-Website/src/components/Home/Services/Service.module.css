@@ -1,147 +1,137 @@
 .serviceSection {
-  background-color: white;
-  padding: 4rem 8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.topContent {
+  padding: 10rem 0rem 4rem;
   text-align: center;
+  align-items: center;
 }
 
 .title {
-  color: #F08A29;
-  font-weight: 600;
   font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #ff7a00;
+  font-weight: bold;
   text-decoration: underline;
-  margin-bottom: 0.5rem;
 }
 
 .subTitle {
   font-size: clamp(1.5rem, 5vw, 2rem);
-  font-weight: 600;
-  color: #563CAA;
-  margin-bottom: 1.25rem;
+  color: #563caa;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
 }
 
-.serviceWrapper {
+.cardWrapper {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
-  max-width: 800px;
-  height: auto;
-  padding-bottom: 5rem;
-  gap: 3rem;
+  gap: 2rem;
 }
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-}
-
-.baseImage {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  object-position: center bottom; 
+.card {
+  width: 400px;
   border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-.contentImageWrapper {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
   width: 100%;
-  pointer-events: none;
-  margin-bottom: -5rem;
+  height: 270px;
+  object-fit: cover;
+  margin-bottom: -2rem;
+}
+
+.overlayWrapper {
+  position: relative;
 }
 
 .overlayImage {
   width: 100%;
-  margin-bottom: -0.5rem;
+  position: relative;
+  z-index: 1;
+  margin-top: -4px;
 }
 
-.speechContentBox, .clinicalContentBox {
-  border-radius: 0rem 0rem 1rem 1rem;
-  padding: 1rem 1rem 2rem;
+.cardContent {
+  padding: 1rem;
+  border-radius: 0 0 1rem 1rem;
+  color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: clamp(1rem, 5vw, 1.5rem);
   gap: 1rem;
+  position: relative;
+  z-index: 2;
+  margin-top: -0.5rem;
 }
 
-.speechContentBox {
-  background-color: #1BB9FF;
+.speechBg {
+  background-color: #1bb9ff;
 }
 
-.clinicalContentBox {
-  background-color: #A0C260;
+.psychologyBg {
+  background-color: #a0c260;
 }
 
-.contentTitle {
-  text-align: center;
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-.speechLearnMoreBtn, .clinicalLearnMoreBtn {
-  background-color: white;
+.learnMoreBtn,
+.learnMoreBtnGreen {
   padding: 0.5rem 1rem;
-  font-size: 1rem;
+  background-color: white;
+  color: #1bb9ff;
+  font-size: clamp(1rem, 5vw, 1.15rem);
   font-weight: 600;
   border-radius: 0.5rem;
-  border: none;
   text-decoration: none;
-  z-index: 999;
+  transition: all 0.3s ease;
 }
 
-.speechLearnMoreBtn {
-  color: #1BB9FF;
+.learnMoreBtnGreen {
+  color: #a0c260;
 }
 
-.clinicalLearnMoreBtn {
-  color: #A0C260;
+.learnMoreBtn:hover,
+.learnMoreBtnGreen:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
 }
 
-.BookBtn{
-  background-color: #F0C000;
-  color: #563CAA;
-  padding: 0.5rem 2rem;
-  font-size: 1.15rem;
-  font-weight: 600;
+.bookBtn {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 3rem;
+  background-color: #f0c000;
+  color: #563caa;
+  padding: 0.8rem 2rem;
   border-radius: 2rem;
-  border: none;
+  font-weight: 600;
+  font-size: clamp(1rem, 5vw, 1.25rem);
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 1440px) and (min-width: 1025px) {}
-@media (max-width: 1024px) and (min-width: 769px) {
-  .serviceSection {
-    padding: 4rem 2rem;
-  }
+.bookBtn:hover {
+  box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+  transform: translateY(-2px);
 }
-@media (max-width: 768px) and (min-width: 426px) {
-  .serviceSection {
-    padding: 4rem 2rem;
+
+@media (max-width: 768px) {
+  .subTitle {
+    margin: 0.5rem 1rem 3rem;
   }
 
-  .serviceWrapper {
+  .cardWrapper {
     flex-direction: column;
-    max-width: 360px;
-    gap: 7rem;
-  }
-}
-@media (max-width: 425px) {
-  .serviceSection {
-    padding: 4rem 2rem;
+    align-items: center;
   }
 
-  .serviceWrapper {
-    flex-direction: column;
-    max-width: 360vw;
-    gap: 7rem;
+  .card {
+    width: 90%;
   }
 }

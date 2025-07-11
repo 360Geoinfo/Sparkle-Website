@@ -112,7 +112,7 @@
 .noticeIcon {
     margin-right: 0.5rem;
     color: #563caa;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .notice {
@@ -139,8 +139,8 @@
     border-radius: 1rem;
     border: none;
     margin: 1.5rem;
-    max-width: 100%;
-    width: 400px;
+    width: 100%;
+    max-width: 90vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -320,5 +320,23 @@
         display: block;
         max-width: 100%;
         width: 30rem;
+    }
+
+    .noticeIcon {
+        font-size: 2rem;
+    }
+
+    .notice {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 425px) {
+    .noticeIcon {
+        font-size: 4rem;
+    }
+
+    .notice {
+        text-align: justify;
     }
 }

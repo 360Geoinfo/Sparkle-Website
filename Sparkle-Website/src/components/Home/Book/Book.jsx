@@ -22,7 +22,14 @@ const Book = () => {
                 We may be able to assist. Book your consultation slot now with our experienced and passionate therapists.
             </p>
 
-            <button className={styles.bookHereBtn}>Book here!</button>
+            <a
+                href="https://calendly.com"
+                className={styles.bookHereBtn}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Book here!
+            </a>
         </div>
     </section>
   );

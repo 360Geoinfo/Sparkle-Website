@@ -177,7 +177,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px) and (min-width: 426px) {
   .cardWrapper {
     justify-items: center;
     padding: 0rem; 
@@ -228,6 +228,75 @@
   .bottomRight {
     bottom: 0vw;
     right: -3.5vw;
+    transform: rotate(20deg);
+  }
+}
+
+@media (max-width: 425px) {
+  .cardWrapper {
+    justify-items: center;
+    padding: 0rem; 
+    margin-left: 0rem;
+  }
+
+  .bubbleWrapper {
+    width: 88%;
+  }
+
+  .bubbleImage {
+    width: 100%;
+    height: 40rem;
+    display: none !important;
+  }
+
+  .bubbleBox {
+    width: 100%;
+    height: 27rem;
+    border-radius: 2rem;
+  }
+
+  .purple {
+    background-color: #CDC8FF; 
+  }
+
+  .green {
+    background-color: #CDEED5;
+  }
+
+  .bubbleContent {
+    width: 100%;
+    height: 100%;
+    margin-top: 0rem;
+    margin-left: 0rem;
+    padding: 1.5rem;
+  }
+
+  .bottomContent {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .stars {
+    display: flex;
+    justify-content: left;
+    margin-top: 1rem;
+    gap: 0.3rem;
+  }
+
+  .quote {
+    width: 2rem;
+  }
+
+  .topLeft {
+    top: 0px;
+    left: -10px;
+    transform: rotate(200deg);
+  }
+
+  .bottomRight {
+    bottom: 0vw;
+    right: -3vw;
     transform: rotate(20deg);
   }
 }
