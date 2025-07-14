@@ -148,10 +148,13 @@
     border: none;
     margin: 3rem;
     align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .contactUsBtn:hover {
-    background-color: #cea501;
+    box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+    transform: translateY(-2px);
 }
 
 .contactUsIcon {

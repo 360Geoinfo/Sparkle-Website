@@ -1,11 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./Training.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { FaWhatsapp } from "react-icons/fa";
-import { MdKeyboardArrowLeft } from "react-icons/md";
-import { MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 
 const trainingTopics = [
   "Communicating With Adults Post Stroke",
@@ -30,50 +29,40 @@ const trainingTopics = [
   "Adult related mental health programs"
 ];
 
-const PrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} ${styles.arrowWrapper}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      <MdKeyboardArrowLeft className={styles.arrowIcon} />
-    </div>
-  );
-};
-
-const NextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={`${className} ${styles.arrowWrapper}`}
-      style={{ ...style }}
-      onClick={onClick}
-    >
-      <MdKeyboardArrowRight className={styles.arrowIcon} />
-    </div>
-  );
-};
-
 const Training = () => {
-  const sliderRef = useRef(null); 
+  const sliderRef = useRef(null);
+  const [groupedTopics, setGroupedTopics] = useState([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const screenWidth = window.innerWidth;
+      const itemsPerSlide = screenWidth <= 768 ? 5 : 6;
+
+      const newGroupedTopics = trainingTopics.reduce((acc, curr, idx) => {
+        if (idx % itemsPerSlide === 0) acc.push([]);
+        acc[acc.length - 1].push(curr);
+        return acc;
+      }, []);
+
+      setGroupedTopics(newGroupedTopics);
+    };
+
+    handleResize(); // Initial call
+    window.addEventListener("resize", handleResize); // Listen for changes
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const settings = {
     dots: false,
     infinite: true,
     speed: 600,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrows: false, 
+    arrows: false,
     autoplay: true,
     autoplaySpeed: 6000,
   };
-
-  const groupedTopics = trainingTopics.reduce((acc, curr, idx) => {
-    if (idx % 6 === 0) acc.push([]);
-    acc[acc.length - 1].push(curr);
-    return acc;
-  }, []);
 
   return (
     <section className={styles.trainingSection}>

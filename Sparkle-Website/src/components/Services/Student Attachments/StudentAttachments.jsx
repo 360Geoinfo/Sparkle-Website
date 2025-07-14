@@ -63,9 +63,16 @@ const StudentAttachments = () => {
             insights into the working life!
           </p>
 
-          <button className={styles.contactButton}>
-            <FaWhatsapp className={styles.whatsAppIcon} /> Send your application here
-          </button>
+          <a
+            href="https://wa.me/6738391407"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.contactUsLink}
+          >
+            <button className={styles.contactButton}>
+              <FaWhatsapp className={styles.whatsAppIcon} /> Send your application here
+            </button>
+          </a>
         </div>
 
         <div className={styles.attachmentsCard}>
@@ -83,7 +90,7 @@ const StudentAttachments = () => {
               <div className={styles.studentDownloadLinkWrapper}>
                 <a
                   className={`${styles.downloadLink} ${styles.studentDownloadLink}`}
-                  href="/forms/student-attachment.pdf"
+                  href="/Forms/Student attachment.pdf"
                   download
                 >
                     <GrDocumentText className={styles.documentIcon}/> Student Attachment
@@ -94,7 +101,7 @@ const StudentAttachments = () => {
               <div className={styles.dressDownloadLinkWrapper}>
                 <a
                   className={`${styles.downloadLink} ${styles.dressDownloadLink}`}
-                  href="/forms/student-attachment.pdf"
+                  href="/Forms/Dress Code for Students.pdf"
                   download
                 >
                     <GrDocumentText className={styles.documentIcon}/> Dress Code for Students
@@ -105,7 +112,7 @@ const StudentAttachments = () => {
               <div className={styles.agreementDownloadLinkWrapper}>
                 <a
                   className={`${styles.downloadLink} ${styles.agreementDownloadLink}`}
-                  href="/forms/student-attachment.pdf"
+                  href="/Forms/Patient Information Confidentiality Agreement.pdf"
                   download
                 >
                     <GrDocumentText className={styles.documentIcon}/> Patient Information Confidentiality Agreement

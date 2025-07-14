@@ -129,6 +129,12 @@
     box-shadow: #888 0px 0px 5px 0px;
 }
 
+.contactUsLink {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
 .contactUsBtn {
     font-size: clamp(1rem, 5vw, 1.5rem);
     font-weight: 600;
@@ -145,10 +151,13 @@
     align-items: center;
     justify-content: center;
     margin-left: 8rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
 }
 
 .contactUsBtn:hover {
-    background-color: #cea501;
+    box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+    transform: translateY(-2px);
 }
 
 .contactUsIcon {

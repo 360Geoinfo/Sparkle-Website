@@ -62,15 +62,20 @@
   position: relative;
   width: 100%;
   border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
 }
 
 .imageWrapper {
   position: relative;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .cardImage {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  display: block;
   border-radius: 1rem;
 }
 
@@ -84,57 +89,8 @@
 }
 
 .activeCard {
-  transform: scale(1.05);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   z-index: 2;
-}
-
-.cardOverlay {
-  position: absolute;
-  inset: 0;
-  background-color: var(--active-color, #000);
-  color: #fff;
-  display: none;
-  flex-direction: column;
-  justify-items: center;
-  align-items: center;
-  z-index: 3;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  font-weight: bold;
-  padding: 3rem 1rem;
-  gap: 0.5rem;
-  border-radius: 1rem;
-}
-
-.cardOverlay h3 {
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  margin-top: 1rem;
-  padding: 0rem 3rem;
-}
-
-.cardOverlay p {
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  font-weight: 400;
-  text-align: justify;
-  margin: 0;
-  max-width: 90%;
-  margin-top: 1rem;
-}
-
-.activeCard .cardOverlay {
-  display: flex;
-  bottom: 0;
-}
-
-.activeCard::after {
-  bottom: 0;
-}
-
-.cardOverlay {
-  animation: fadeIn 0.3s ease-in-out;
 }
 
 .contactBox {
@@ -203,19 +159,27 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  overflow: hidden;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .waveImage {
-  width: 100.3%;
-  margin-bottom: -0.5rem;
+    width: 100%;
+    display: block;
+    height: auto;
+    position: relative;
+    z-index: 1;
+    margin-bottom: -1rem;
 }
 
 .cardContent {
-  width: 100%;
-  height: auto;
+  padding: 2rem 1rem 3rem;
+  border-radius: 0 0 1rem 1rem;
   color: white;
-  padding: 1rem 1rem 2rem;
-  border-radius: 0rem 0rem 1rem 1rem ;
+  position: relative;
+  font-weight: 600;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  text-align: center;
 }
 
 .cardContent>* {
@@ -232,7 +196,7 @@
 
 .learnMore {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: white;
   padding: 6px 12px;
   border: none;
@@ -259,25 +223,90 @@
   transform: translateX(4px);
 }
 
+/* Overlay */
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background-color: var(--active-color, #000);
+  color: #fff;
+  display: none;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  z-index: 3;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: bold;
+  padding-top: 1.5rem;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.cardOverlay h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  font-weight: 700;
+  text-align: center;
+  max-width: 90%;
+  margin: 0;
+  margin-top: 2rem;
+}
+
+.cardOverlay p {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  text-align: justify;
+  margin: 0;
+  max-width: 90%;
+  margin-top: 1rem;
+}
+
+.activeCard .cardOverlay {
+  display: flex;
+  bottom: 0;
+}
+
+.activeCard::after {
+  bottom: 0;
+}
+
+/* Close button for overlay */
+.closeOverlay {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  line-height: 1;
+  font-weight: 700;
+  padding: 0;
+  user-select: none;
+}
+
 .ctaWrapper {
   margin-top: 2rem;
   text-align: center;
 }
 
 .ctaButton {
-  background-color: #FFD500;
-  color: #563CAA;
-  padding: 0.75rem 2rem;
-  font-size: clamp(0.5rem, 5vw, 1.25rem);
-  font-weight: 600;
-  border-radius: 2rem;
-  text-decoration: none;
   display: inline-block;
-  transition: background 0.3s ease;
+  width: fit-content;
+  margin-top: 3rem;
+  background-color: #f0c000;
+  color: #563caa;
+  padding: 0.8rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: clamp(1rem, 5vw, 1.25rem);
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .ctaButton:hover {
-  background-color: #E6C000;
+  box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 1440px) and (min-width: 1025px) {}

@@ -13,8 +13,14 @@ const Sidebar = ({ isOpen, onClose }) => {
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
-    useEffect(() => {
+     useEffect(() => {
         document.body.classList.toggle('no-scroll', isOpen);
+        if (!isOpen) {
+        // Close all dropdowns when sidebar closes
+        setIsBookingOpen(false);
+        setIsServicesOpen(false);
+        setIsResourcesOpen(false);
+        }
         return () => {
         document.body.classList.remove('no-scroll');
         };
@@ -85,54 +91,46 @@ const Sidebar = ({ isOpen, onClose }) => {
                         <h3 className={styles.sidebarDropdownSubtitle}>
                             SPEECH THERAPY
                         </h3>
-                        <NavLink
-                            to="/Booking"
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
+                            className={styles.sidebarBookingArrow}
                         >
-                            <div className={styles.sidebarBookingArrow }>
-                                Free 15 min Consultation <FaArrowRightLong/>
-                            </div>
-                        </NavLink>
-                        <NavLink
-                            to="/Booking/Blog"
+                            Free 15 min Consultation <FaArrowRightLong />
+                        </a>
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
+                            className={styles.sidebarBookingArrow}
                         >
-                            <div className={styles.sidebarBookingArrow }>
-                                Paid Consultation <FaArrowRightLong/>
-                            </div>
-                        </NavLink>
+                            1 hour Consultation <FaArrowRightLong />
+                        </a>
 
                         <h3 className={styles.sidebarDropdownSubtitle}>
                             CLINICAL PSYCHOLOGY
                         </h3>
-                        <NavLink
-                            to="/Booking/FAQ"
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
+                            className={styles.sidebarBookingArrow}
                         >
-                            <div className={styles.sidebarBookingArrow }>
-                                Free 15 min Consultation <FaArrowRightLong/>
-                            </div>
-                        </NavLink>
-                        <NavLink
-                            to="/Booking/FAQ"
+                            Free 15 min Consultation <FaArrowRightLong />
+                        </a>
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
+                            className={styles.sidebarBookingArrow}
                         >
-                            <div className={styles.sidebarBookingArrow }>
-                                Paid Consultation <FaArrowRightLong/>
-                            </div>
-                        </NavLink>
+                            1 hour Consultation <FaArrowRightLong />
+                        </a>
                     </div>
                 )}
             </div>

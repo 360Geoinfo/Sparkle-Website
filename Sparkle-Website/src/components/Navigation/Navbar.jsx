@@ -131,20 +131,25 @@ export const Navbar = () => {
                         {dropdownStates.speech && (
                           <div className={styles.subDropdownContent}>
                             <div className={styles.subDropdownLabel}>Speech Therapy</div>
-                            <NavLink
-                              to="/Booking/SpeechTherapy/Free 15 min Consultation"
-                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                            <a
+                              href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.dropdownLink}
                               onClick={closeAllDropdowns}
                             >
                               Free 15 min Consultation
-                            </NavLink>
-                            <NavLink
-                              to="/Booking/SpeechTherapy/Paid Consultation"
-                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                            </a>
+
+                            <a
+                              href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.dropdownLink}
                               onClick={closeAllDropdowns}
                             >
                               Paid Consultation
-                            </NavLink>
+                            </a>
                           </div>
                         )}
                       </div>
@@ -165,20 +170,26 @@ export const Navbar = () => {
                         {dropdownStates.clinical && (
                           <div className={styles.subDropdownContent}>
                             <div className={styles.subDropdownLabel}>Clinical Psychology</div>
-                            <NavLink
-                              to="/Booking/ClinicalPsychology/Free 15 min Consultation"
-                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                            <a
+                              href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.dropdownLink}
                               onClick={closeAllDropdowns}
                             >
                               Free 15 min Consultation
-                            </NavLink>
-                            <NavLink
-                              to="/Booking/ClinicalPsychology/Paid Consultation"
-                              className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`}
+                            </a>
+
+                            <a
+                              href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={styles.dropdownLink}
                               onClick={closeAllDropdowns}
                             >
                               Paid Consultation
-                            </NavLink>
+                            </a>
+
                           </div>
                         )}
                       </div>

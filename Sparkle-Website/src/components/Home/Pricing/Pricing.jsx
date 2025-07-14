@@ -95,7 +95,17 @@ const Pricing = () => {
       </p>
 
       <div className={styles.contactUsSection}>
-        <button className={styles.contactUsBtn}><FaWhatsapp className={styles.contactUsIcon}/>Contact Us</button>
+        <a
+          href="https://wa.me/6738391407"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.contactUsLink}
+        >
+          <button className={styles.contactUsBtn}>
+            <FaWhatsapp className={styles.contactUsIcon}/>
+            Contact Us
+          </button>
+        </a>
 
         <img
           className={styles.flyingBirdsImage}

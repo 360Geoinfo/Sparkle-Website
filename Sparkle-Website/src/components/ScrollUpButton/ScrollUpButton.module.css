@@ -1,0 +1,25 @@
+.scrollUpBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #563caab4;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.scrollUpBtn:hover {
+  background-color: #563CAA;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px); 
+}

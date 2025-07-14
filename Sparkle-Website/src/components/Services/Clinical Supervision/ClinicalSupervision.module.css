@@ -36,7 +36,7 @@
     width: 100%;
     background-color: #F0C000;
     color: #563CAA;
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     font-size: clamp(0.5rem, 5vw, 1.25rem);
     font-weight: 600;
     cursor: pointer;
@@ -54,14 +54,15 @@
 }
 
 .contactButton:hover {
-    background-color: #cea501;
+    box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+    transform: translateY(-2px);
 }
 
 .whatsAppIcon {
     margin-right: 0.5rem;
     margin-top: -0.25rem;
     vertical-align: middle;
-    font-size: 1.5rem;
+    font-size: 1.65rem;
 }
 
 @media (max-width: 1440px) and (min-width: 1025px) {}

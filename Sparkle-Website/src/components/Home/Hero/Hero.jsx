@@ -10,6 +10,7 @@ const images = [
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,6 +21,15 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Show popup on each home page visit
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <section className={styles.heroSection}>
       <div className={styles.slider}>
@@ -27,7 +37,7 @@ const Hero = () => {
           <img
             key={index}
             className={`${styles.heroSlidesImage} ${
-            index === currentImageIndex ? styles.active : styles.inactive
+              index === currentImageIndex ? styles.active : styles.inactive
             }`}
             src={img}
             alt={`Sparkle Slide ${index + 1}`}
@@ -37,13 +47,14 @@ const Hero = () => {
 
       <div className={styles.heroContent}>
         <h2 className={styles.heroTitle}>Transforming You</h2>
-        <p className={styles.heroText}>From communication to literacy, our dedicated therapists provide the 
+        <p className={styles.heroText}>
+          From communication to literacy, our dedicated therapists provide the 
           support for adults and children needs to grow, learn, and thrive.
         </p>
         <div className={styles.heroBtn}>
           <button className={styles.heroBookBtn}>
             <a
-              href="https://calendly.com"
+              href="https://calendly.com/sparkle-therapy-centre"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -69,8 +80,43 @@ const Hero = () => {
           alt="Cloud"
         />
       </div>
-    </section>
 
+      {showPopup && (
+        <div className={styles.popupOverlay}>
+          <div className={styles.popupBox}>
+            <img
+              src="/assets/LandingPage/PopUp/Confetti.png"
+              alt="Speech Therapy"
+              className={styles.cardImage}
+            />
+            <h3 className={styles.popupTitle}>Sparkle Anniversary Special!</h3>
+            <h4 className={styles.popupSubTitle}>$30 OFF</h4>
+            <p className={styles.popupText}>
+              On your first consultation!
+            </p>
+
+            <div className={styles.popupButtonBox}>
+              <a
+                href="https://calendly.com/sparkle-therapy-centre/sparkle-open-day"
+                className={styles.popupButton}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book Now!
+              </a>
+
+              <button
+                onClick={handleClosePopup}
+                className={styles.popupCloseBtn}
+                aria-label="Close popup"
+              >
+                NO, THANKS
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
   );
 };
 

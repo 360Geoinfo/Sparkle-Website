@@ -65,39 +65,47 @@
 }
 
 .footerLinks li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 1.5rem);
   border-top: 1px solid white;
   padding-top: 1rem;
-  font-size: clamp(1.5rem, 5vw, 1.5rem);
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.footerLinks li:hover {
-  color: #ff7a00;
-}
-
-.footerLinks li svg {
-  font-size: 2rem;
+  list-style: none;
 }
 
 .footerLink {
-    display: flex;
-    color: white;
-    text-decoration: none;
-    gap: 0.5rem;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  text-decoration: none;
+  width: 100%;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footerLink:hover {
+  color: #F0C000;
+}
+
+.linkLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.5rem, 5vw, 1.5rem);
 }
 
 .ArrowIcon {
-    font-size: 2.5rem;
-    border-radius: 50%;
-    padding: 0.3rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  font-size: 2.5rem;
+  border-radius: 50%;
+  padding: 0.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
+
+.footerLink:hover .ArrowIcon {
+  transform: rotate(45deg) scale(1.1);
+}
+
+
+
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .footerSection {

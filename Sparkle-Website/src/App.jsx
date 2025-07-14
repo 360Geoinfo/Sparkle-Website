@@ -24,6 +24,9 @@ import ClinicalSupervision from './components/Services/Clinical Supervision/Clin
 import Blog from './components/Resource/Blog/Blog';
 import FAQ from './components/Resource/FAQ/FAQ';
 
+import ScrollUpButton from './components/ScrollUpButton/ScrollUpButton';
+
+
 function App() {
   return (
     <>
@@ -57,6 +60,7 @@ function App() {
           <Route path="/Resources/FAQ" element={<FAQ />} />
         </Routes>
 
+        <ScrollUpButton />
       </div>
     </>
   );

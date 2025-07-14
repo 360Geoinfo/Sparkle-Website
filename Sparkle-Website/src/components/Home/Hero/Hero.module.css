@@ -124,6 +124,137 @@
   pointer-events: none;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Popup Overlay */
+.popupOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.521);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Popup Box */
+.popupBox {
+  background: #988eff;
+  color: white;
+  padding: 2rem;
+  border-radius: 2rem;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  animation: popIn 0.4s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Confetti Image */
+.cardImage {
+  width: 200px;
+  height: auto;
+  margin-top: -8rem;
+}
+
+/* Title Styles */
+.popupTitle {
+  font-size: clamp(1.25rem, 5vw, 1.75rem);
+  font-weight: 700;
+  width: 100%;
+  background: #F0C000;
+  color: #563caa;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem auto;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6); 
+}
+
+/* Big Discount Text */
+.popupBox h4 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 900;
+  margin-top: 0.5rem;
+  color: white;
+}
+
+/* Subtext */
+.popupText {
+  font-size: clamp(1.25rem, 5vw, 1.35rem);
+  margin: 0.5rem 0 1.5rem;
+}
+
+.popupButtonBox {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Book Now Button */
+.popupButton {
+  display: inline-block;
+  background-color: #563caa;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: clamp(1.25rem, 5vw, 1.5rem);
+  transition: all 0.3s ease;
+}
+
+.popupButton:hover {
+  box-shadow: 0 4px 12px #3f2a9283; 
+  transform: translateY(-2px);
+}
+
+/* No Thanks Button */
+.popupCloseBtn {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: clamp(1rem, 5vw, 1rem);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.popupCloseBtn:hover {
+  color: rgb(235, 235, 235);
+  font-weight: 600;
+}
+
+/* Animation */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
 @media (max-width: 1024px) and (min-width: 768px) {
   .heroSection {
     position: relative;

@@ -9,28 +9,28 @@ const interventionData = [
         title: "Individual Talk Therapy (Children & Adults)",
         description: "Supportive one-on-one sessions to explore emotional challenges, improve coping, and foster personal growth.",
         image: "/assets/ServicesPage/Clinical Psychology/Individual Talk Therapy (Children & Adults).webp",
-        wave: "/assets/ServicesPage/Therapy/Wave/Blue.svg",
+        wave: "/assets/ServicesPage/Speech Therapy/Blue Wave.png",
         color: "#1BB9FF"
     },
     {
         title: "Play Therapy",
         description: "Developmentally appropriate, play-based interventions to support emotional regulation, communication, and social engagement in children, including those with neurodevelopmental needs.",
         image: "/assets/ServicesPage/Clinical Psychology/Play Therapy.webp",
-        wave: "/assets/ServicesPage/Therapy/Wave/Green.svg",
+        wave: "/assets/ServicesPage/Speech Therapy/Green Wave.png",
         color: "#A0C260"
     },
     {
         title: "Parent Training",
         description: "Guidance for caregivers through structured programs such as Parent Coaching for Challenging Behaviours, Child-Parent Relationship Therapy (CPRT), and Circle of Security Parenting (COSP) to enhance parenting skills and strengthen family relationships.",
         image: "/assets/ServicesPage/Clinical Psychology/Parent Training.webp",
-        wave: "/assets/ServicesPage/Therapy/Wave/Yellow.svg",
+        wave: "/assets/ServicesPage/Speech Therapy/Yellow Wave.png",
         color: "#F0C000"
     },
     {
         title: "PEERS® Social Skills Training",
         description: "An evidence-based program to help children and adolescents with social challenges develop and maintain meaningful peer relationships through structured group or individual sessions.",
         image: "/assets/ServicesPage/Clinical Psychology/PEERS® Social Skills Training.webp",
-        wave: "/assets/ServicesPage/Therapy/Wave/Red.svg",
+        wave: "/assets/ServicesPage/Speech Therapy/Red Wave.png",
         color: "#FF6666"
     }
 ];
@@ -87,7 +87,7 @@ const ClinicalPsychology = () => {
                                 className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
                                 style={{ '--active-color': item.color }}
                             >
-                                <div className={styles.cardImage}>
+                                <div className={styles.card}>
                                     <div className={styles.imageWrapper}>
                                         <img src={item.image} alt={item.title} className={styles.cardImage} />
                                         <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
@@ -112,13 +112,27 @@ const ClinicalPsychology = () => {
                                 <div className={styles.cardOverlay}>
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
+                                    <button
+                                        className={styles.closeOverlay}
+                                        onClick={() => setActiveCard(null)}
+                                        aria-label="Close details"
+                                    >
+                                        ×
+                                    </button>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     <div className={styles.ctaWrapper}>
-                        <a href="/contact" className={styles.ctaButton}>Book your consultation today!</a>
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.ctaButton}
+                        >
+                            Book a session now!
+                        </a>
                     </div>
                 </div>
             </section>

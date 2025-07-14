@@ -53,12 +53,12 @@ const Events = () => {
                     <img
                         src="/assets/ServicesPage/Events/Purple Bg.png"
                         alt="Purple Bg"
-                        className={styles.BgImage}
+                        className={styles.PurpleBgImage}
                     />
                     <img
                         src="/assets/ServicesPage/Events/Purple Line.png"
                         alt="Purple Line"
-                        className={styles.LineImage}
+                        className={styles.PurpleLineImage}
                     />
 
                     <div className={styles.eventContentOpenDay}>
@@ -70,14 +70,20 @@ const Events = () => {
                         <p className={styles.eventDescription}>
                             In conjunction with Sparkle's anniversary, we are happy to host our first open day! Please book your slot to ensure a dedicated time with our therapist for a chat and look around our space.
                         </p>
-                        <button className={styles.eventButton}>
+                        
+                        <a
+                            href="https://calendly.com/sparkle-therapy-centre/sparkle-open-day"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.eventButton}
+                        >
                             Book Now
                             <img 
                                 className={styles.ArrowIcon}
                                 src="/assets/LandingPage/Footer/Arrow up-right.png" 
                                 alt="Arrow Icon" 
                             />
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -87,12 +93,12 @@ const Events = () => {
                     <img
                         src="/assets/ServicesPage/Events/Green Bg.png"
                         alt="Green Bg"
-                        className={styles.BgImage}
+                        className={styles.GreenBgImage}
                     />
                     <img
                         src="/assets/ServicesPage/Events/Green Line.png"
                         alt="Green Line"
-                        className={styles.LineImage}
+                        className={styles.GreenLineImage}
                     />
 
                     <div className={styles.eventContentAnniversary}>
@@ -115,14 +121,19 @@ const Events = () => {
                             </li>
                         </ul>
 
-                        <button className={styles.eventButton}>
+                        {/* <a
+                            href="https://wa.me/6738391407"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.eventButton}
+                        >
                             Book Now
                             <img 
                                 className={styles.ArrowIcon}
                                 src="/assets/LandingPage/Footer/Arrow up-right.png" 
                                 alt="Arrow Icon" 
                             />
-                        </button>
+                        </a> */}
                     </div>
                 </div>
             </div>
