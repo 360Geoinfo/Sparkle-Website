@@ -114,6 +114,7 @@
   padding: 0.5rem;
   margin-top: 3rem;
   text-align: center;
+  z-index: 99;
 }
 
 .name {

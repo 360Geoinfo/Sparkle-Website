@@ -259,8 +259,34 @@
     height: 6rem;
   }
 
+  .slider {
+    height: 20rem;
+  }
+
+  .studentSlidesImage {
+    height: 20rem;
+  }
+
+  .attachmentsCard {
+    padding: 1rem;
+  }
+
+  .attachmentDescription {
+    text-align: justify;
+  }
+
   .contactButton {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
     font-size: 1rem;
+    padding: 0.75rem 0.5rem;
+    width: 100%;
+  }
+
+  .contactUsLink {
+    text-decoration: none;
   }
 
   .agreementDownloadIcon{

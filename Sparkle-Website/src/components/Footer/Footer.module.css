@@ -104,6 +104,14 @@
   transform: rotate(45deg) scale(1.1);
 }
 
+.poweredBy {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1rem;
+  color: #777;
+  background-color: #f8f8f8;
+  border-top: 1px solid #e0e0e0;
+}
 
 
 

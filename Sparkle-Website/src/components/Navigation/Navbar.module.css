@@ -178,18 +178,6 @@
 }
 
 /* Dropdown menu hidden by default */
-.dropdownContent {
-  position: absolute;
-  top: 115%;
-  left: 0px;
-  background-color: #A0C260;
-  width: 150px;
-  z-index: 1;
-  border-radius: 20px;
-  overflow: hidden;
-  padding: 0 1rem;
-}
-
 .dropdownContentServices {
   position: absolute;
   top: 115%;
@@ -199,21 +187,35 @@
   z-index: 1;
   border-radius: 1rem;
   overflow: hidden;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownContentServices a {
+  padding: 0.5rem;
+}
+
+.dropdownContentResources {
+  position: absolute;
+  top: 115%;
+  left: 0px;
+  background-color: #A0C260;
+  width: 150px;
+  z-index: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownContentResources a {
+  padding: 0.5rem;
 }
 
 .dropdownLink {
   display: block;
-  padding: 0;
+  padding: 1rem;
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
-}
-
-.dropdownLink:hover {
-  background-color: #00000034;
-  color: #fff; 
-  border-radius: 0rem;
 }
 
 .dropdownContent a:nth-child(1) {
@@ -221,14 +223,6 @@
   border-radius: 0;
 }
 
-.dropdownContentServices a:not(:last-child) {
-  border-bottom: 2px solid white;
-  border-radius: 0;
-}
-
-.dropdownActive {
-  background-color: #A0C260;
-}
 
 .navbarLinks {
   display: flex;
@@ -270,15 +264,10 @@
 
 
 
-
-
-
-
 .dropdownContentBooking {
   display: flex;
   position: relative;
   flex-direction: column;
-  gap: 0.5rem;
   background-color: #F08A29;
   border-radius: 1rem;
   position: absolute;
@@ -286,6 +275,12 @@
   left: 0;
   z-index: 999;
   margin-top: 0.5rem;
+  padding: 0.5rem 0.5rem;
+}
+
+
+.dropdownLink {
+  padding: 0.5rem;
 }
 
 .bookingButton {
@@ -324,6 +319,10 @@
   z-index: 1000;
 }
 
+.subDropdownContent a {
+  padding: 0.5rem;
+}
+
 .subDropdownLabel {
   font-weight: bold;
   color: white;
@@ -341,11 +340,6 @@
   text-align: left;
 }
 
-.dropdownLink:hover {
-  border-radius: 0rem;
-  background-color: #d17926;
-}
-
 .dropdownTitle {
   display: flex;
   justify-content: space-between;
@@ -353,6 +347,21 @@
   width: 100%;
 }
 
+.dropdownLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 5px;
+  left: 50%;
+  background-color: white;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.dropdownLink:hover::after {
+  width: 100%;
+  left: 0;
+}
 
 /* === MOBILE STYLES === */
 @media (max-width: 1024px) {

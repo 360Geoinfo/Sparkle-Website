@@ -4,6 +4,7 @@ import { FaYoutube, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/
 
 const Footer = () => {
   return (
+    <>
     <section className={styles.footerSection}>
       <footer className={styles.footer}>
         <div className={styles.footerLeftContent}>
@@ -32,80 +33,87 @@ const Footer = () => {
           <h4 className={styles.footerTitle}>Connect With Us!</h4>
           <ul className={styles.footerLinks}>
             <li>
-                <a
-                    href="https://www.youtube.com/@sparkletherapycentre"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLink}
-                >
-                    <div className={styles.linkLeft}>
-                        <FaYoutube />Youtube
-                    </div>
-                    <img
-                        className={styles.ArrowIcon}
-                        src="/assets/LandingPage/Footer/Arrow up-right.png"
-                        alt="Arrow Icon"
-                    />
-                </a>
-            </li>
-            
-            <li>
-                <a
-                    href="https://www.instagram.com/sparkle_therapy_centre/?hl=en"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLink}
-                >
-                    <div className={styles.linkLeft}>
-                        <FaInstagram /> Instagram
-                    </div>
-                    <img
-                        className={styles.ArrowIcon}
-                        src="/assets/LandingPage/Footer/Arrow up-right.png"
-                        alt="Arrow Icon"
-                    />
-                </a>
+              <a
+                href="https://www.youtube.com/@sparkletherapycentre"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                <div className={styles.linkLeft}>
+                  <FaYoutube /> Youtube
+                </div>
+                <img
+                  className={styles.ArrowIcon}
+                  src="/assets/LandingPage/Footer/Arrow up-right.png"
+                  alt="Arrow Icon"
+                />
+              </a>
             </li>
 
             <li>
-                <a
-                    href="https://wa.me/6738391407"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLink}
-                >
-                    <div className={styles.linkLeft}>
-                        <FaWhatsapp /> Whatsapp
-                    </div>
-                    <img
-                        className={styles.ArrowIcon}
-                        src="/assets/LandingPage/Footer/Arrow up-right.png"
-                        alt="Arrow Icon"
-                    />
-                </a>
+              <a
+                href="https://www.instagram.com/sparkle_therapy_centre/?hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                <div className={styles.linkLeft}>
+                  <FaInstagram /> Instagram
+                </div>
+                <img
+                  className={styles.ArrowIcon}
+                  src="/assets/LandingPage/Footer/Arrow up-right.png"
+                  alt="Arrow Icon"
+                />
+              </a>
             </li>
 
             <li>
-                <a
-                    href="https://www.google.com/maps?q=Sparkle+Therapy+Centre+Brunei"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.footerLink}
-                >
-                    <div className={styles.linkLeft}>
-                        <FaMapMarkerAlt /> Location
-                    </div>
-                    <img
-                        className={styles.ArrowIcon}
-                        src="/assets/LandingPage/Footer/Arrow up-right.png"
-                        alt="Arrow Icon"
-                    />
-                </a>
+              <a
+                href="https://wa.me/6738391407"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                <div className={styles.linkLeft}>
+                  <FaWhatsapp /> Whatsapp
+                </div>
+                <img
+                  className={styles.ArrowIcon}
+                  src="/assets/LandingPage/Footer/Arrow up-right.png"
+                  alt="Arrow Icon"
+                />
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.google.com/maps?q=Sparkle+Therapy+Centre+Brunei"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.footerLink}
+              >
+                <div className={styles.linkLeft}>
+                  <FaMapMarkerAlt /> Location
+                </div>
+                <img
+                  className={styles.ArrowIcon}
+                  src="/assets/LandingPage/Footer/Arrow up-right.png"
+                  alt="Arrow Icon"
+                />
+              </a>
             </li>
           </ul>
         </div>
       </footer>
+      
     </section>
+
+      {/* Powered by section */}
+      <div className={styles.poweredBy}>
+        <p>Powered by <strong>360 GEOINFO</strong></p>
+      </div>
+    </>
   );
 };
 

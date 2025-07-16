@@ -236,7 +236,7 @@ export const Navbar = () => {
                     </span>
                   </button>
                   {dropdownStates.resources && (
-                    <div className={styles.dropdownContent}>
+                    <div className={styles.dropdownContentResources}>
                       <NavLink to="/Resources/Blog" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Blog</NavLink>
                       <NavLink to="/Resources/FAQ" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>FAQ</NavLink>
                     </div>
