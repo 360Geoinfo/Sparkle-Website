@@ -11,7 +11,7 @@ export const testimonials = [
   },
   {
     id: 2,
-    name: "Parent's name",
+    name: "Parent of MF",
     text: `The team at Sparkle Therapy Centre has changed our lives. My daughter used to 
     struggle with basic sounds, and now she’s confidently reading aloud. I felt 
     included every step of the way — the therapists really listen and guide with 

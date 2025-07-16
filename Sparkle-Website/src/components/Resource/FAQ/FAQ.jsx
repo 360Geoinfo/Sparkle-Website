@@ -200,15 +200,43 @@ const FAQ = () => {
                         >
                             {Array.isArray(item.answer) ? (
                                 <div>
-                                    {item.answer.map((line, i) =>
-                                        line.trim().startsWith('-') || line.trim().startsWith('–') ? (
-                                            <ul key={i} className={styles.bulletList}>
-                                                <li>{line.replace(/^[-–]\s*/, '')}</li>
+                                    {(() => {
+                                        const elements = [];
+                                        let bulletBuffer = [];
+
+                                        item.answer.forEach((line, i) => {
+                                            const trimmed = line.trim();
+
+                                            if (trimmed.startsWith('-') || trimmed.startsWith('–')) {
+                                            bulletBuffer.push(trimmed.replace(/^[-–]\s*/, ''));
+                                            } else {
+                                            if (bulletBuffer.length > 0) {
+                                                elements.push(
+                                                <ul key={`ul-${i}`} className={styles.bulletList}>
+                                                    {bulletBuffer.map((bullet, j) => (
+                                                    <li key={`li-${i}-${j}`}>{bullet}</li>
+                                                    ))}
+                                                </ul>
+                                                );
+                                                bulletBuffer = [];
+                                            }
+                                            elements.push(<p key={`p-${i}`} className={styles.answer}>{line}</p>);
+                                            }
+                                        });
+
+                                        // Flush remaining bullets
+                                        if (bulletBuffer.length > 0) {
+                                            elements.push(
+                                            <ul key={`ul-end`} className={styles.bulletList}>
+                                                {bulletBuffer.map((bullet, j) => (
+                                                <li key={`li-end-${j}`}>{bullet}</li>
+                                                ))}
                                             </ul>
-                                        ) : (
-                                            <p key={i} className={styles.answer}>{line}</p>
-                                        )
-                                    )}
+                                            );
+                                        }
+
+                                        return elements;
+                                    })()}
                                 </div>
                             ) : (
                                 <p className={styles.answer}>{item.answer}</p>

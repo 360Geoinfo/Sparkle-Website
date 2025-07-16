@@ -124,22 +124,6 @@
   pointer-events: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Popup Overlay */
 .popupOverlay {
   position: fixed;
@@ -169,7 +153,7 @@
 }
 
 /* Confetti Image */
-.cardImage {
+.confettiImage {
   width: 200px;
   height: auto;
   margin-top: -8rem;
@@ -255,7 +239,7 @@
 }
 
 
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 769px) {
   .heroSection {
     position: relative;
     width: 100%;
@@ -294,7 +278,7 @@
   }
 }
 
-@media (max-width: 767px) and (min-width: 426px) {
+@media (max-width: 768px) and (min-width: 426px) {
   .heroSection {
     position: relative;
     width: 100%;
@@ -330,6 +314,11 @@
   .heroBookBtn, .heroQuestionBtn {
     width: 100%;
     margin: 0.5rem 0;
+  }
+
+  /* Popup Box */
+  .popupBox {
+    margin: 1.5rem;
   }
 }
 
@@ -382,6 +371,19 @@
     width: 100%;
     margin: 0.5rem 0;
     font-size: 1.25rem;
+  }
+
+  .confettiImage {
+    width: 160px;
+  }
+
+  /* Popup Box */
+  .popupBox {
+    margin: 1.5rem;
+  }
+
+  .popupBox h4 {
+    font-size: clamp(3rem, 6vw, 4rem);
   }
 }
 

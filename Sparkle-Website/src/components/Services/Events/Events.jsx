@@ -65,7 +65,7 @@ const Events = () => {
                         <h4 className={styles.eventTitle}>Sparkle's Open Day</h4>
                         <p className={styles.eventDate}>
                             <IoIosCalendar className={styles.DateIcon}/>
-                            August 2025
+                            15th August 2025
                         </p>
                         <p className={styles.eventDescription}>
                             In conjunction with Sparkle's anniversary, we are happy to host our first open day! Please book your slot to ensure a dedicated time with our therapist for a chat and look around our space.

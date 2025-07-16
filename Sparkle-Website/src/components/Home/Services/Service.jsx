@@ -59,7 +59,7 @@ const Service = () => {
       </div>
 
       <a
-        href="https://calendly.com"
+        href="https://calendly.com/sparkle-therapy-centre"
         className={styles.bookBtn}
         target="_blank"
         rel="noopener noreferrer"

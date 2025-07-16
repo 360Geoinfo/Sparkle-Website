@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Blog.module.css';
-import Footer from '../../../../Element/Footer/Footer';
+import Footer from "../../Footer/Footer";
 
 const Blog = () => {
     // Add state for WordPress posts
@@ -205,7 +205,7 @@ const Blog = () => {
             <div className={styles.navbarSpacer}></div>
             <div className={styles.Header}>
                 <h1 className={styles.headerTitle}>Sparkle's Blog - Our musings</h1>
-                <p className={styles.headerDescription}>
+                <p className={styles.headerSubTitle}>
                     Laugh & cry with us, as we sail through this journey we call life together..
                 </p>
             </div>
@@ -243,7 +243,6 @@ const Blog = () => {
                             <div className={styles.recentPost}>
                                 <img src={post.image} alt={post.title} className={styles.thumbImage} />
                                 <div className={styles.recentText}>
-                                    <p className={styles.recentDate}>{post.date}</p>
                                     <h3>
                                         {post.link !== "#" ? (
                                             <a href={post.link} target="_blank" rel="noopener noreferrer">
@@ -253,7 +252,11 @@ const Blog = () => {
                                             post.title
                                         )}
                                     </h3>
-                                    <p className={styles.Publisher}>Published by Sparkle Therapy Center</p>
+
+                                    <div className={styles.bottomText}>
+                                        <p className={styles.recentDate}>{post.date}</p>
+                                        <p className={styles.Publisher}>Published by Sparkle Therapy Center</p>
+                                    </div>
                                 </div>
                             </div>
                             {index !== recentPosts.length - 1 && <div className={styles.horizontalDivider}></div>}

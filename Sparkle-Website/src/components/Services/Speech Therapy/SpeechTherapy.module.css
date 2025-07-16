@@ -1,5 +1,3 @@
-/* src/pages/Services/SpeechTherapy.module.css */
-
 .speechTherapySection {
     padding: 10rem 0rem 0rem;
     background: #EEF8FF;
@@ -42,281 +40,179 @@
     font-size: clamp(1rem, 3vw, 1.5rem);
     color: black;
     line-height: 1.5;
+    text-align: justify;
 }
 
-.interventionSection {
+.howItWorksSection {
     width: 100%;
-    margin-top: 2rem;
-    padding-bottom: 4rem;
-    padding: 4rem;
-    background-color: #FFFFFF;
+    text-align: center;
     justify-items: center;
 }
 
-.sectionTitle {
+.howTitle {
     font-size: clamp(1.5rem, 5vw, 2rem);
-    text-align: center;
     color: #563caa;
     font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    width: 100%;
+    max-width: 55rem;
+    margin: 4rem 2rem;
+    justify-items: center;
 }
 
 .card {
   position: relative;
-  width: 100%;
   border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 38vw;
+  height: 25rem;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
 }
 
-.imageWrapper {
-  position: relative;
-  border-radius: 1rem 1rem 0 0;
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .cardImage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 1rem;
-}
-
-.cardGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  width: 60rem;
-  gap: 3rem;
-  justify-items: center;
-  margin-top: 4rem;
-}
-
-.activeCard {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    z-index: 2;
-}
-
-.contactBox {
-    text-align: center;
-    padding: 1.5rem;
-    border-top: 2px solid #ccc;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.badge {
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #fff;
-    color: #472f92;
-    border: 2px solid #472f92;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    z-index: 4;
-}
-
-.badge1 {
-    background-color: #fff;
-    color: #1BB9FF;
-    border-color: #1BB9FF;
-}
-
-.badge2 {
-    background-color: #fff;
-    color: #A0C260;
-    border-color: #A0C260;
-}
-
-.badge3 {
-    background-color: #fff;
-    color: #F0C000;
-    border-color: #F0C000;
-}
-
-.badge4 {
-    background-color: #fff;
-    color: #FF6666;
-    border-color: #FF6666;
-}
-
-.cardContentBox {
-    position: absolute;
-    bottom: 0;
     width: 100%;
-}
-
-.cardContentBox {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    overflow: hidden;
-    border-radius: 0 0 1rem 1rem;
+    height: 15rem;
+    border-radius: 1rem 1rem 0 0;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
 }
 
 .waveImage {
     width: 100%;
-    display: block;
     height: auto;
-    position: relative;
-    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -1.9rem;
+    z-index: 999;
 }
 
 .cardContent {
-  padding: 2rem 1rem 3rem;
-  border-radius: 0 0 1rem 1rem;
-  color: white;
-  position: relative;
-  font-weight: 600;
-  font-size: clamp(1rem, 3vw, 1.5rem);
-  text-align: center;
-}
-
-.cardContent>* {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: 1rem 1rem 1rem;
     position: relative;
     z-index: 2;
 }
 
-.cardContent h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+.learnMoreBtn {
+    font-size: clamp(1rem, 5vw, 1.15rem);
     font-weight: 600;
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
-}
-
-.learnMore {
-    font-size: 1rem;
-    font-weight: 500;
-    background-color: white;
-    padding: 6px 12px;
+    background: white;
+    color: black;
     border: none;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: background 0.2s;
-    width: 50%;
+    border-radius: 30px;
+    padding: 0.5rem 2rem;
+    margin-top: 1.25rem;
     cursor: pointer;
-}
-
-.learnMore:hover {
-    font-size: 1rem;
-    font-weight: 600;
-    transition: background 0.2s;
-}
-
-.learnMore span {
-    font-weight: bold;
-    transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.learnMore:hover span {
-    font-weight: 600;
-    transform: translateX(4px);
-}
-
-/* Overlay */
-.cardOverlay {
-    position: absolute;
-    inset: 0;
-    background-color: var(--active-color, #000);
-    color: #fff;
-    display: none;
-    flex-direction: column;
-    justify-items: center;
-    align-items: center;
-    z-index: 3;
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    font-weight: bold;
-    padding-top: 1.5rem;
-    gap: 0.5rem;
-    border-radius: 1rem;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.cardOverlay h3 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-    font-weight: 700;
-    text-align: center;
-    max-width: 90%;
-    margin: 0;
-    margin-top: 2rem;
-}
-
-.cardOverlay p {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    font-weight: 400;
-    text-align: justify;
-    margin: 0;
-    max-width: 90%;
-    margin-top: 1rem;
-}
-
-.activeCard .cardOverlay {
-    display: flex;
-    bottom: 0;
-}
-
-.activeCard::after {
-    bottom: 0;
-}
-
-/* Close button for overlay */
-.closeOverlay {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: transparent;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    line-height: 1;
-    font-weight: 700;
-    padding: 0;
-    user-select: none;
-}
-
-.ctaWrapper {
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.ctaButton {
-    display: inline-block;
-    width: fit-content;
-    margin-top: 3rem;
-    background-color: #f0c000;
-    color: #563caa;
-    padding: 0.8rem 2rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    font-size: clamp(1rem, 5vw, 1.25rem);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.ctaButton:hover {
-    box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+.learnMoreBtn:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     transform: translateY(-2px);
 }
 
-@media (max-width: 1440px) and (min-width: 1025px) {}
+.stepNumber {
+    position: absolute;
+    top: -1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: #5b21b6;
+    border: 3px solid #5b21b6;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+}
+
+.cardDescription {
+    margin-top: 1rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--active-color, rgba(0, 0, 0, 0.85));
+
+  color: white;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  border-radius: 1rem;
+  animation: slideUpInside 0.4s ease-out;
+  overflow-y: auto;
+}
+
+.overlay p {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+}
+
+@keyframes slideUpInside {
+  from {
+    transform: translateY(1%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.closeBtn:hover {
+  background: #eee;
+}
+
+
 @media (max-width: 1024px) and (min-width: 769px) {
     .speechTherapySection {
         padding: 10rem 0rem 0rem;
@@ -326,30 +222,26 @@
         padding: 0rem 2rem 0rem;
     }
 
-    .descriptionBox {
-        padding: 1rem;
-    }
-
-    .description {
-        margin-bottom: 0rem;
-    }
-
-    .interventionSection {
-        margin-top: 0rem;
-        padding: 2rem 2rem 6rem;
-    }
-
     .cardGrid {
-        width: 90vw;
-        gap: 2rem;
+        gap: 3rem 1.5rem;
+        max-width: 93vw;
     }
 
-    .cardOverlay p {
-        font-size: clamp(1rem, 3vw, 1.2rem);
-        margin-top: 0.5rem;
+    .card {
+        max-width: 40vw;
+        height: 27rem;
+    }
+
+    .cardImage {
+        height: 15rem;
+    }
+
+    .waveImage {
+        margin-top: -1.6rem;
     }
 }
-@media (max-width: 768px) {
+
+@media (max-width: 768px) and (min-width: 426px) {
     .speechTherapySection {
         padding: 10rem 0rem 0rem;
     }
@@ -358,36 +250,51 @@
         padding: 0rem 2rem 0rem;
     }
 
-    .descriptionBox {
-        padding: 1rem;
-    }
-
-    .description {
-        margin-bottom: 0rem;
-        text-align: justify;
-    }
-
-    .interventionSection {
-        margin-top: 0rem;
-        padding: 2rem 1rem 6rem;
-    }
-    
     .cardGrid {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        width: 80vw;
-        gap: 3rem;
-        justify-items: center;
-        margin-top: 4rem;
+        grid-template-columns: 1fr;
+        gap: 3rem 1.5rem;
+        max-width: 90vw;
     }
 
-    .cardOverlay h3 {
-        font-size: clamp(1.25rem, 3vw, 1.5rem);
-        margin-top: 3rem;
+    .card {
+        max-width: 22.5rem;
+        height: 27rem;
     }
 
-    .cardOverlay p {
-        font-size: clamp(1rem, 3vw, 1.25rem);
-        line-height: 1.5;
+    .cardImage {
+        height: 18rem;
+    }
+
+    .waveImage {
+        margin-top: -1.6rem;
+    }
+}
+
+@media (max-width: 426px) {
+    .speechTherapySection {
+        padding: 10rem 0rem 0rem;
+    }
+
+    .topSection {
+        padding: 0rem 1rem 0rem;
+    }
+
+    .cardGrid {
+        grid-template-columns: 1fr;
+        gap: 3rem 1.5rem;
+        max-width: 90vw;
+    }
+
+    .card {
+        max-width: 90vw;
+        height: 25rem;
+    }
+
+    .cardImage {
+        height: 16rem;
+    }
+
+    .waveImage {
+        margin-top: -1.5rem;
     }
 }

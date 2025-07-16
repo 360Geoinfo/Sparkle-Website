@@ -87,7 +87,7 @@ const Hero = () => {
             <img
               src="/assets/LandingPage/PopUp/Confetti.png"
               alt="Speech Therapy"
-              className={styles.cardImage}
+              className={styles.confettiImage}
             />
             <h3 className={styles.popupTitle}>Sparkle Anniversary Special!</h3>
             <h4 className={styles.popupSubTitle}>$30 OFF</h4>

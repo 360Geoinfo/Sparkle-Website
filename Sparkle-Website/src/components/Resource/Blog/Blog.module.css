@@ -2,45 +2,25 @@
   background-color: #F8F7FE;
 }
 
-.navbarSpacer {
-  height: 100px;
-}
-
 .Header {
-  padding: 4rem 2rem 2rem;
+  padding: 10rem 6rem 0rem;
   text-align: center;
 }
 
 .headerTitle {
   font-family: 'Fredoka One', cursive;
-  font-weight: 1500;
-  font-size: 32px;
-  margin-bottom: 1rem;
-  color: #F08A29;
-  text-align: center;
-  position: relative;
-  display: inline-block;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #ff7a00;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
-/* Underline */
-.headerTitle::after {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: #F08A29;
-  margin: 0.5rem auto 0;
-  border-radius: 2px;
-}
-
-.headerDescription {
+.headerSubTitle {
   font-family: 'Fredoka One', cursive;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #563CAA;
-  line-height: 1.6;
-  text-align: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #563caa;
+  font-weight: bold;
+  margin: 0.5rem 0 2rem;
 }
 
 .blogLayout {
@@ -58,9 +38,9 @@
 
 .cornerImage {
   position: absolute;
-  top: -20px;
+  top: -2rem;
   right: -1rem;
-  width: 50px;
+  width: 5rem;
   height: auto;
   z-index: 10;
 }
@@ -76,25 +56,37 @@
   border-radius: 1rem;
 }
 
+.featuredImage {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  object-position: top;
+}
+
 .featuredTitle {
-  font-family: 'Roboto', sans-serif;
-  font-size: 2rem;
   margin-top: 1rem;
+}
+
+.featuredTitle a{
+  font-size: 2rem;
   color: #563CAA;
 }
 
+.Publisher {
+  font-size: 1rem;
+  color: #888;
+}
+
 .featuredDate {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #888;
   margin-top: 0.25rem;
 }
 
 .featuredDesc {
-  font-family: 'Roboto', sans-serif;
   margin-top: 1rem;
   font-size: 1.1rem;
-  color: #444;
+  color: black;
   line-height: 1.6;
 }
 
@@ -120,10 +112,30 @@
 }
 
 .thumbImage {
-  width: 150px;
-  height: 150px;
+  width: 10rem;
+  height: auto;
   object-fit: cover;
   border-radius: 0.5rem;
+}
+
+.recentText {
+  display: flex;
+  flex-direction: column;
+  height: 10rem;
+}
+
+.recentText a {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #563CAA;
+  margin-top: 0.50rem;
+}
+
+.bottomText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
 }
 
 .recentDate {
@@ -131,20 +143,6 @@
   font-size: 1rem;
   color: #777;
   margin-top: 0rem;
-}
-
-.recentText h3 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  color: #563CAA;
-  margin-top: 0.50rem;
-}
-
-.Publisher {
-  font-family: 'Roboto', sans-serif;
-  font-size: 13px;
-  color: #CC6AE1;
-  margin-top: 0.50rem;
 }
 
 .horizontalDivider {

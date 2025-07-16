@@ -148,6 +148,8 @@
     overflow: hidden;
     max-height: 0;
     opacity: 0;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
     transition: max-height 0.4s ease, opacity 0.4s ease;
 }
 
@@ -167,15 +169,16 @@
 }
 
 .bulletList {
-    padding-left: 1.5rem;
+    text-align: left;
+    padding-left: 2.25rem;
     margin-top: 0.5rem;
     list-style-type: disc;
 }
 
 .bulletList li {
     font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    color: #444;
+    font-size: clamp(1rem, 5vw, 1.15rem);
+    color: black;
     line-height: 1.6;
     margin-bottom: 0.5rem;
 }
