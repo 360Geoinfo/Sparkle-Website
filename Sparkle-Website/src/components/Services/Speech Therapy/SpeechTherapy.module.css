@@ -47,6 +47,9 @@
     width: 100%;
     text-align: center;
     justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 .howTitle {
@@ -62,7 +65,7 @@
     gap: 3rem;
     width: 100%;
     max-width: 55rem;
-    margin: 4rem 2rem;
+    margin: 4rem 0;
     justify-items: center;
 }
 
