@@ -65,7 +65,7 @@
     gap: 3rem;
     width: 100%;
     max-width: 55rem;
-    margin: 4rem 0;
+    margin: 4rem 1rem;
     justify-items: center;
 }
 
@@ -175,11 +175,15 @@
   line-height: 1.5;
   border-radius: 1rem;
   animation: slideUpInside 0.4s ease-out;
-  overflow-y: auto;
+}
+
+.overlay h3 {
+    font-size: clamp(1.5rem, 3vw, 1.85rem);
+    margin-bottom: 1rem;
 }
 
 .overlay p {
-    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-size: clamp(1.15rem, 3vw, 1.25rem);
 }
 
 @keyframes slideUpInside {
@@ -194,26 +198,22 @@
 }
 
 .closeBtn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    background: white;
-    color: black;
+    font-size: 1rem;
     border: none;
-    border-radius: 50%;
-    font-size: 1.2rem;
-    width: 32px;
-    height: 32px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
     cursor: pointer;
-    font-weight: bold;
-    transition: background 0.3s ease;
+    margin-top: 20px;
+    transition: all 0.3s ease;
 }
 
 .closeBtn:hover {
-  background: #eee;
+  color: white;
+  transform: scale(1.05);
 }
+
 
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -282,6 +282,10 @@
         padding: 0rem 1rem 0rem;
     }
 
+    .descriptionBox {
+        padding: 1rem;
+    }
+
     .cardGrid {
         grid-template-columns: 1fr;
         gap: 3rem 1.5rem;
@@ -299,5 +303,14 @@
 
     .waveImage {
         margin-top: -1.5rem;
+    }
+
+    .overlay {
+        padding: 5rem 0.5rem;line-height: 1.25;
+    }
+
+    .closeBtn {
+        margin-top: 0.5rem;
+        margin-right: 0.5rem;
     }
 }

@@ -111,7 +111,7 @@ const Footer = () => {
 
       {/* Powered by section */}
       <div className={styles.poweredBy}>
-        <p>Powered by <strong>360 GEOINFO</strong></p>
+        <p>Powered by <strong>360 GEOINFO COMPANY</strong></p>
       </div>
     </>
   );

@@ -8,7 +8,6 @@
 }
 
 .headerTitle {
-  font-family: 'Fredoka One', cursive;
   font-size: clamp(1.5rem, 5vw, 2rem);
   color: #ff7a00;
   font-weight: bold;
@@ -16,7 +15,6 @@
 }
 
 .headerSubTitle {
-  font-family: 'Fredoka One', cursive;
   font-size: clamp(1.5rem, 5vw, 2rem);
   color: #563caa;
   font-weight: bold;
@@ -68,24 +66,24 @@
 }
 
 .featuredTitle a{
-  font-size: 2rem;
+  font-size: clamp(1.35rem, 3vw, 1.75rem);
   color: #563CAA;
 }
 
 .Publisher {
-  font-size: 1rem;
+  font-size: clamp(1rem, 3vw, 1.15rem);
   color: #888;
 }
 
 .featuredDate {
-  font-size: 1rem;
+  font-size: clamp(1rem, 3vw, 1.15rem);
   color: #888;
-  margin-top: 0.25rem;
+  margin-top: 0.5rem;
 }
 
 .featuredDesc {
+  font-size: clamp(1rem, 3vw, 1.35rem);
   margin-top: 1rem;
-  font-size: 1.1rem;
   color: black;
   line-height: 1.6;
 }
@@ -126,7 +124,7 @@
 
 .recentText a {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   font-weight: bold;
   color: #563CAA;
   margin-top: 0.50rem;
@@ -139,10 +137,14 @@
 }
 
 .recentDate {
-  font-family: 'Roboto', sans-serif;
   font-size: 1rem;
   color: #777;
   margin-top: 0rem;
+}
+
+.bottomPublisher {
+  font-size: 1rem;
+  color: #888;
 }
 
 .horizontalDivider {
@@ -152,11 +154,20 @@
 }
 
 @media (max-width: 768px) {
+  .Header {
+    padding: 10rem 1rem 0rem;
+  }
+
   .blogLayout {
     flex-direction: column;
     padding: 2rem 1rem;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
+  }
+
+  .blogLayout {
+    padding: 3rem 1rem;
+    border-radius: 0rem;
   }
 
   .featuredPost,
@@ -176,14 +187,15 @@
   }
 
   .featuredTitle {
-    font-size: 1.5rem;
     text-align: center;
   }
 
-  .featuredDate,
-  .Publisher,
+  .featuredDate {
+    margin-top: 1rem;
+  }
+
   .featuredDesc {
-    text-align: center;
+    text-align: justify;
   }
 
   .verticalDivider {
@@ -191,7 +203,7 @@
   }
 
   .recentPosts {
-    gap: 1rem;
+    gap: 3rem;
   }
 
   .recentPost {
@@ -200,35 +212,23 @@
     text-align: center;
   }
 
+  .recentText {
+    width: 100%;
+    height: 5rem;
+    margin: 1rem 0;
+  }
+
   .thumbImage {
     width: 100%;
     height: auto;
     max-height: 200px;
   }
 
-  .recentText h3 {
-    font-size: 1.1rem;
-  }
-
-  .recentDate {
-    font-size: 0.9rem;
-  }
-
-  .Publisher {
-    font-size: 12px;
-  }
-
   .horizontalDivider {
-    width: 100%;
-    margin: 1rem 0;
-  }
-
-  .headerTitle {
-    font-size: 1.75rem;
+    display: none;
   }
 
   .headerDescription {
-    font-size: 1rem;
     padding: 0 1rem;
   }
 }

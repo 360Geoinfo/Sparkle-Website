@@ -255,7 +255,7 @@ const Blog = () => {
 
                                     <div className={styles.bottomText}>
                                         <p className={styles.recentDate}>{post.date}</p>
-                                        <p className={styles.Publisher}>Published by Sparkle Therapy Center</p>
+                                        <p className={styles.bottomPublisher}>Published by Sparkle Therapy Center</p>
                                     </div>
                                 </div>
                             </div>

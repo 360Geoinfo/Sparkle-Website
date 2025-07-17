@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from './Hero.module.css';
 
 const images = [
@@ -11,6 +11,8 @@ const images = [
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const popupRef = useRef(null);
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +31,23 @@ const Hero = () => {
   const handleClosePopup = () => {
     setShowPopup(false);
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setShowPopup(false);
+      }
+    };
+
+    if (showPopup) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showPopup]);
+
 
   return (
     <section className={styles.heroSection}>
@@ -83,7 +102,7 @@ const Hero = () => {
 
       {showPopup && (
         <div className={styles.popupOverlay}>
-          <div className={styles.popupBox}>
+          <div className={styles.popupBox} ref={popupRef}>
             <img
               src="/assets/LandingPage/PopUp/Confetti.png"
               alt="Speech Therapy"
@@ -93,6 +112,9 @@ const Hero = () => {
             <h4 className={styles.popupSubTitle}>$30 OFF</h4>
             <p className={styles.popupText}>
               On your first consultation!
+            </p>
+            <p className={styles.popupDateText}>
+              Until 31<sup>st</sup> August 2025
             </p>
 
             <div className={styles.popupButtonBox}>

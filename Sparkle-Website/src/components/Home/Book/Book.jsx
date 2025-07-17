@@ -23,7 +23,7 @@ const Book = () => {
             </p>
 
             <a
-                href="https://calendly.com"
+                href="https://calendly.com/sparkle-therapy-centre"
                 className={styles.bookHereBtn}
                 target="_blank"
                 rel="noopener noreferrer"
