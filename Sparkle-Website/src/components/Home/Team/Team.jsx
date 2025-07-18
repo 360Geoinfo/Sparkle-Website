@@ -99,13 +99,13 @@ export default function Team() {
 
                                 {/* BACK SIDE */}
                                 <div
-                                className={styles.cardBack}
-                                onClick={() => setFlippedIndex(null)} 
-                                >
-                                <div className={styles.backContent}>
-                                    <p className={styles.description}>{member.description}</p>
-                                    <p className={styles.tapToReturn}>Tap to return</p>
-                                </div>
+                                    className={styles.cardBack}
+                                    onClick={() => setFlippedIndex(null)} 
+                                    >
+                                    <div className={styles.backContent}>
+                                        <p className={styles.description}>{member.description}</p>
+                                        <p className={styles.tapToReturn}>Tap to return</p>
+                                    </div>
                                 </div>
 
                             </div>

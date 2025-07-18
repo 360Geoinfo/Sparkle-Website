@@ -146,7 +146,11 @@
   text-align: center;
 }
 
-.studentDownloadLink {
+.studentSpeechDownloadLink {
+  background-color: #A0C260;
+}
+
+.studentPsychologyDownloadLink {
   background-color: #F08A29;
 }
 
@@ -158,7 +162,18 @@
   background-color: #CC6AE1;
 }
 
-.studentDownloadLinkWrapper {
+.downloadLinkWrapper {
+  width: 85%;
+}
+
+.studentSpeechDownloadLinkWrapper {
+  border: 3px dashed #A0C260; 
+  padding: 0.25rem; 
+  border-radius: 3rem; 
+  margin-bottom: 1rem;
+}
+
+.studentPsychologyDownloadLinkWrapper {
   border: 3px dashed #F08A29; 
   padding: 0.25rem; 
   border-radius: 3rem; 
@@ -180,18 +195,27 @@
 }
 
 .documentIcon {
+  font-size: 1.5rem; 
+  min-width: 1.5rem;  
+  min-height: 1.5rem;
+  flex-shrink: 0;
   margin-right: 0.25rem;
-  margin-top: -0.35rem;
-  font-size: 1.25rem;
-}
-
-.agreementDownloadIcon{
-  font-size: 1.6rem;
+  vertical-align: middle;
 }
 
 .downloadIcon {
   font-size: 1.6rem;
 }
+
+.downloadIcon {
+  font-size: 1.5rem;      
+  min-width: 1.5rem;    
+  min-height: 1.5rem;
+  flex-shrink: 0;
+  margin-right: 0.5rem;       
+  vertical-align: middle; 
+}
+
 
 .documentIcon,
 .downloadIcon {
@@ -205,6 +229,12 @@
 
   .attachmentsWrapper {
     gap: 2rem;
+  }
+}
+
+@media (max-width: 1300px) {
+  .downloadLinkWrapper {
+    width: 100%;
   }
 }
 
@@ -222,7 +252,12 @@
     top: 14rem;
     left: 83%;
   }
+
+  .downloadLinkWrapper {
+    width: 80%;
+  }
 }
+
 @media (max-width: 768px) and (min-width: 426px) {
   .studentSection {
     padding: 10rem 2rem 4rem;
@@ -235,13 +270,25 @@
 
   .gradCapImage {
     top: 14rem;
-    left: 82%;
+    left: 84vw;
+    width: 6rem;
+    height: 6rem;
   }
 
   .agreementDownloadIcon{
     font-size: 1.7rem;
   }
 }
+
+@media (max-width: 615px) {
+  .gradCapImage {
+    top: 14rem;
+    left: 80vw;
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
 @media (max-width: 425px) {
   .studentSection {
     padding: 8rem 1rem 4rem;
@@ -254,9 +301,9 @@
 
   .gradCapImage {
     top: 12rem;
-    left: 75%;
-    width: 6rem;
-    height: 6rem;
+    left: 76%;
+    width: 5.5rem;
+    height: 5.5rem;
   }
 
   .slider {
@@ -291,5 +338,14 @@
 
   .agreementDownloadIcon{
     font-size: 2.35rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .gradCapImage {
+    top: 12rem;
+    left: 68vw;
+    width: 6rem;
+    height: 6rem;
   }
 }

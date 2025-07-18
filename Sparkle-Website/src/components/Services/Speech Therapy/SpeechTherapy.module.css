@@ -171,10 +171,20 @@
   align-items: center;
   z-index: 5;
   text-align: center;
-  font-size: 0.95rem;
   line-height: 1.5;
   border-radius: 1rem;
   animation: slideUpInside 0.4s ease-out;
+}
+
+.overlayContent {
+    text-align: center;
+}
+
+.tapText {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-size: 0.9rem;
+  text-decoration: underline;
 }
 
 .overlay h3 {

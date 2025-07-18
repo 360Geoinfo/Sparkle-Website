@@ -89,18 +89,19 @@ const SpeechTherapy = () => {
                             </div>
 
                             {openIndex === index && (
-                                <div className={styles.overlay}>
-                                    <h3>{item.title}</h3>
-                                    <p>{item.description}</p>
-                                    <button
-                                      className={styles.closeBtn}
-                                      style={{ '--active-color': item.color, color: item.color }}
-                                      onClick={() => toggleCard(index)}
-                                    >
-                                      Tap to return
-                                    </button>
-
+                              <div
+                                className={styles.overlay}
+                                onClick={() => toggleCard(index)}
+                              >
+                                <div
+                                  className={styles.overlayContent}
+                                  onClick={(e) => e.stopPropagation()}
+                                >
+                                  <h3>{item.title}</h3>
+                                  <p>{item.description}</p>
+                                  <p className={styles.tapText}>Tap to return</p>
                                 </div>
+                              </div>
                             )}
                         </div>
 

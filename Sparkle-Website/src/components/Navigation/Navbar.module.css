@@ -12,7 +12,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -184,7 +184,7 @@
   left: 0px;
   background-color: #F0C000;
   width: 280px;
-  z-index: 1;
+  z-index: 999;
   border-radius: 1rem;
   overflow: hidden;
   padding: 0.5rem 1rem;
@@ -216,13 +216,13 @@
   font-size: 1rem;
   text-decoration: none;
   color: #fff;
+  z-index: 9999;
 }
 
 .dropdownContent a:nth-child(1) {
   border-bottom: 2px solid white;
   border-radius: 0;
 }
-
 
 .navbarLinks {
   display: flex;
@@ -338,6 +338,7 @@
   font-weight: 600;
   font-size: 1.15rem;
   text-align: left;
+  z-index: 5;
 }
 
 .dropdownTitle {
@@ -354,6 +355,7 @@
   height: 2px;
   bottom: 5px;
   left: 50%;
+  z-index: 5;
   background-color: white;
   transition: width 0.3s ease, left 0.3s ease;
 }
@@ -362,6 +364,14 @@
   width: 100%;
   left: 0;
 }
+
+.dropdownContentBooking,
+.dropdownContentServices,
+.dropdownContentResources {
+  position: absolute;
+  z-index: 9999; 
+}
+
 
 /* === MOBILE STYLES === */
 @media (max-width: 1024px) {

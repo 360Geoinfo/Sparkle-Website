@@ -160,45 +160,8 @@ const Blog = () => {
     };
 
     // Use WordPress data if available, otherwise fallback to static data
-    const featuredPost = posts.length > 0 ? {
-        title: posts[0].title,
-        date: formatDate(posts[0].pubDate),
-        description: posts[0].excerpt,
-        image: posts[0].imageUrl || "/assets/Resources/Blog/Individual Talk Therapy (Children & Adults).webp",
-        link: posts[0].link
-    } : {
-        title: "How Mindfulness Transforms Your Day",
-        date: "August 25, 2025",
-        description: "Discover how practicing mindfulness daily can drastically improve focus, reduce stress, and boost happiness. Dive into techniques that take just 5 minutes a day.",
-        image: "/assets/Resources/Blog/Individual Talk Therapy (Children & Adults).webp",
-        link: "#"
-    };
-
-    const recentPosts = posts.length > 1 ? posts.slice(1, 4).map(post => ({
-        title: post.title,
-        date: formatDate(post.pubDate),
-        image: post.imageUrl || "/assets/Resources/Blog/recentPost/Play Therapy.webp",
-        link: post.link
-    })) : [
-        {
-            title: "Our therapist – Dayana",
-            date: "May 28, 2024",
-            image: "/assets/Resources/Blog/recentPost/Play Therapy.webp",
-            link: "#"
-        },
-        {
-            title: "Our therapist – Sayyidah",
-            date: "May 28, 2024",
-            image: "/assets/Resources/Blog/recentPost/PEERS® Social Skills Training.webp",
-            link: "#"
-        },
-        {
-            title: "Our therapist – Meela",
-            date: "May 09, 2024",
-            image: "/assets/Resources/Blog/recentPost/Parent Training.webp",
-            link: "#"
-        },
-    ];
+    const featuredPost = posts[0] || null;
+    const recentPosts = posts.length > 1 ? posts.slice(1, 4) : [];
 
     return (
         <div className={styles.pageBackground}>
@@ -209,61 +172,56 @@ const Blog = () => {
                     Laugh & cry with us, as we sail through this journey we call life together..
                 </p>
             </div>
-            <section className={styles.blogLayout}>
-                {/* Small image in the top-right corner */}
-                <img
+            {posts.length > 0 && (
+                <section className={styles.blogLayout}>
+                    <img
                     src="/assets/Resources/Blog/Decor/Smile.png"
                     alt="Decorative"
                     className={styles.cornerImage}
-                />
-                {/* LEFT: Featured Blog */}
-                <div className={styles.featuredPost}>
-                    <img src={featuredPost.image} alt="Featured" className={styles.featuredImage} />
+                    />
+                    {/* LEFT: Featured Blog */}
+                    <div className={styles.featuredPost}>
+                    <img src={featuredPost.imageUrl} alt="Featured" className={styles.featuredImage} />
                     <h2 className={styles.featuredTitle}>
-                        {featuredPost.link !== "#" ? (
-                            <a href={featuredPost.link} target="_blank" rel="noopener noreferrer">
-                                {featuredPost.title}
-                            </a>
-                        ) : (
-                            featuredPost.title
-                        )}
+                        <a href={featuredPost.link} target="_blank" rel="noopener noreferrer">
+                        {featuredPost.title}
+                        </a>
                     </h2>
-                    <p className={styles.featuredDate}>{featuredPost.date}</p>
+                    <p className={styles.featuredDate}>{formatDate(featuredPost.pubDate)}</p>
                     <p className={styles.Publisher}>Published by Sparkle Therapy Center</p>
-                    <p className={styles.featuredDesc}>{featuredPost.description}</p>
-                    {loading && <p>Loading blog posts...</p>}
-                    {error && <p style={{ color: 'red' }}>{error}</p>}
-                </div>
-                {/* Divider Line */}
-                <div className={styles.verticalDivider}></div>
-                {/* RIGHT: Recent Posts */}
-                <div className={styles.recentPosts}>
-                    {recentPosts.map((post, index) => (
-                        <div key={index}>
-                            <div className={styles.recentPost}>
-                                <img src={post.image} alt={post.title} className={styles.thumbImage} />
-                                <div className={styles.recentText}>
-                                    <h3>
-                                        {post.link !== "#" ? (
-                                            <a href={post.link} target="_blank" rel="noopener noreferrer">
-                                                {post.title}
-                                            </a>
-                                        ) : (
-                                            post.title
-                                        )}
-                                    </h3>
+                    <p className={styles.featuredDesc}>{featuredPost.excerpt}</p>
+                    </div>
 
-                                    <div className={styles.bottomText}>
-                                        <p className={styles.recentDate}>{post.date}</p>
-                                        <p className={styles.bottomPublisher}>Published by Sparkle Therapy Center</p>
-                                    </div>
-                                </div>
+                    <div className={styles.verticalDivider}></div>
+
+                    {/* RIGHT: Recent Posts */}
+                    <div className={styles.recentPosts}>
+                    {recentPosts.map((post, index) => (
+                        <div key={post.guid}>
+                        <div className={styles.recentPost}>
+                            <img src={post.imageUrl} alt={post.title} className={styles.thumbImage} />
+                            <div className={styles.recentText}>
+                            <h3>
+                                <a href={post.link} target="_blank" rel="noopener noreferrer">
+                                {post.title}
+                                </a>
+                            </h3>
+                            <div className={styles.bottomText}>
+                                <p className={styles.recentDate}>{formatDate(post.pubDate)}</p>
+                                <p className={styles.bottomPublisher}>Published by Sparkle Therapy Center</p>
                             </div>
-                            {index !== recentPosts.length - 1 && <div className={styles.horizontalDivider}></div>}
+                            </div>
+                        </div>
+                        {index !== recentPosts.length - 1 && <div className={styles.horizontalDivider}></div>}
                         </div>
                     ))}
-                </div>
-            </section>
+                    </div>
+                </section>
+            )}
+
+            {loading && <p className={styles.loadingMessage}>Loading blog posts...</p>}
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+
             <Footer />
         </div>
     );

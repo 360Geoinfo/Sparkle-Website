@@ -61,6 +61,18 @@ const AboutUs = () => {
                 offer training to their loved ones or teachers and carers involved in
                 their growth and development.
             </p>
+            <div className={styles.aboutLogo}>
+              <img
+                  src="assets/LandingPage/About/PEERS Logo Color on Blue.webp"
+                  alt="PEERS Logo"
+                  className={styles.PEERSLogo}
+              />
+              <img
+                  src="assets/LandingPage/About/COSP-logo.webp"
+                  alt="COSP Logo"
+                  className={styles.COSPLogo}
+              />
+            </div>
             <img
                 src="assets/LandingPage/About/rocket.webp"
                 alt="Rocket Illustration"

@@ -153,6 +153,27 @@
   margin: 1rem 0;
 }
 
+.loadingMessage {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #6c6c6c;
+  margin: 6rem 0;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media (max-width: 768px) {
   .Header {
     padding: 10rem 1rem 0rem;

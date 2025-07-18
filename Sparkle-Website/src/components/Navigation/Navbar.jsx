@@ -210,6 +210,7 @@ export const Navbar = () => {
                       <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.services ? styles.open : ''}`} />
                     </span>
                   </button>
+                  
                   {dropdownStates.services && (
                     <div className={styles.dropdownContentServices}>
                       <NavLink to="/Services/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Speech Therapy</NavLink>

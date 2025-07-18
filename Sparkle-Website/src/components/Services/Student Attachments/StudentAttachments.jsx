@@ -87,13 +87,24 @@ const StudentAttachments = () => {
             </p>
 
             <div className={styles.downloadLinkWrapper}>
-              <div className={styles.studentDownloadLinkWrapper}>
+              <div className={styles.studentSpeechDownloadLinkWrapper}>
                 <a
-                  className={`${styles.downloadLink} ${styles.studentDownloadLink}`}
+                  className={`${styles.downloadLink} ${styles.studentSpeechDownloadLink}`}
                   href="/Forms/Student attachment.pdf"
                   download
                 >
-                    <GrDocumentText className={styles.documentIcon}/> Student Attachment
+                  <GrDocumentText className={styles.documentIcon}/> Student Attachment for Speech Therapy
+                  <MdOutlineFileDownload className={styles.downloadIcon}/>
+                </a>
+              </div>
+
+              <div className={styles.studentPsychologyDownloadLinkWrapper}>
+                <a
+                  className={`${styles.downloadLink} ${styles.studentPsychologyDownloadLink}`}
+                  href="Forms/Sparkle - Psych Clinical Attachment form.pdf"
+                  download
+                >
+                  <GrDocumentText className={styles.documentIcon}/> Student Attachment for Clinical Psychology
                   <MdOutlineFileDownload className={styles.downloadIcon}/>
                 </a>
               </div>
@@ -104,7 +115,7 @@ const StudentAttachments = () => {
                   href="/Forms/Dress Code for Students.pdf"
                   download
                 >
-                    <GrDocumentText className={styles.documentIcon}/> Dress Code for Students
+                  <GrDocumentText className={styles.documentIcon}/> Dress Code for Students
                   <MdOutlineFileDownload className={styles.downloadIcon}/>
                 </a>
               </div>
@@ -115,8 +126,8 @@ const StudentAttachments = () => {
                   href="/Forms/Patient Information Confidentiality Agreement.pdf"
                   download
                 >
-                    <GrDocumentText className={styles.documentIcon}/> Patient Information Confidentiality Agreement
-                  <MdOutlineFileDownload className={styles.agreementDownloadIcon}/>
+                  <GrDocumentText className={styles.documentIcon}/> Patient Information Confidentiality Agreement
+                  <MdOutlineFileDownload className={styles.downloadIcon}/>
                 </a>
               </div>
             </div>

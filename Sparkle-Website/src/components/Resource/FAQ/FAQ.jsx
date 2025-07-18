@@ -180,6 +180,18 @@ const FAQ = () => {
                 </div>
             </div>
 
+            <img
+                src="/assets/Resources/FAQ/question.webp"
+                alt="Question"
+                className={styles.questionImage}
+            />
+
+            <img
+                src="/assets/Resources/FAQ/tictactoe.webp"
+                alt="Tic Tac Toe"
+                className={styles.tictactoeImage}
+            />
+
             <div className={styles.faqContainer}>
                 {currentFaq.map((item, index) => (
                     <div key={index} className={styles.faqItem}>

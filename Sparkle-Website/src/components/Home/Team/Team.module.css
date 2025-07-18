@@ -58,6 +58,7 @@
   max-width: 280px;
   border-radius: 1rem;
   aspect-ratio: 3 / 4.2;
+  margin-bottom: 0.5rem;
 }
 
 .cardInner {

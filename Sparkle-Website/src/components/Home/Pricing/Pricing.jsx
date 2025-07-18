@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./Pricing.module.css";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
-import { FaYoutube, FaInstagram, FaMapMarkerAlt } from "react-icons/fa";
 
 const Pricing = () => {
   const [activeTab, setActiveTab] = useState("speech");
@@ -36,25 +35,31 @@ const Pricing = () => {
             <div className={styles.BandarPricingCard}>
               <img
                 className={styles.greenBirdImage}
-                src="/assets/LandingPage/Pricing/green bird.webp"
+                src="assets/LandingPage/Pricing/green bird.webp"
                 alt="Green Bird"
               />
               <img
                 className={styles.pricingImage}
-                src="/assets/LandingPage/Pricing/PricingBebatik Kilanas.png"
+                src="assets/LandingPage/Pricing/Bebatik Kilanas Tue-Thurs.png"
                 alt="Bebatik Kilanas Pricing"
               />
             </div>
 
+            <img
+              className={styles.pricingImage}
+              src="assets/LandingPage/Pricing/Bebatik Kilanas Fri-Sat.png"
+              alt="Bebatik Kilanas Pricing"
+            />
+
             <div className={styles.BelaitPricingCard}>
               <img
                 className={styles.twoBirdsImage}
-                src="/assets/LandingPage/Pricing/two birds.webp"
+                src="assets/LandingPage/Pricing/two birds.webp"
                 alt="Two Birds"
               />
               <img
                 className={styles.pricingImage}
-                src="/assets/LandingPage/Pricing/PricingKuala Belait.png"
+                src="assets/LandingPage/Pricing/Kuala Belait Tue-Thurs.png"
                 alt="Kuala Belait Pricing"
               />
             </div>
@@ -65,13 +70,13 @@ const Pricing = () => {
           <>
             <img
               className={styles.greenBirdPImage}
-              src="/assets/LandingPage/Pricing/green bird.webp"
+              src="assets/LandingPage/Pricing/green bird.webp"
               alt="Green Bird"
             />
 
             <img
               className={styles.pricingLarge}
-              src="/assets/LandingPage/Pricing/Pricing List.png"
+              src="assets/LandingPage/Pricing/Pricing List.png"
               alt="Clinical Psychology Pricing"
             />
 

@@ -1,5 +1,5 @@
 .pricingSection {
-    padding: 10rem 0rem 4rem;
+    padding: 10rem 2rem 4rem;
     background: white;
     text-align: center;
 
@@ -88,12 +88,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 0rem;
 }
 
 .pricingImage {
     max-width: 100%;
-    width: 600px;
+    width: 420px;
     height: auto;
     border-radius: 1rem;
 }
@@ -175,7 +175,7 @@
 .twoBirdsImage {
     position: absolute;
     margin-top: -2.5rem;
-    margin-left: 28rem;
+    margin-left: 15rem;
     width: 6rem;
 }
 
@@ -224,6 +224,13 @@
         height: auto;
         border-radius: 1rem;
         margin-top: 1rem;
+    }
+
+    .pricingImage {
+        max-width: 100%;
+        width: 500px;
+        height: auto;
+        border-radius: 1rem;
     }
 }
 
