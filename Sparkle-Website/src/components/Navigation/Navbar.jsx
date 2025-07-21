@@ -113,6 +113,7 @@ export const Navbar = () => {
                       <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.booking ? styles.open : ''}`} />
                     </span>
                   </button>
+                  
                   {dropdownStates.booking && (
                     <div className={styles.dropdownContentBooking}>
                       {/* Speech Therapy */}
@@ -123,16 +124,14 @@ export const Navbar = () => {
                         >
                           <div className={styles.dropdownTitle}>
                             Speech Therapy
-                            <span style={{ marginLeft: 'auto' }}>
                               {dropdownStates.speech ? <FaCaretLeft /> : <FaCaretRight />}
-                            </span>
                           </div>
                         </button>
                         {dropdownStates.speech && (
                           <div className={styles.subDropdownContent}>
                             <div className={styles.subDropdownLabel}>Speech Therapy</div>
                             <a
-                              href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                              href="https://calendly.com/sparkle-therapy-centre/free-15-minute-speech-therapy-consultation"
                               target="_blank"
                               rel="noopener noreferrer"
                               className={styles.dropdownLink}
@@ -142,7 +141,7 @@ export const Navbar = () => {
                             </a>
 
                             <a
-                              href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                              href="https://calendly.com/sparkle-therapy-centre/1-hour-speech-therapy-consultation"
                               target="_blank"
                               rel="noopener noreferrer"
                               className={styles.dropdownLink}
@@ -162,16 +161,15 @@ export const Navbar = () => {
                         >
                           <div className={styles.dropdownTitle}>
                             Clinical Psychology
-                            <span style={{ marginLeft: 'auto' }}>
                               {dropdownStates.clinical ? <FaCaretLeft /> : <FaCaretRight />}
-                            </span>
                           </div>
                         </button>
+                        
                         {dropdownStates.clinical && (
                           <div className={styles.subDropdownContent}>
                             <div className={styles.subDropdownLabel}>Clinical Psychology</div>
                             <a
-                              href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                              href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
                               target="_blank"
                               rel="noopener noreferrer"
                               className={styles.dropdownLink}
@@ -181,7 +179,7 @@ export const Navbar = () => {
                             </a>
 
                             <a
-                              href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                              href="https://calendly.com/sparkle-therapy-centre/1-hour-clinical-psychology-consultation"
                               target="_blank"
                               rel="noopener noreferrer"
                               className={styles.dropdownLink}

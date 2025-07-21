@@ -119,7 +119,7 @@ const Hero = () => {
 
             <div className={styles.popupButtonBox}>
               <a
-                href="https://calendly.com/sparkle-therapy-centre/sparkle-open-day"
+                href="https://calendly.com/sparkle-therapy-centre"
                 className={styles.popupButton}
                 target="_blank"
                 rel="noopener noreferrer"

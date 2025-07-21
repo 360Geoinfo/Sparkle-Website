@@ -92,7 +92,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             SPEECH THERAPY
                         </h3>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                            href="https://calendly.com/sparkle-therapy-centre/free-15-minute-speech-therapy-consultation"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={onClose}
@@ -101,7 +101,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             Free 15 min Consultation <FaArrowRightLong />
                         </a>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                            href="https://calendly.com/sparkle-therapy-centre/1-hour-speech-therapy-consultation"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={onClose}
@@ -114,7 +114,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             CLINICAL PSYCHOLOGY
                         </h3>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre/free-15min-consultation"
+                            href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={onClose}
@@ -123,7 +123,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                             Free 15 min Consultation <FaArrowRightLong />
                         </a>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre/1-hour-consultation"
+                            href="https://calendly.com/sparkle-therapy-centre/1-hour-clinical-psychology-consultation"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={onClose}

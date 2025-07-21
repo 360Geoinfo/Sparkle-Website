@@ -7,14 +7,6 @@ const FAQ = () => {
     const [activeTab, setActiveTab] = useState('speech');
     const [openIndexes, setOpenIndexes] = useState({ speech: null, clinical: null });
 
-    const handleTabSwitch = (tab) => {
-        setActiveTab(tab);
-        setOpenIndexes((prev) => ({
-            ...prev,
-            [tab]: null
-        }));
-    };
-
     const toggleAnswer = (index) => {
         setOpenIndexes((prev) => ({
             ...prev,
@@ -159,21 +151,21 @@ const FAQ = () => {
         <section className={styles.faqSection}>
             <div className={styles.topSection}>
                 <h1 className={styles.topTitle}>FAQ</h1>
-                <p className={styles.topSubTitle}>
+                <h4 className={styles.topSubTitle}>
                     Do you have any questions?
-                </p>
+                </h4>
             
 
                 <div className={styles.toggleTabs} data-active={activeTab}>
                     <span
                         className={activeTab === "speech" ? styles.activeTab : styles.inactiveTab}
-                        onClick={() => handleTabSwitch("speech")}
+                        onClick={() => setActiveTab("speech")}
                     >
                         Speech Therapy
                     </span>
                     <span
                         className={activeTab === "clinical" ? styles.activeTab : styles.inactiveTab}
-                        onClick={() => handleTabSwitch("clinical")}
+                        onClick={() => setActiveTab("clinical")}
                     >
                         Clinical Psychology
                     </span>

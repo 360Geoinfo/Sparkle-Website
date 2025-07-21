@@ -233,6 +233,13 @@
 }
 
 @media (max-width: 425px) {
+  .sliderContainer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 0rem;
+    margin: 0 0.5rem;
+  }
+
   .cardWrapper {
     justify-items: center;
     padding: 0rem; 

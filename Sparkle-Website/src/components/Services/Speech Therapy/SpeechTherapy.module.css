@@ -50,13 +50,15 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    padding: 1rem;
+    background-color: white;
 }
 
 .howTitle {
     font-size: clamp(1.5rem, 5vw, 2rem);
     color: #563caa;
     font-weight: bold;
-    margin-top: 0.5rem;
+    margin: 4rem 1rem;
 }
 
 .cardGrid {
@@ -65,7 +67,6 @@
     gap: 3rem;
     width: 100%;
     max-width: 55rem;
-    margin: 4rem 1rem;
     justify-items: center;
 }
 
@@ -207,24 +208,48 @@
   }
 }
 
-.closeBtn {
-    font-size: 1rem;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-weight: 600;
-    color: white;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: all 0.3s ease;
-}
-
-.closeBtn:hover {
+.closeButton {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
   color: white;
-  transform: scale(1.05);
+  cursor: pointer;
+  z-index: 1000;
 }
 
+.closeButton:hover {
+  opacity: 0.8;
+}
 
+.BookBtn {
+  width: 100%;
+  max-width: 25rem;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 5rem 0;
+  transition: all 0.3s ease;
+}
+
+.BookBtn {
+  background-color: #F0C000;
+}
+
+.BookBtn a {
+  color: #563CAA;
+  text-decoration: none;
+}
+
+.BookBtn:hover {
+  box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6); 
+  transform: translateY(-2px);
+}
 
 @media (max-width: 1024px) and (min-width: 769px) {
     .speechTherapySection {

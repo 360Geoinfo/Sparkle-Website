@@ -64,7 +64,7 @@
 }
 
 .productDescription {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
     text-align: justify;
     margin: 1rem 0 2rem;
 }
@@ -135,11 +135,16 @@
 }
 
 .toysDescription {
-    padding: 2rem 20rem 2rem 3rem;
+    padding: 0rem 20rem 0rem 3rem;
     color: white;
     line-height: 1.5;
     font-weight: bold;
     font-size: clamp(1.25rem, 5vw, 1.5rem);
+    text-align: justify;
+}
+
+.description {
+    margin-top: 1rem;
 }
 
 .LegoImages {
@@ -197,7 +202,8 @@
     }
 
     .toysDescription {
-        padding: 2rem 12vw 0rem 1rem;
+        padding: 1rem 12vw 1rem 1rem;
+        text-align: justify;
     }
 
     .LegoImages {
@@ -257,10 +263,7 @@
 
     .toysDescription {
         padding: 1rem 7rem 1rem 0rem;
-    }
-
-    .description {
-        text-align: center;
+        text-align: justify;
     }
 
     .LegoImages {

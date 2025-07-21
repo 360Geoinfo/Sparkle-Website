@@ -168,9 +168,9 @@ const Blog = () => {
             <div className={styles.navbarSpacer}></div>
             <div className={styles.Header}>
                 <h1 className={styles.headerTitle}>Sparkle's Blog - Our musings</h1>
-                <p className={styles.headerSubTitle}>
+                <h4 className={styles.headerSubTitle}>
                     Laugh & cry with us, as we sail through this journey we call life together..
-                </p>
+                </h4>
             </div>
             {posts.length > 0 && (
                 <section className={styles.blogLayout}>

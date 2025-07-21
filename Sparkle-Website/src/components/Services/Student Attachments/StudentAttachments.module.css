@@ -106,7 +106,7 @@
 
 .contactButton:hover {
   box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .whatsAppIcon {
@@ -171,6 +171,13 @@
   padding: 0.25rem; 
   border-radius: 3rem; 
   margin-bottom: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.studentSpeechDownloadLinkWrapper:hover {
+  box-shadow: 0 4px 12px #a0c260;
+  transform: translateY(-2px);
 }
 
 .studentPsychologyDownloadLinkWrapper {
@@ -178,6 +185,13 @@
   padding: 0.25rem; 
   border-radius: 3rem; 
   margin-bottom: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.studentPsychologyDownloadLinkWrapper:hover {
+  box-shadow: 0 4px 12px #F08A29;
+  transform: translateY(-2px);
 }
 
 .dressDownloadLinkWrapper {
@@ -185,6 +199,13 @@
   padding: 0.25rem; 
   border-radius: 3rem; 
   margin-bottom: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.dressDownloadLinkWrapper:hover {
+  box-shadow: 0 4px 12px #1BB9FF;
+  transform: translateY(-2px);
 }
 
 .agreementDownloadLinkWrapper {
@@ -192,6 +213,13 @@
   padding: 0.25rem; 
   border-radius: 3rem; 
   margin-bottom: 1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.agreementDownloadLinkWrapper:hover {
+  box-shadow: 0 4px 12px #CC6AE1;
+  transform: translateY(-2px);
 }
 
 .documentIcon {

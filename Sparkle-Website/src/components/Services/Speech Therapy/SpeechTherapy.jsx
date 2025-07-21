@@ -6,32 +6,28 @@ import styles from './SpeechTherapy.module.css';
 const interventionData = [
   {
     title: "Consultation",
-    description:
-      "We offer free 15 minutes consultation. A formal consultation lasts an hour with parents sharing information or concerns. At the end of the session, we will provide differential diagnosis and offer suggestions. Book your formal consultation now!",
+    description: "We offer free 15 minutes consultation. A formal consultation lasts an hour with parents sharing information or concerns. At the end of the session, we will provide differential diagnosis and offer suggestions. Book your formal consultation now!",
     image: "/assets/ServicesPage/Speech Therapy/Consultation.jpg",
     wave: "/assets/ServicesPage/Speech Therapy/Blue Wave.png",
     color: "#1BB9FF",
   },
   {
     title: "Assessment and Diagnosis ",
-    description:
-      "Assessment is important in confirming diagnosis and understanding your child’s strengths, needs and current skills. You may be recommended more than 1 tool, depending on your child, and a Speech and Language Therapy diagnosis will be shared with you once evaluated.",
+    description: "Assessment is important in confirming diagnosis and understanding your child’s strengths, needs and current skills. You may be recommended more than 1 tool, depending on your child, and a Speech and Language Therapy diagnosis will be shared with you once evaluated.",
     image: "/assets/ServicesPage/Speech Therapy/Assessment and Diagnosis.jpg",
     wave: "/assets/ServicesPage/Speech Therapy/Green Wave.png",
     color: "#A0C260",
   },
   {
     title: "Treatment",
-    description:
-      "We recommend attending at least once a week. Each session includes an individual session with the therapist, followed by a discussion with parents/carers, as we value parental involvement. More sessions may be available depending on your therapist’s schedule.",
+    description: "We recommend attending at least once a week. Each session includes an individual session with the therapist, followed by a discussion with parents/carers, as we value parental involvement. More sessions may be available depending on your therapist’s schedule.",
     image: "/assets/ServicesPage/Speech Therapy/Treatment.jpg",
     wave: "/assets/ServicesPage/Speech Therapy/Yellow Wave.png",
     color: "#F0C000",
   },
   {
     title: "Training",
-    description:
-      "We are passionate in offering training to teachers, parents, or the community at large. Our training can be designed specially to your needs, contact us to find out more info.",
+    description: "We are passionate in offering training to teachers, parents, or the community at large. Our training can be designed specially to your needs, contact us to find out more info.",
     image: "/assets/ServicesPage/Speech Therapy/Training.jpg",
     wave: "/assets/ServicesPage/Speech Therapy/Red Wave.png",
     color: "#FF6666",
@@ -99,14 +95,30 @@ const SpeechTherapy = () => {
                                 >
                                   <h3>{item.title}</h3>
                                   <p>{item.description}</p>
-                                  <p className={styles.tapText}>Tap to return</p>
+                                  <button
+                                    className={styles.closeButton}
+                                    onClick={() => toggleCard(index)}
+                                  >
+                                    &times;
+                                  </button>
+
                                 </div>
                               </div>
                             )}
                         </div>
-
                     ))}
                 </div>
+
+              <button className={styles.BookBtn}>
+                <a
+                  href="https://calendly.com/sparkle-therapy-centre"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book your consultation today!
+                </a>
+              </button>
+
             </div>
         </section>
         <Footer />

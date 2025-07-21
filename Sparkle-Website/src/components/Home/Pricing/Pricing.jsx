@@ -59,7 +59,7 @@ const Pricing = () => {
               />
               <img
                 className={styles.pricingImage}
-                src="assets/LandingPage/Pricing/Kuala Belait Tue-Thurs.png"
+                src="assets/LandingPage/Pricing/Kuala Belait Tue-Sat.png"
                 alt="Kuala Belait Pricing"
               />
             </div>
@@ -76,13 +76,13 @@ const Pricing = () => {
 
             <img
               className={styles.pricingLarge}
-              src="assets/LandingPage/Pricing/Pricing List.png"
+              src="/assets/LandingPage/Pricing/Bebatik Kilanas Big.png"
               alt="Clinical Psychology Pricing"
             />
 
             <img
               className={styles.pricingSmall}
-              src="/assets/LandingPage/Pricing/Pricing List Small.png"
+              src="/assets/LandingPage/Pricing/Bebatik Kilanas Small.png"
               alt="Clinical Psychology Pricing Small"
             />
 

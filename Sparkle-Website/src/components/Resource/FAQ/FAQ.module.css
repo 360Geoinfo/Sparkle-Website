@@ -23,6 +23,9 @@
 }
 
 .topSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 0rem;
     width: 100%;
 }
@@ -45,14 +48,14 @@
     display: flex;
     justify-content: center;
     background-color: #f1f1f1;
-    padding: 0.15rem;
+    padding: 0.15rem 0;
     width: 100%;
-    max-width: 1000px;
-    margin: 2rem auto;
+    max-width: 900px;
+    margin: 2rem 0rem;
     border-radius: 3rem;
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
     position: relative;
-    font-size: clamp(1rem, 5vw, 1.25rem);
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
     font-weight: bold;
     overflow: hidden;
 }
@@ -63,6 +66,7 @@
     text-align: center;
     padding: 0.6rem 0rem;
     cursor: pointer;
+    z-index: 1;
     transition: color 0.3s ease;
     min-width: 0; 
     white-space: nowrap; 
@@ -71,12 +75,13 @@
 }
 
 .activeTab {
-  color: #ff7a00;
-    z-index: 1;
+    color: #ff7a00;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
 }
 
 .inactiveTab {
-  color: #888;
+    color: #888;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
 }
 
 .toggleTabs::before {
@@ -84,14 +89,15 @@
     position: absolute;
     top: 4px;
     bottom: 4px;
-    left: 0px;
+    left: 0;
     width: 48.5%;
     margin: 0rem 0.25rem;
     background-color: white;
     border-radius: 3rem;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
     z-index: 0;
-    transition: left 0.3s ease;
     transform: translateX(0%);
 }
 
@@ -134,13 +140,11 @@
 }
 
 .question {
-    font-family: 'Roboto', sans-serif;
     font-size: 1.2rem;
     color: #563CAA;
 }
 
 .questionButton {
-    font-family: 'Roboto', sans-serif;
     font-size: clamp(1rem, 5vw, 1.25rem);
     font-weight: 600;
     color: #1BB9FF;
@@ -176,7 +180,6 @@
 }
 
 .answer {
-    font-family: 'Roboto', sans-serif;
     font-size: clamp(1rem, 5vw, 1.15rem);
     color: black;
     padding: 1rem 4rem 1rem 1rem;
@@ -192,7 +195,6 @@
 }
 
 .bulletList li {
-    font-family: 'Roboto', sans-serif;
     font-size: clamp(1rem, 5vw, 1.15rem);
     color: black;
     line-height: 1.6;
@@ -237,7 +239,6 @@
     }
 
     .answer {
-        font-family: 'Roboto', sans-serif;
         font-size: clamp(1rem, 5vw, 1.15rem);
         color: black;
         padding: 1rem 1rem 1rem 1rem;
@@ -246,8 +247,7 @@
 
 @media (max-width: 768px) {
     .toggleTabs::before {
-        width: 48%;
-        max-width: 22.2rem;
+        width: 46vw;
     }
 
     .questionImage {
@@ -255,20 +255,29 @@
     }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 700px) {
     .toggleTabs::before {
-        width: 47.5%;
-    }
-}
-
-@media (max-width: 550px) {
-    .toggleTabs::before {
-        width: 47%;
+        width: 47.6%;
     }
 }
 
 @media (max-width: 425px) {
     .toggleTabs::before {
-        width: 43vw;
+        width: 46.6%;
+    }
+}
+
+@media (max-width: 375px) {
+    .toggleTabs[data-active='clinical']::before {
+        left: calc(35% + 30px);
+        padding: 0 0.5rem;
+    }
+
+    .activeTab {
+        margin-right: 0.5rem;
+    }
+
+    .inactiveTab {
+        margin-right: 0.5rem;
     }
 }

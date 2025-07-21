@@ -86,7 +86,7 @@ const Events = () => {
                                 />
                             </a>
                             <a
-                                href="https://calendly.com/sparkle-therapy-centre/sparkle-open-day"
+                                href="https://calendly.com/sparkle-therapy-centre/open-day-free-30-mins-clinical-psychology-consultation"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className={styles.eventButton}

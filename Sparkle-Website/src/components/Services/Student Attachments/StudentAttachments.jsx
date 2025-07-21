@@ -90,7 +90,7 @@ const StudentAttachments = () => {
               <div className={styles.studentSpeechDownloadLinkWrapper}>
                 <a
                   className={`${styles.downloadLink} ${styles.studentSpeechDownloadLink}`}
-                  href="/Forms/Student attachment.pdf"
+                  href="/Forms/Sparkle - Speech Therapy Attachment form.pdf"
                   download
                 >
                   <GrDocumentText className={styles.documentIcon}/> Student Attachment for Speech Therapy
@@ -101,7 +101,7 @@ const StudentAttachments = () => {
               <div className={styles.studentPsychologyDownloadLinkWrapper}>
                 <a
                   className={`${styles.downloadLink} ${styles.studentPsychologyDownloadLink}`}
-                  href="Forms/Sparkle - Psych Clinical Attachment form.pdf"
+                  href="/Forms/Sparkle - Psych Clinical Attachment form.pdf"
                   download
                 >
                   <GrDocumentText className={styles.documentIcon}/> Student Attachment for Clinical Psychology

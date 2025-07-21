@@ -1,5 +1,4 @@
-// src/pages/Services/SpeechTherapy.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import Navbar from "../../Navigation/Navbar";
 import Footer from "../../Footer/Footer";
 import styles from './ClinicalPsychology.module.css';
@@ -36,23 +35,11 @@ const interventionData = [
 ];
 
 const ClinicalPsychology = () => {
-    const [activeCard, setActiveCard] = useState(null);
-    const cardRefs = useRef([]);
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (
-                activeCard !== null &&
-                cardRefs.current[activeCard] &&
-                !cardRefs.current[activeCard].contains(e.target)
-            ) {
-                setActiveCard(null);
-            }
-        };
-
-        document.addEventListener('mousedown', handleClickOutside);
-        return () => document.removeEventListener('mousedown', handleClickOutside);
-    }, [activeCard]);
+    const [openIndex, setOpenIndex] = useState(null);
+    
+    const toggleCard = (index) => {
+        setOpenIndex((prev) => (prev === index ? null : index));
+    };
 
     return (
         <>
@@ -75,65 +62,70 @@ const ClinicalPsychology = () => {
                     </div>
                 </div>
 
-                {/* Intervention Section */}
-                <div className={styles.interventionSection}>
+                <div className={styles.typesSection}>
                     <h2 className={styles.sectionTitle}>Types of Psychological Interventions</h2>
 
                     <div className={styles.cardGrid}>
                         {interventionData.map((item, index) => (
                             <div
+                                className={styles.card}
                                 key={index}
-                                ref={(el) => (cardRefs.current[index] = el)}
-                                className={`${styles.card} ${activeCard === index ? styles.activeCard : ''}`}
-                                style={{ '--active-color': item.color }}
+                                style={{ '--active-color': item.color, backgroundColor: item.color }}
                             >
-                                <div className={styles.card}>
-                                    <div className={styles.imageWrapper}>
-                                        <img src={item.image} alt={item.title} className={styles.cardImage} />
-                                        <div className={`${styles.badge} ${styles[`badge${index + 1}`]}`}>{index + 1}</div>
-                                    </div>
+                                <div 
+                                    className={styles.stepNumber}
+                                    style={{ '--active-color': item.color, color: item.color, borderColor: item.color }}
+                                    >{index + 1}
+                                </div>
+                                <img src={item.image} alt={item.title} className={styles.cardImage} />
 
-                                    <div className={styles.cardContentBox}>
-                                        <img src={item.wave} alt="Wave Overlay" className={styles.waveImage} />
-
-                                        <div className={styles.cardContent} style={{ backgroundColor: item.color }}>
-                                            <h3>{item.title}</h3>
-                                            <button
-                                                onClick={() => setActiveCard(index)}
-                                                className={styles.learnMore}
-                                                style={{ color: item.color }}
-                                            >
-                                                Learn More <span>→</span>
-                                            </button>
-                                        </div>
-                                    </div>
+                                <div className={styles.cardContent}>
+                                    <img src={item.wave} alt="Wave" className={styles.waveImage} />
+                                    <h3>{item.title}</h3>
+                                    <button
+                                        className={styles.learnMoreBtn}
+                                        style={{ '--active-color': item.color, color: item.color }}
+                                        onClick={() => toggleCard(index)}
+                                    >
+                                        {openIndex === index ? "Hide" : "Learn More →"}
+                                    </button>
                                 </div>
 
-                                <div className={styles.cardOverlay}>
+                                {openIndex === index && (
+                                <div
+                                    className={styles.overlay}
+                                    onClick={() => toggleCard(index)}
+                                >
+                                    <div
+                                    className={styles.overlayContent}
+                                    onClick={(e) => e.stopPropagation()}
+                                    >
                                     <h3>{item.title}</h3>
                                     <p>{item.description}</p>
                                     <button
-                                        className={styles.closeOverlay}
-                                        onClick={() => setActiveCard(null)}
-                                        aria-label="Close details"
+                                        className={styles.closeButton}
+                                        onClick={() => toggleCard(index)}
                                     >
-                                        ×
+                                        &times;
                                     </button>
+
+                                    </div>
                                 </div>
+                                )}
                             </div>
                         ))}
                     </div>
 
-                    <div className={styles.ctaWrapper}>
+                    <button className={styles.BookBtn}>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={styles.ctaButton}
+                        href="https://calendly.com/sparkle-therapy-centre"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         >
-                            Book a session now!
+                        Book your consultation today!
                         </a>
-                    </div>
+                    </button>
+
                 </div>
             </section>
             <Footer />
