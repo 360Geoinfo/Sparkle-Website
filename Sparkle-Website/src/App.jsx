@@ -13,6 +13,7 @@ import Book from './components/Home/Book/Book';
 import Testimonials from './components/Home/Testimonials/Testimonials';
 import Training from './components/Home/Training/Training';
 import Pricing from './components/Home/Pricing/Pricing';
+import InspiringStories from './components/Home/InspiringStories/InspiringStories';
 
 import SpeechTherapy from './components/Services/Speech Therapy/SpeechTherapy';
 import ClinicalPsychology from './components/Services/Clinical Psychology/ClinicalPsychology';
@@ -20,6 +21,7 @@ import Products from './components/Services/Products/Products';
 import Events from './components/Services/Events/Events';
 import StudentAttachment from './components/Services/Student Attachments/StudentAttachments';
 import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
+
 
 import Blog from './components/Resource/Blog/Blog';
 import FAQ from './components/Resource/FAQ/FAQ';
@@ -42,6 +44,7 @@ function App() {
               <Team />
               <Service />
               <Book />
+              <InspiringStories />
               <Testimonials />
               <Training />
               <Pricing />

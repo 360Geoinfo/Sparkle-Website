@@ -6,11 +6,17 @@ const TestimonialsCard = ({ testimonial }) => {
 
   return (
     <div className={styles.bubbleWrapper}>
-        <img src={quoteImage} alt="Quote" className={`${styles.quote} ${styles.topLeft}`} />
+        
 
-        <div className={`${styles.bubbleBox} ${testimonial.color === 'purple' ? styles.purple : styles.green}`}>
-            <img src={bubbleImage} alt="Bubble" className={styles.bubbleImage} />
+        <div className={`${styles.bubbleBox} 
+        ${testimonial.color === 'purple' ? styles.purple : 
+        testimonial.color === 'green' ? styles.green : 
+        testimonial.color === 'blue' ? styles.blue : ''}`}>
         </div>
+
+        <img src={bubbleImage} alt="Bubble" className={styles.bubbleImage} />
+
+        <img src={quoteImage} alt="Quote" className={`${styles.quote} ${styles.topLeft}`} />
 
         <div className={styles.bubbleContent}>
             <p className={styles.text}>{text}</p>

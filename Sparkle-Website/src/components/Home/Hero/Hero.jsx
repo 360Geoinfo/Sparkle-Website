@@ -25,7 +25,7 @@ const Hero = () => {
 
   // Show popup on each home page visit
   useEffect(() => {
-    setShowPopup(true);
+    setShowPopup(false);
   }, []);
 
   const handleClosePopup = () => {

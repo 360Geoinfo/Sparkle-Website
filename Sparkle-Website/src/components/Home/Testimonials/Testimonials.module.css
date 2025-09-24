@@ -1,35 +1,35 @@
 .testimonialsSection {
-    padding: 8rem 0rem 4rem;
-    background: #f8f7fe;
-    text-align: center;
+  padding: 8rem 0rem 4rem;
+  background: #f8f7fe;
+  text-align: center;
 }
 
 .topContent {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 .title {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    color: #ff7a00;
-    font-weight: bold;
-    text-decoration: underline;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #ff7a00;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .subTitle {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    color: #563caa;
-    font-weight: bold;
-    margin-top: 0.5rem;
-    padding: 0rem 1rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  color: #563caa;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  padding: 0rem 1rem;
 }
 
 .testimonialContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonialCard {
-    position: relative;
+  position: relative;
 }
 
 .sliderContainer {
@@ -39,7 +39,7 @@
 }
 
 .cardWrapper {
-  padding: 0rem; 
+  padding: 0rem;
   margin-left: -10rem;
   box-sizing: border-box;
 }
@@ -57,37 +57,39 @@
 
 .bubbleWrapper {
   position: relative;
-  overflow: visible; 
+  overflow: visible;
   width: 70%;
+  height: auto;
 }
 
 .bubbleImage {
-    width: 100%;
-    height: auto;
-    display: block;
-    padding: 0rem;
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: 0rem;
 }
 
 .bubbleContent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 2rem;
-    width: 95%;
-    height: 100%;
-    display: flex;
-    margin-top: -3rem;
-    margin-left: 1rem;
-    flex-direction: column;
-    justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  margin-top: -3rem;
+  margin-left: 1rem;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text {
-    text-align: justify;
-    font-size: clamp(1rem, 5vw, 1.15rem);
-    line-height: 1.5;
-    color: #111;
-    margin-bottom: 1rem;
+  text-align: justify;
+  font-size: clamp(1rem, 5vw, 1.15rem);
+  line-height: 1.5;
+  color: #111;
+  margin-bottom: 1rem;
+  white-space: 'pre-line'
 }
 
 .bottomContent {
@@ -96,21 +98,21 @@
 }
 
 .name {
-    text-align: left;
-    font-size: clamp(1rem, 5vw, 1.15rem);
-    font-weight: bold;
-    color: #563caa;
+  text-align: left;
+  font-size: clamp(1rem, 5vw, 1.15rem);
+  font-weight: bold;
+  color: #563caa;
 }
 
 .stars {
-    display: flex;
-    justify-content: right;
-    gap: 0.3rem;
+  display: flex;
+  justify-content: right;
+  gap: 0.3rem;
 }
 
 .starIcon {
-    width: 1.5rem;
-    height: auto;
+  width: 1.5rem;
+  height: auto;
 }
 
 .quote {
@@ -130,6 +132,8 @@
   transform: rotate(20deg);
 }
 
+
+
 /* @media (min-width: 768px) {
   .testimonialContainer {
     flex-direction: row;
@@ -141,7 +145,7 @@
 
 @media (max-width: 1440px) and (min-width: 1025px) {
   .cardWrapper {
-    padding: 0rem; 
+    padding: 0rem;
     margin-left: -5rem;
   }
 
@@ -163,7 +167,7 @@
 
 @media (max-width: 1024px) and (min-width: 769px) {
   .cardWrapper {
-    padding: 0rem; 
+    padding: 0rem;
     margin-left: 4rem;
   }
 
@@ -180,11 +184,12 @@
 @media (max-width: 768px) and (min-width: 426px) {
   .cardWrapper {
     justify-items: center;
-    padding: 0rem; 
+    padding: 0rem;
     margin-left: 0rem;
   }
 
   .bubbleWrapper {
+    display: grid;
     width: 88%;
   }
 
@@ -195,24 +200,35 @@
   }
 
   .bubbleBox {
+    position: relative;
     width: 100%;
-    height: 27rem;
+    grid-area: 1 / 1;
+    min-height: 27rem;
     border-radius: 2rem;
+    padding: 2rem;
   }
 
   .purple {
-    background-color: #CDC8FF; 
+    background-color: #CDC8FF;
   }
 
   .green {
     background-color: #CDEED5;
   }
 
+  .blue {
+    background-color: #C8DFFF;
+  }
+
   .bubbleContent {
+    position: static;
+    grid-area: 1 / 1;
     width: 98%;
-    height: 100%;
+    height: auto;
     margin-top: 0rem;
     margin-left: 0.5rem;
+    padding: 1.5rem;
+    z-index: 1;
   }
 
   .quote {
@@ -232,7 +248,9 @@
   }
 }
 
-@media (max-width: 425px) {
+
+
+@media (max-width: 437px) {
   .sliderContainer {
     width: 100%;
     margin: 0 auto;
@@ -242,12 +260,8 @@
 
   .cardWrapper {
     justify-items: center;
-    padding: 0rem; 
+    padding: 0rem;
     margin-left: 0rem;
-  }
-
-  .bubbleWrapper {
-    width: 88%;
   }
 
   .bubbleImage {
@@ -256,18 +270,45 @@
     display: none !important;
   }
 
+  .bubbleWrapper {
+    display: grid;
+    width: 88%;
+  }
+
   .bubbleBox {
-    width: 100%;
-    height: 27rem;
+    grid-area: 1 / 1;
+    min-height: 27rem;
+    /* base height, grows with content */
     border-radius: 2rem;
   }
 
+  .bubbleContent {
+    position: static;
+    /* stop absolute overflow */
+    grid-area: 1 / 1;
+    /* sit on top of .bubbleBox */
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    margin: 0;
+    z-index: 1;
+  }
+
+  .text {
+    white-space: pre-line;
+  }
+
+
   .purple {
-    background-color: #CDC8FF; 
+    background-color: #CDC8FF;
   }
 
   .green {
     background-color: #CDEED5;
+  }
+
+  .blue {
+    background-color: #C8DFFF;
   }
 
   .bubbleContent {
