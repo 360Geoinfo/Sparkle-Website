@@ -16,7 +16,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1rem auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,8 +25,8 @@
 
 .navbarContainer {
   width: auto;
-  margin: 0 auto;
-  padding: 2rem;
+  margin: 3rem auto;
+  padding: 2rem auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -43,7 +43,7 @@
 
 .menuItems {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.5rem;
   align-items: center;
   list-style: none;
   margin: 0;
@@ -56,29 +56,8 @@
 }
 
 .navLink {
-  width: 140px;
+  width: 180px;
   text-align: center;
-}
-
-/* Service dropdown specific */
-.servicesDropdown {
-  background-color: #F0C000;
-  border-radius: 2rem;
-  padding: 0.5rem;
-}
-
-/* Resource dropdown specific */
-.resourcesDropdown {
-  background-color: #A0C260;
-  border-radius: 2rem;
-  padding: 0.5rem;
-}
-
-/* Booking dropdown specific */
-.bookingDropdown {
-  background-color: #F08A29;
-  border-radius: 2rem;
-  padding: 0.5rem;
 }
 
 /* Home dropdown specific */
@@ -88,11 +67,45 @@
   padding: 0.5rem;
 }
 
+/* Speech Therapy dropdown specific */
+.speechTherapyDropdown {
+  background-color: #F08A29;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+/* Clinical Psychology dropdown specific */
+.clinicalPsychologyDropdown {
+  background-color: #F0C000;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+/* Service dropdown specific */
+.servicesDropdown {
+  background-color: #A0C260;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+/* Resource dropdown specific */
+.resourcesDropdown {
+  background-color: #1BB9FF;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
+/* Promotion dropdown specific */
+.promotionDropdown {
+  background-color: #CC6AE1;
+  border-radius: 2rem;
+  padding: 0.5rem;
+}
+
 .navButton {
   all: unset;
   cursor: pointer;
   display: inline-block;
-  max-width: 140px;
   text-align: center;
   font-weight: 600;
   font-size: 1.25rem;
@@ -132,25 +145,24 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-
 /* === LINK COLORS === */
 .activeLink {
   border-radius: 2rem;
 }
 
 /* Repeat for other links */
-.bookingLink {
+.speechTherapyLink {
   color: #fff;
   background-color: #F08A29;
 }
 
-.bookingActive {
+.speechTherapyActive {
   border-radius: 2rem;
 }
 
 .servicesLink {
   color: #fff;
-  background-color: #F0C000;
+  background-color: #A0C260;
 }
 
 .servicesActive {
@@ -159,7 +171,12 @@
 
 .resourcesLink {
   color: #fff;
-  background-color: #A0C260;
+  background-color: #1BB9FF;
+}
+
+.promotionLink {
+  color: #fff;
+  background-color: #CC6AE1;
 }
 
 .resourcesActive {
@@ -169,39 +186,6 @@
 /* Wrapper for the Resources + dropdown */
 .dropdown {
   position: relative;
-}
-
-/* Dropdown menu hidden by default */
-.dropdownContentServices {
-  position: absolute;
-  top: 115%;
-  left: 0px;
-  background-color: #F0C000;
-  width: 280px;
-  z-index: 999;
-  border-radius: 1rem;
-  overflow: hidden;
-  padding: 0.5rem 1rem;
-}
-
-.dropdownContentServices a {
-  padding: 0.5rem;
-}
-
-.dropdownContentResources {
-  position: absolute;
-  top: 115%;
-  left: 0px;
-  background-color: #A0C260;
-  width: 150px;
-  z-index: 1;
-  border-radius: 1rem;
-  overflow: hidden;
-  padding: 0.5rem 1rem;
-}
-
-.dropdownContentResources a {
-  padding: 0.5rem;
 }
 
 .dropdownLink {
@@ -220,7 +204,7 @@
 
 .navbarLinks {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   font-size: 1rem;
   align-content: center;
   justify-content: center;
@@ -239,6 +223,7 @@
 .linkWithIcon {
   display: inline-flex;
   align-items: center;
+  width: max-content;
   gap: 0.5rem;
 }
 
@@ -256,28 +241,77 @@
   transform: rotate(180deg);
 }
 
-
-
-.dropdownContentBooking {
+/* Dropdown Box */
+.dropdownContentSpeechTherapy,
+.dropdownContentClinicalPsychology {
   display: flex;
   position: relative;
   flex-direction: column;
-  background-color: #F08A29;
   border-radius: 1rem;
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 999;
   margin-top: 0.5rem;
-  padding: 0.5rem 0.5rem;
+  padding: 0.5rem;
+  gap: 0.5rem;
 }
 
+/* Speech Therapy */
+.dropdownContentSpeechTherapy {
+  background-color: #F08A29;
+}
 
-.dropdownLink {
+/* Clinical Psychology */
+.dropdownContentClinicalPsychology {
+  background-color: #F0C000;
+}
+
+.dropdownContentSpeechTherapy a,
+.dropdownContentClinicalPsychology a {
   padding: 0.5rem;
 }
 
-.bookingButton {
+/* Services*/
+.dropdownContentServices {
+  position: absolute;
+  top: 115%;
+  left: 0px;
+  background-color: #A0C260;
+  width: 280px;
+  z-index: 999;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownContentServices a {
+  padding: 0.5rem;
+}
+
+/* Resources */
+.dropdownContentResources {
+  position: absolute;
+  top: 115%;
+  left: 0px;
+  background-color: #1BB9FF;
+  width: 150px;
+  z-index: 1;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+}
+
+.dropdownContentResources a {
+  padding: 0.5rem;
+}
+
+.dropdownLink {
+  width: max-content;
+  padding: 0.5rem ;
+}
+
+.speechTherapyButton {
   display: flex;
   position: relative;
   align-items: center;
@@ -361,7 +395,7 @@
   left: 0;
 }
 
-.dropdownContentBooking,
+.dropdownContentSpeechTherapy,
 .dropdownContentServices,
 .dropdownContentResources {
   position: absolute;
@@ -370,7 +404,7 @@
 
 
 /* === MOBILE STYLES === */
-@media (max-width: 1024px) {
+@media (max-width: 1180px) {
   .navbar {
     top: 0;
     width: 100%;
@@ -467,7 +501,7 @@
 }
 
 /* Prevent mobile nav on large screens */
-@media (min-width: 1025px) {
+@media (min-width: 1181px) {
   .navbarMobile {
     display: none !important;
   }

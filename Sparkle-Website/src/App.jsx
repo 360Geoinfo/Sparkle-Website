@@ -22,9 +22,10 @@ import Events from './components/Services/Events/Events';
 import StudentAttachment from './components/Services/Student Attachments/StudentAttachments';
 import ClinicalSupervision from './components/Services/Clinical Supervision/ClinicalSupervision';
 
-
 import Blog from './components/Resource/Blog/Blog';
 import FAQ from './components/Resource/FAQ/FAQ';
+
+import Promotion from './components/Promotion/Promotion'
 
 import ScrollUpButton from './components/ScrollUpButton/ScrollUpButton';
 
@@ -44,7 +45,7 @@ function App() {
               <Team />
               <Service />
               <Book />
-              <InspiringStories />
+              {/* <InspiringStories /> */}
               <Testimonials />
               <Training />
               <Pricing />
@@ -61,6 +62,7 @@ function App() {
           
           <Route path="/Resources/Blog" element={<Blog />} />
           <Route path="/Resources/FAQ" element={<FAQ />} />
+          <Route path="/Promotion/Promotion" element={<Promotion />} />
         </Routes>
 
         <ScrollUpButton />

@@ -156,7 +156,7 @@
 .confettiImage {
   width: 200px;
   height: auto;
-  margin-top: -8rem;
+  margin-top: -12rem;
 }
 
 /* Title Styles */
@@ -168,7 +168,7 @@
   color: #563caa;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
-  margin: 0.5rem auto;
+  margin: -0.25rem auto;
   display: inline-block;
   box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6); 
 }

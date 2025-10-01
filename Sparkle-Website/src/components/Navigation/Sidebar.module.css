@@ -154,7 +154,7 @@
 
 
 /* Hide sidebar on larger screens */
-@media (min-width: 1025px) {
+@media (min-width: 1181x) {
   .sidebar,
   .sidebarOverlay {
     display: none;

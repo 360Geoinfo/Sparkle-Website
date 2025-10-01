@@ -13,27 +13,27 @@ const teamMembers = [
     description:
       "Meela is the founder of Sparkle Therapy Centre with more than 25 years of experience working with children and adults. She is passionate to train and empower families in taking action for their loved ones in their stride. She loves reading and has many stories to share!",
   },
-  {
-    name: "Dayana Kula",
-    title: "Speech and Language Therapist (i-Ready)",
-    image: "/assets/LandingPage/Team/Dayana.webp",
-    description:
-      "Dayana graduated from the UK and has joined the team since January 2024. She empowers children, builds parents' confidence as communicator partners, and is passionate about adult dysphagia. A cat lover and photography enthusiast!",
-  },
-  {
-    name: "Sayyidah Masri",
-    title: "Speech and Language Therapist (i-Ready)",
-    image: "/assets/LandingPage/Team/Sayyidah.webp",
-    description:
-      "Sayyidah started in January 2024 after graduating from Sheffield. She’s dedicated to supporting children through fun & supportive sessions, with a special interest in neurodivergence and early literacy. Outside work, she enjoys café hopping, and trying out creative hobbies!",
-  },
-  {
-    name: "Hannah Ong",
-    title: "Speech and Language Therapist",
-    image: "/assets/LandingPage/Team/Hannah.jpg",
-    description:
-      "With over 3 years of experience in Australia, she's now back in Brunei with her family. Hannah’s a fun therapist who loves giving stickers and a homebody with artistic talent. She enjoys exploring the arts and traveling when possible.",
-  },
+//   {
+//     name: "Dayana Kula",
+//     title: "Speech and Language Therapist (i-Ready)",
+//     image: "/assets/LandingPage/Team/Dayana.webp",
+//     description:
+//       "Dayana graduated from the UK and has joined the team since January 2024. She empowers children, builds parents' confidence as communicator partners, and is passionate about adult dysphagia. A cat lover and photography enthusiast!",
+//   },
+//   {
+//     name: "Sayyidah Masri",
+//     title: "Speech and Language Therapist (i-Ready)",
+//     image: "/assets/LandingPage/Team/Sayyidah.webp",
+//     description:
+//       "Sayyidah started in January 2024 after graduating from Sheffield. She’s dedicated to supporting children through fun & supportive sessions, with a special interest in neurodivergence and early literacy. Outside work, she enjoys café hopping, and trying out creative hobbies!",
+//   },
+//   {
+//     name: "Hannah Ong",
+//     title: "Speech and Language Therapist",
+//     image: "/assets/LandingPage/Team/Hannah.jpg",
+//     description:
+//       "With over 3 years of experience in Australia, she's now back in Brunei with her family. Hannah’s a fun therapist who loves giving stickers and a homebody with artistic talent. She enjoys exploring the arts and traveling when possible.",
+//   },
   {
     name: "Laili Syukrillah",
     title: "Administration Assistant (i-Ready)",

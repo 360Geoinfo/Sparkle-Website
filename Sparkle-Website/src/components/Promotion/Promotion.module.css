@@ -1,0 +1,143 @@
+.supervisionSection {
+    padding: 10rem 6rem 4rem;
+    background: #EEF8FF;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    color: #ff7a00;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid #563caa21;
+    margin: 4rem 0;
+    gap: 5rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.StarImage {
+    width: auto;
+    height: 10rem;
+}
+
+.cardWrapper {
+    justify-items: left;
+    text-align: left;
+}
+
+.subtitle {
+    font-size: clamp(1.25rem, 5vw, 1.65rem);
+    color: #CC6AE1;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.description {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    color: black;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.PromotionContactButton {
+    width: 100%;
+    background-color: #F0C000;
+    color: #563CAA;
+    padding: 1rem 2rem;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 1rem;
+    border: none;
+    margin: 2rem 0 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.PromotionContactButton a {
+    color: #563CAA;
+    font-size: clamp(0.5rem, 5vw, 1.25rem);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.PromotionContactButton:hover {
+    box-shadow: 0 4px 12px rgba(240, 192, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.whatsAppIcon {
+    margin-right: 0.5rem;
+    margin-top: -0.25rem;
+    vertical-align: middle;
+    font-size: 1.65rem;
+}
+
+.noPromoBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border: 1px dashed #ccc;
+  border-radius: 12px;
+  max-width: 650px;
+}
+
+.noPromoIcon {
+  font-size: 3rem;
+  color: #CC6AE1;
+  margin-bottom: 1rem;
+}
+
+.noPromoText {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+
+
+@media (max-width: 1440px) and (min-width: 1025px) {}
+@media (max-width: 1024px) and (min-width: 769px) {
+    .supervisionSection {
+        padding: 10rem 4rem 4rem;
+    }
+}
+@media (max-width: 768px) and (min-width: 426px) {
+    .supervisionSection {
+        padding: 10rem 2rem 4rem;
+    }
+}
+@media (max-width: 425px) {
+    .supervisionSection {
+        padding: 8rem 1rem 4rem;
+    }
+
+    .card {
+        margin: 2rem 0;
+    }
+
+    .contactButton {
+        font-size: 1rem;
+    }
+}

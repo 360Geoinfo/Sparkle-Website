@@ -25,7 +25,7 @@ const Hero = () => {
 
   // Show popup on each home page visit
   useEffect(() => {
-    setShowPopup(false);
+    setShowPopup(true);
   }, []);
 
   const handleClosePopup = () => {
@@ -104,17 +104,17 @@ const Hero = () => {
         <div className={styles.popupOverlay}>
           <div className={styles.popupBox} ref={popupRef}>
             <img
-              src="/assets/LandingPage/PopUp/Confetti.png"
+              src="/assets/LandingPage/PopUp/Woman notepad 1.png"
               alt="Speech Therapy"
               className={styles.confettiImage}
             />
-            <h3 className={styles.popupTitle}>Sparkle Anniversary Special!</h3>
-            <h4 className={styles.popupSubTitle}>$30 OFF</h4>
+            <h3 className={styles.popupTitle}>Psychologist Trainee Special!</h3>
+            <h4 className={styles.popupSubTitle}>50% OFF</h4>
             <p className={styles.popupText}>
-              On your first consultation!
+              For Clinical Psychology Trainee
             </p>
             <p className={styles.popupDateText}>
-              Until 31<sup>st</sup> August 2025
+              Promotion until 28<sup>th</sup> February 2026
             </p>
 
             <div className={styles.popupButtonBox}>

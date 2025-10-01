@@ -6,10 +6,14 @@ import { IoCalendarOutline } from "react-icons/io5";
 import { GrServices, GrResources } from "react-icons/gr";
 import { FaCaretDown } from "react-icons/fa";
 import { FaArrowRightLong } from "react-icons/fa6";
+import { LuSpeech } from "react-icons/lu";
+import { RiPsychotherapyLine } from "react-icons/ri";
+import { FaBullhorn } from "react-icons/fa";
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ isOpen, onClose }) => {
-    const [isBookingOpen, setIsBookingOpen] = useState(false);
+    const [isSpeechTherapyOpen, setIsSpeechTherapyOpen] = useState(false);
+    const [isClinicalPsychologyOpen, setIsClinicalPsychologyOpen] = useState(false);
     const [isServicesOpen, setIsServicesOpen] = useState(false);
     const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
@@ -17,7 +21,8 @@ const Sidebar = ({ isOpen, onClose }) => {
         document.body.classList.toggle('no-scroll', isOpen);
         if (!isOpen) {
         // Close all dropdowns when sidebar closes
-        setIsBookingOpen(false);
+        setIsSpeechTherapyOpen(false);
+        setIsClinicalPsychologyOpen(false);
         setIsServicesOpen(false);
         setIsResourcesOpen(false);
         }
@@ -26,8 +31,12 @@ const Sidebar = ({ isOpen, onClose }) => {
         };
     }, [isOpen]);
 
-    const toggleBookingDropdown = () => {
-        setIsBookingOpen(prev => !prev);
+    const toggleSpeechTherapyDropdown = () => {
+        setIsSpeechTherapyOpen(prev => !prev);
+    };
+
+    const toggleClinicalPsychologyDropdown = () => {
+        setIsClinicalPsychologyOpen(prev => !prev);
     };
 
     const toggleServicesDropdown = () => {
@@ -71,28 +80,34 @@ const Sidebar = ({ isOpen, onClose }) => {
                 Home
             </NavLink>
 
-            {/* Booking Dropdown */}
+            {/* Speech Therapy Dropdown */}
             <div className={styles.sidebarDropdown}>
                 <button
-                    onClick={toggleBookingDropdown}
+                    onClick={toggleSpeechTherapyDropdown}
                     className={styles.sidebarDropdownToggle}
                 >
                     <div className={styles.sidebarDropdownTitle}>
-                        <IoCalendarOutline className={styles.sidebarIcon} />
-                        Booking
+                        <LuSpeech className={styles.sidebarIcon} />
+                        SpeechTherapy
                     </div>
-                    <FaCaretDown
-                    className={`${styles.sidebarDropdownArrow} ${isBookingOpen ? styles.open : ''}`}
+                        <FaCaretDown
+                        className={`${styles.sidebarDropdownArrow} ${isSpeechTherapyOpen ? styles.open : ''}`}
                     />
                 </button>
 
-                {isBookingOpen && (
+                {isSpeechTherapyOpen && (
                     <div className={styles.sidebarDropdownMenu}>
-                        <h3 className={styles.sidebarDropdownSubtitle}>
-                            SPEECH THERAPY
-                        </h3>
+                        <NavLink
+                            to="/Services/SpeechTherapy"
+                            onClick={onClose}
+                            className={({ isActive }) =>
+                            isActive ? styles.activeLink : undefined
+                            }
+                        >
+                            About
+                        </NavLink>
                         <a
-                            href="https://calendly.com/sparkle-therapy-centre/free-15-minute-speech-therapy-consultation"
+                            href="https://calendly.com/sparkle-therapy-centre/free-15-mins-slt-consult"
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={onClose}
@@ -109,10 +124,36 @@ const Sidebar = ({ isOpen, onClose }) => {
                         >
                             1 hour Consultation <FaArrowRightLong />
                         </a>
+                    </div>
+                )}
+            </div>
 
-                        <h3 className={styles.sidebarDropdownSubtitle}>
-                            CLINICAL PSYCHOLOGY
-                        </h3>
+            {/* Clinical Psychology Dropdown */}
+            <div className={styles.sidebarDropdown}>
+                <button
+                    onClick={toggleClinicalPsychologyDropdown}
+                    className={styles.sidebarDropdownToggle}
+                >
+                    <div className={styles.sidebarDropdownTitle}>
+                        <RiPsychotherapyLine className={styles.sidebarIcon} />
+                        Clinical Psychology
+                    </div>
+                        <FaCaretDown
+                        className={`${styles.sidebarDropdownArrow} ${isClinicalPsychologyOpen ? styles.open : ''}`}
+                    />
+                </button>
+
+                {isClinicalPsychologyOpen && (
+                    <div className={styles.sidebarDropdownMenu}>
+                        <NavLink
+                            to="/Services/ClinicalPsychology"
+                            onClick={onClose}
+                            className={({ isActive }) =>
+                            isActive ? styles.activeLink : undefined
+                            }
+                        >
+                            About
+                        </NavLink>
                         <a
                             href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
                             target="_blank"
@@ -146,30 +187,12 @@ const Sidebar = ({ isOpen, onClose }) => {
                         Services
                     </div>
                         <FaCaretDown
-                        className={`${styles.sidebarDropdownArrow} ${isResourcesOpen ? styles.open : ''}`}
+                        className={`${styles.sidebarDropdownArrow} ${isServicesOpen ? styles.open : ''}`}
                     />
                 </button>
 
                 {isServicesOpen && (
                     <div className={styles.sidebarDropdownMenu}>
-                        <NavLink
-                            to="/Services/SpeechTherapy"
-                            onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
-                        >
-                            Speech Therapy
-                        </NavLink>
-                        <NavLink
-                            to="/Services/ClinicalPsychology"
-                            onClick={onClose}
-                            className={({ isActive }) =>
-                            isActive ? styles.activeLink : undefined
-                            }
-                        >
-                            Clinical Psychology
-                        </NavLink>
                         <NavLink
                             to="/Services/Products"
                             onClick={onClose}
@@ -248,6 +271,18 @@ const Sidebar = ({ isOpen, onClose }) => {
                     </div>
                 )}
             </div>
+
+            {/* Promotion */}
+            <NavLink
+                to="/Promotion/Promotion"
+                onClick={onClose}
+                className={({ isActive }) =>
+                    `${styles.sidebarLink} ${isActive ? styles.activeLink : ''} ${styles.promotionLink}`
+                }
+                >
+                <FaBullhorn className={styles.sidebarIcon} />
+                Promotion
+            </NavLink>
         </aside>
 
         {isOpen && (

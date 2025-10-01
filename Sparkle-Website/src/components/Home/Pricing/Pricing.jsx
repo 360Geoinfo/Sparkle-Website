@@ -76,7 +76,7 @@ const Pricing = () => {
 
             <img
               className={styles.pricingLarge}
-              src="/assets/LandingPage/Pricing/Bebatik Kilanas Big.png"
+              src="/assets/LandingPage/Pricing/Psychology Pricing List.png"
               alt="Clinical Psychology Pricing"
             />
 

@@ -12,37 +12,43 @@ export const Navbar = () => {
   // Group all dropdown states in one object
   const [dropdownStates, setDropdownStates] = useState({
     home: false,
+    speechTherapy: false,
+    clinicalPsychology: false,
     booking: false,
     services: false,
     resources: false,
     speech: false,
-    clinical: false
+    clinical: false,
+    promotion: false,
   });
 
   // Toggle main dropdowns (booking, services, etc.)
   const toggleMainDropdown = (key) => {
     setDropdownStates((prev) => {
-      const reset = { home: false, booking: false, services: false, resources: false };
+      const reset = { home: false, speechTherapy: false, clinicalPsychology: false, booking: false, services: false, resources: false, promotion: false, };
       return { ...prev, ...reset, [key]: !prev[key] };
     });
   };
 
-  // Toggle sub-dropdowns (speech, clinical)
-  const toggleSubDropdown = (key) => {
-    setDropdownStates((prev) => {
-      const reset = { speech: false, clinical: false };
-      return { ...prev, ...reset, [key]: !prev[key] };
-    });
-  };
+  // // Toggle sub-dropdowns (speech, clinical)
+  // const toggleSubDropdown = (key) => {
+  //   setDropdownStates((prev) => {
+  //     const reset = { speech: false, clinical: false };
+  //     return { ...prev, ...reset, [key]: !prev[key] };
+  //   });
+  // };
 
   const closeAllDropdowns = () => {
     setDropdownStates({
       home: false,
+      speechTherapy: false,
+      clinicalPsychology: false,
       booking: false,
       services: false,
       resources: false,
       speech: false,
-      clinical: false
+      clinical: false,
+      promotion: false,
     });
   };
 
@@ -60,7 +66,7 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    const checkIsMobile = () => setIsMobile(window.innerWidth <= 1024);
+    const checkIsMobile = () => setIsMobile(window.innerWidth <= 1180);
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
     return () => window.removeEventListener('resize', checkIsMobile);
@@ -101,96 +107,81 @@ export const Navbar = () => {
                 </div>
               </li>
 
-              {/* Booking */}
+              {/* Speeach Therapy */}
               <li className={styles.navbarItem}>
-                <div className={`${styles.dropdown} ${styles.bookingDropdown}`}>
+                <div className={`${styles.dropdown} ${styles.speechTherapyDropdown}`}>
                   <button
-                    onClick={() => toggleMainDropdown('booking')}
-                    className={`${styles.navButton} ${dropdownStates.booking ? styles.bookingActive : ''}`}
+                    onClick={() => toggleMainDropdown('speechTherapy')}
+                    className={`${styles.navButton} ${dropdownStates.speechTherapy ? styles.speechTherapyActive : ''}`}
                   >
                     <span className={styles.linkWithIcon}>
-                      Booking
-                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.booking ? styles.open : ''}`} />
+                      Speech Therapy
+                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.speechTherapy ? styles.open : ''}`} />
                     </span>
                   </button>
                   
-                  {dropdownStates.booking && (
-                    <div className={styles.dropdownContentBooking}>
-                      {/* Speech Therapy */}
-                      <div className={styles.columnGap}>
-                        <button
-                          onClick={() => toggleSubDropdown('speech')}
-                          className={`${styles.dropdownLink} ${dropdownStates.speech ? styles.dropdownActive : ''} ${styles.bookingButton}`}
-                        >
-                          <div className={styles.dropdownTitle}>
-                            Speech Therapy
-                              {dropdownStates.speech ? <FaCaretLeft /> : <FaCaretRight />}
-                          </div>
-                        </button>
-                        {dropdownStates.speech && (
-                          <div className={styles.subDropdownContent}>
-                            <div className={styles.subDropdownLabel}>Speech Therapy</div>
-                            <a
-                              href="https://calendly.com/sparkle-therapy-centre/free-15-minute-speech-therapy-consultation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.dropdownLink}
-                              onClick={closeAllDropdowns}
-                            >
-                              Free 15 min Consultation
-                            </a>
+                  {dropdownStates.speechTherapy && (
+                    <div className={styles.dropdownContentSpeechTherapy}>
+                      <NavLink to="/Services/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
+                      <a
+                        href="https://calendly.com/sparkle-therapy-centre/free-15-mins-slt-consult"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.dropdownLink}
+                        onClick={closeAllDropdowns}
+                      >
+                        Free 15 min Consultation
+                      </a>
 
-                            <a
-                              href="https://calendly.com/sparkle-therapy-centre/1-hour-speech-therapy-consultation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.dropdownLink}
-                              onClick={closeAllDropdowns}
-                            >
-                              Paid Consultation
-                            </a>
-                          </div>
-                        )}
-                      </div>
+                      <a
+                        href="https://calendly.com/sparkle-therapy-centre/1-hour-speech-therapy-consultation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.dropdownLink}
+                        onClick={closeAllDropdowns}
+                      >
+                        Paid Consultation
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </li>
 
-                      {/* Clinical Psychology */}
-                      <div className={styles.columnGap}>
-                        <button
-                          onClick={() => toggleSubDropdown('clinical')}
-                          className={`${styles.dropdownLink} ${dropdownStates.clinical ? styles.dropdownActive : ''} ${styles.bookingButton}`}
-                        >
-                          <div className={styles.dropdownTitle}>
-                            Clinical Psychology
-                              {dropdownStates.clinical ? <FaCaretLeft /> : <FaCaretRight />}
-                          </div>
-                        </button>
-                        
-                        {dropdownStates.clinical && (
-                          <div className={styles.subDropdownContent}>
-                            <div className={styles.subDropdownLabel}>Clinical Psychology</div>
-                            <a
-                              href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.dropdownLink}
-                              onClick={closeAllDropdowns}
-                            >
-                              Free 15 min Consultation
-                            </a>
+              {/* Clinical Psychology */}
+              <li className={styles.navbarItem}>
+                <div className={`${styles.dropdown} ${styles.clinicalPsychologyDropdown}`}>
+                  <button
+                    onClick={() => toggleMainDropdown('clinicalPsychology')}
+                    className={`${styles.navButton} ${dropdownStates.clinicalPsychology ? styles.clinicalPsychologyActive : ''}`}
+                  >
+                    <span className={styles.linkWithIcon}>
+                      Clinical Psychology
+                      <FaCaretDown className={`${styles.dropdownArrow} ${dropdownStates.clinicalPsychology ? styles.open : ''}`} />
+                    </span>
+                  </button>
+                  
+                  {dropdownStates.clinicalPsychology && (
+                    <div className={styles.dropdownContentClinicalPsychology}>
+                      <NavLink to="/Services/ClinicalPsychology" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
+                      <a
+                        href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.dropdownLink}
+                        onClick={closeAllDropdowns}
+                      >
+                        Free 15 min Consultation
+                      </a>
 
-                            <a
-                              href="https://calendly.com/sparkle-therapy-centre/1-hour-clinical-psychology-consultation"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className={styles.dropdownLink}
-                              onClick={closeAllDropdowns}
-                            >
-                              Paid Consultation
-                            </a>
-
-                          </div>
-                        )}
-                      </div>
+                      <a
+                        href="https://calendly.com/sparkle-therapy-centre/1-hour-clinical-psychology-consultation"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.dropdownLink}
+                        onClick={closeAllDropdowns}
+                      >
+                        Paid Consultation
+                      </a>
                     </div>
                   )}
                 </div>
@@ -211,8 +202,6 @@ export const Navbar = () => {
                   
                   {dropdownStates.services && (
                     <div className={styles.dropdownContentServices}>
-                      <NavLink to="/Services/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Speech Therapy</NavLink>
-                      <NavLink to="/Services/ClinicalPsychology" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Clinical Psychology</NavLink>
                       <NavLink to="/Services/Products" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Products</NavLink>
                       <NavLink to="/Services/Events" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Events</NavLink>
                       <NavLink to="/Services/StudentAttachments" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>Student Attachments</NavLink>
@@ -240,6 +229,20 @@ export const Navbar = () => {
                       <NavLink to="/Resources/FAQ" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>FAQ</NavLink>
                     </div>
                   )}
+                </div>
+              </li>
+
+              {/* Promotion */}
+              <li className={styles.navbarItem}>
+                <div className={`${styles.dropdown} ${styles.promotionDropdown}`}>
+                  <NavLink
+                    to="/Promotion/Promotion"
+                    className={({ isActive }) =>
+                      `${styles.navButton} ${isActive ? styles.promotionActive : ''}`
+                    }
+                  >
+                    <span className={styles.linkWithIconpromotion}>Promotion</span>
+                  </NavLink>
                 </div>
               </li>
             </ul>
