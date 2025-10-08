@@ -62,7 +62,7 @@ function App() {
           
           <Route path="/Resources/Blog" element={<Blog />} />
           <Route path="/Resources/FAQ" element={<FAQ />} />
-          <Route path="/Promotion/Promotion" element={<Promotion />} />
+          <Route path="/Promotion" element={<Promotion />} />
         </Routes>
 
         <ScrollUpButton />

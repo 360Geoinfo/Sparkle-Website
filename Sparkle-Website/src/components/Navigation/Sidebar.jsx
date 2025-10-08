@@ -274,7 +274,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
             {/* Promotion */}
             <NavLink
-                to="/Promotion/Promotion"
+                to="/Promotion"
                 onClick={onClose}
                 className={({ isActive }) =>
                     `${styles.sidebarLink} ${isActive ? styles.activeLink : ''} ${styles.promotionLink}`

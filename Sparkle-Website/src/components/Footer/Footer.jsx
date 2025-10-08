@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Footer.module.css";
 import { FaYoutube, FaInstagram, FaWhatsapp, FaMapMarkerAlt } from "react-icons/fa";
+import VisitsCounter from "./VisitsCounter"; 
 
 const Footer = () => {
   return (
@@ -30,7 +31,21 @@ const Footer = () => {
         </div>
 
         <div className={styles.footerRightContent}>
-          <h4 className={styles.footerTitle}>Connect With Us!</h4>
+          <div className={styles.footerRightWrapper}>
+            <h4 className={styles.footerTitle}>Connect With Us!</h4>
+            <div className={styles.VisitsCounterWrapper}>
+              <img
+                className={styles.SmallCloudImage}
+                src="/assets/LandingPage/Hero/Small Cloud.png"
+                alt="Cloud"
+              />
+            
+              <div className={styles.visitsCounterBox}>
+                <VisitsCounter scope="all" />
+              </div>
+            </div>
+          </div>
+
           <ul className={styles.footerLinks}>
             <li>
               <a

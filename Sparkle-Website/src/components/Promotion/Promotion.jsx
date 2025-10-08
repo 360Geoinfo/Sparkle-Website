@@ -5,16 +5,25 @@ import styles from "./Promotion.module.css";
 import { FaWhatsapp, FaBullhorn } from "react-icons/fa";
 
 const Promotion = () => {
-  // Example: replace with real data from props, API, or CMS
   const promotions = [
-    // {
-    //   id: 1,
-    //   title: "Promotion 1",
-    //   description:
-    //     "We welcome anyone interested in joining. Let us know if you'd like to be part of it!",
-    //   img: "/assets/LandingPage/About/shooting star.webp",
-    //   link: "https://wa.me/6738391407",
-    // },
+    {
+      id: 1,
+      title: "Psychologist Trainee Special!",
+      description:
+        "50% OFF, For Clinical Psychology Trainee Promotion until 28th February 2026",
+      img: "/assets/LandingPage/About/shooting star.webp",
+      link: "https://wa.me/6738391407",
+    },
+    {
+      id: 2,
+      title: "World Mental Health Day 2025",
+      description: [
+        "15% OFF, For psychological services by our Clinical Psychologist",
+        "50% OFF, For psychological services by our Psychologist Trainee",
+      ],
+      img: "/assets/Promotions/World Mental Health Day 2025.jpeg",
+      link: "https://wa.me/6738391407",
+    },
   ];
 
   return (
@@ -29,31 +38,41 @@ const Promotion = () => {
               <img
                 src={promo.img}
                 alt={promo.title}
-                className={styles.StarImage}
+                className={styles.PromotionsImage}
               />
               <div className={styles.cardWrapper}>
                 <h4 className={styles.subtitle}>{promo.title}</h4>
-                <p className={styles.description}>{promo.description}</p>
+
+                {Array.isArray(promo.description) ? (
+                  promo.description.map((text, index) => (
+                    <p key={index} className={styles.description}>
+                      {text}
+                    </p>
+                  ))
+                ) : (
+                  <p className={styles.description}>{promo.description}</p>
+                )}
+
                 <button className={styles.PromotionContactButton}>
                   <a
                     href={promo.link}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaWhatsapp className={styles.whatsAppIcon} /> Send your
-                    application here
+                    <FaWhatsapp className={styles.whatsAppIcon} /> Click here for
+                    more info
                   </a>
                 </button>
               </div>
             </div>
           ))
         ) : (
-            <div className={styles.noPromoBox}>
-                <FaBullhorn className={styles.noPromoIcon} />
-                <p className={styles.noPromoText}>
-                    There are no promotions at the moment. Please check back later!
-                </p>
-            </div>
+          <div className={styles.noPromoBox}>
+            <FaBullhorn className={styles.noPromoIcon} />
+            <p className={styles.noPromoText}>
+              There are no promotions at the moment. Please check back later!
+            </p>
+          </div>
         )}
       </section>
       <Footer />

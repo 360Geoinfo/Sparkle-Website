@@ -34,20 +34,27 @@ const teamMembers = [
 //     description:
 //       "With over 3 years of experience in Australia, she's now back in Brunei with her family. Hannah’s a fun therapist who loves giving stickers and a homebody with artistic talent. She enjoys exploring the arts and traveling when possible.",
 //   },
-  {
-    name: "Laili Syukrillah",
-    title: "Administration Assistant (i-Ready)",
-    image: "/assets/LandingPage/Team/Laili.jpg",
-    description:
-      "Laili is the newest sparkling member and is a mum of a lovely young girl. She brings energy and creativity to Sparkle. With over 5 years in administrative role, she manages and supports us in ways we didn't know we needed it.",
-  },
-  {
-    name: "Danial Mahadi",
-    title: "Clinical Psychologist",
-    image: "/assets/LandingPage/Team/Danial.jpg",
-    description:
-      "I’m a licensed Clinical Psychologist with more than 10 years of experience in UK, Malaysia and Brunei. I strive to provide a safe, compassionate space for healing and growth by offering psychological assessments and therapy for individuals and families across all age groups facing emotional, behavioural as well as developmental challenges.",
-  },
+    {
+        name: "Danial Mahadi",
+        title: "Clinical Psychologist",
+        image: "/assets/LandingPage/Team/Danial.jpg",
+        description:
+        "I’m a licensed Clinical Psychologist with more than 10 years of experience in UK, Malaysia and Brunei. I strive to provide a safe, compassionate space for healing and growth by offering psychological assessments and therapy for individuals and families across all age groups facing emotional, behavioural as well as developmental challenges.",
+    },
+    {
+        name: "Auni",
+        title: "Clinical Psychologist Trainee",
+        image: "/assets/LandingPage/Team/Auni.jpeg",
+        description:
+        "Auni is Sparkle's Psychologist Trainee with experience working with children in Brunei and Malaysia. She is passionate about helping both children and adults through assessment, observation, and supportive interventions. She is dedicated to promoting mental health and well-being.",
+    },
+    {
+        name: "Laili Syukrillah",
+        title: "Administration Assistant (i-Ready)",
+        image: "/assets/LandingPage/Team/Laili.jpg",
+        description:
+        "Laili is the newest sparkling member and is a mum of a lovely young girl. She brings energy and creativity to Sparkle. With over 5 years in administrative role, she manages and supports us in ways we didn't know we needed it.",
+    },
 ];
 
 export default function Team() {

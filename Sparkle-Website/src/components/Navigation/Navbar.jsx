@@ -236,7 +236,7 @@ export const Navbar = () => {
               <li className={styles.navbarItem}>
                 <div className={`${styles.dropdown} ${styles.promotionDropdown}`}>
                   <NavLink
-                    to="/Promotion/Promotion"
+                    to="/Promotion"
                     className={({ isActive }) =>
                       `${styles.navButton} ${isActive ? styles.promotionActive : ''}`
                     }

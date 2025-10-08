@@ -82,10 +82,16 @@ const Pricing = () => {
 
             <img
               className={styles.pricingSmall}
-              src="/assets/LandingPage/Pricing/Bebatik Kilanas Small.png"
+              src="/assets/LandingPage/Pricing/Psychology Pricing List Clinical.png"
               alt="Clinical Psychology Pricing Small"
             />
 
+            <img
+              className={styles.pricingSmall}
+              src="/assets/LandingPage/Pricing/Psychology Pricing List Trainee.png"
+              alt="Clinical Psychology Pricing Small"
+            />
+0
             <img
               className={styles.twoBirdsPImage}
               src="/assets/LandingPage/Pricing/two birds.webp"
