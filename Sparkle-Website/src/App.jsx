@@ -54,10 +54,10 @@ function App() {
           } />
 
           <Route path="/Services/ClinicalSupervision" element={<ClinicalSupervision />} />
-          <Route path="/Services/ClinicalPsychology" element={<ClinicalPsychology />} />
+          <Route path="/ClinicalPsychology" element={<ClinicalPsychology />} />
           <Route path="/Services/Events" element={<Events/>} />
           <Route path="/Services/Products" element={<Products/>} />
-          <Route path="/Services/SpeechTherapy" element={<SpeechTherapy />} />
+          <Route path="/SpeechTherapy" element={<SpeechTherapy />} />
           <Route path="/Services/StudentAttachments" element={<StudentAttachment />} />
           
           <Route path="/Resources/Blog" element={<Blog />} />

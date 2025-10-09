@@ -121,12 +121,10 @@ const Hero = () => {
               <a
                 href="/Promotion"
                 className={styles.popupButton}
-                target="_blank"
-                rel="noopener noreferrer"
               >
                 Book Now!
               </a>
-
+          
               <button
                 onClick={handleClosePopup}
                 className={styles.popupCloseBtn}

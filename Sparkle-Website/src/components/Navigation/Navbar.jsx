@@ -122,7 +122,7 @@ export const Navbar = () => {
                   
                   {dropdownStates.speechTherapy && (
                     <div className={styles.dropdownContentSpeechTherapy}>
-                      <NavLink to="/Services/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
+                      <NavLink to="/SpeechTherapy" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
                       <a
                         href="https://calendly.com/sparkle-therapy-centre/free-15-mins-slt-consult"
                         target="_blank"
@@ -162,7 +162,7 @@ export const Navbar = () => {
                   
                   {dropdownStates.clinicalPsychology && (
                     <div className={styles.dropdownContentClinicalPsychology}>
-                      <NavLink to="/Services/ClinicalPsychology" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
+                      <NavLink to="/ClinicalPsychology" className={({ isActive }) => `${styles.dropdownLink} ${isActive ? styles.dropdownActive : ''}`} onClick={closeAllDropdowns}>About</NavLink>
                       <a
                         href="https://calendly.com/sparkle-therapy-centre/free-15-minute-clinical-psychology-consultation"
                         target="_blank"
